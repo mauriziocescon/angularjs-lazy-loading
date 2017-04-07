@@ -1,0 +1,14 @@
+// Variables and mixins
+@import "colors";
+@import "functions";
+@import "mixins";
+
+// Core css
+@import "base";
+
+// Vendors
+@import "../../../node_modules/angular-material/angular-material";
+
+// Right now fa doesn't work
+//$fa-font-path: "~/font-awesome/fonts";
+//@import "~font-awesome/scss/font-awesome";

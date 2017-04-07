@@ -1,0 +1,17 @@
+<div layout="column" flex>
+
+    <h3>Lazy contact list where contact component is lazy loaded</h3>
+
+    <md-list flex ng-if="!$ctrl.isLoadingData">
+        <contact ng-repeat="contact in $ctrl.contacts" contact="contact"></contact>
+    </md-list>
+
+    <md-button class="md-button md-fab md-fab-bottom-right" ng-click="$ctrl.addContact()" aria-label="Add contact">
+        <md-icon md-font-icon="md">add</md-icon>
+    </md-button>
+
+    <md-button class="md-button md-fab md-fab-bottom-left" ng-click="$ctrl.loadModule()" aria-label="Add contact">
+        <md-icon md-font-icon="md">file_download</md-icon>
+    </md-button>
+</div>
+

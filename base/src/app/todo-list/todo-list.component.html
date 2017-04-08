@@ -1,6 +1,6 @@
 <div layout="column" flex>
 
-    <h3>Regular todo list where all components are bundled</h3>
+    <h3>{{ "TODO_LIST_WELCOME" | translate }}</h3>
 
     <md-list flex ng-if="!$ctrl.isLoadingData">
         <todo ng-repeat="todo in $ctrl.todos" todo="todo"></todo>

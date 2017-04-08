@@ -1,4 +1,6 @@
 {
-  "CONTACTS": "Created section",
-  "TODOS": "Created section"
+  "CONTACT_LIST_WELCOME": "Contact list where contact component is lazy loaded",
+  "CONTACTS": "Contacts",
+  "TODO_LIST_WELCOME": "Regular todo list where todo component is bundled",
+  "TODOS": "Todos"
 }

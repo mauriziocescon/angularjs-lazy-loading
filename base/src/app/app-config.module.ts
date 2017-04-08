@@ -4,7 +4,7 @@ export const appConfigFunc = ($ocLazyLoadProvider: oc.ILazyLoadProvider, $transl
 	});
 
 	$translateProvider.useStaticFilesLoader({
-		prefix: "./assets/i18n",
+		prefix: "assets/i18n/",
 		suffix: ".json"
 	});
 	$translateProvider.preferredLanguage("en");

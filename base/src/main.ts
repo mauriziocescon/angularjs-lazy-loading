@@ -25,7 +25,7 @@ class Main {
     }
 
     static loadAngular(): void {
-		const config: ng.IAngularBootstrapConfig = {strictDi: true};
+		const config: ng.IAngularBootstrapConfig = {strictDi: /* @echo STRICT_DI */};
         angular.bootstrap(app, [app], config);
     }
 }

@@ -1,11 +1,17 @@
+const webpack = require("webpack");
 const path = require("path");
 const CleanPlugin = require("clean-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const ExtractPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const {CheckerPlugin} = require("awesome-typescript-loader");
 
+
 module.exports = {
-    entry: "./src/main.ts",
+    entry: {
+        app: "./src/main.ts",
+        vendor: "./src/vendor.ts"
+    },
 
     // Enable sourcemaps for debugging webpack's output.
     devtool: "source-map",
@@ -15,13 +21,15 @@ module.exports = {
         extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js", ".scss", ".html", ".json"]
     },
 
-    // clean dist folder
     plugins: [
+
+        // clean dist folder
         new CleanPlugin(["dist", "build"], {
             verbose: true,
             dry: false,
             exclude: []
         }),
+
         new CopyPlugin([{
             from: "src/index.html"
         }, {
@@ -31,7 +39,24 @@ module.exports = {
         }, {
             from: "../lazy/dist/lazy.js.map"
         }]),
-        new CheckerPlugin()
+
+        new CheckerPlugin(),
+
+        // insert file dynamically
+        new HtmlWebpackPlugin({
+            template: "src/index.html",
+            inject: "head"
+        }),
+
+        new webpack.optimize.CommonsChunkPlugin({
+            name: ["app", "vendor"]
+        }),
+
+        // new webpack.optimize.UglifyJsPlugin({
+        //     mangle: {
+        //         keep_fnames: true
+        //     }
+        // })
     ],
 
     module: {
@@ -88,7 +113,7 @@ module.exports = {
 
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "base.js"
+        filename: "[name].js"
     },
 
     devServer: {

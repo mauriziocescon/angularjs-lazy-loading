@@ -1,7 +1,7 @@
 Demo application for lazy loading of angular 1.x components
 =========
 
-## How to compile the app
+## How to build the app
 
 1. Download and install [NodeJS](https://nodejs.org/en/)
 

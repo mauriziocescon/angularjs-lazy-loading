@@ -8,16 +8,16 @@ module.exports = webpackMerge(commonConfig, {
 
     plugins: [
 
-        // new webpack.optimize.UglifyJsPlugin({
-        //     mangle: {
-        //         keep_fnames: true
-        //     }
-        // }),
-        //
-        // new webpack.DefinePlugin({
-        //     "process.env": {
-        //         "ENV": JSON.stringify(ENV)
-        //     }
-        // })
+        new webpack.optimize.UglifyJsPlugin({
+            mangle: {
+                keep_fnames: true
+            }
+        }),
+
+        new webpack.DefinePlugin({
+            "process.env": {
+                "ENV": JSON.stringify(ENV)
+            }
+        })
     ]
 });

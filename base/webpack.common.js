@@ -35,9 +35,7 @@ module.exports = {
         }, {
             from: "src/assets/i18n", to: "assets/i18n"
         }, {
-            from: "../lazy/dist/lazy.js"
-        }, {
-            from: "../lazy/dist/lazy.js.map"
+            from: "../lazy/dist"
         }]),
 
         new CheckerPlugin(),
@@ -50,13 +48,7 @@ module.exports = {
 
         new webpack.optimize.CommonsChunkPlugin({
             name: ["app", "vendor"]
-        }),
-
-        // new webpack.optimize.UglifyJsPlugin({
-        //     mangle: {
-        //         keep_fnames: true
-        //     }
-        // })
+        })
     ],
 
     module: {
@@ -90,6 +82,14 @@ module.exports = {
                 ]
             },
 
+            // images loader
+            {
+                test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
+                use: [
+                    {loader: "file-loader?name=assets/imgs/[name].[hash].[ext]"}
+                ]
+            },
+
             // all files with a ".ts" or ".tsx" extension will be handled by "ts-loader"
             {
                 test: /\.(ts|tsx)?$/,
@@ -113,7 +113,7 @@ module.exports = {
 
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "[name].js"
+        filename: "[name].[hash].js"
     },
 
     devServer: {

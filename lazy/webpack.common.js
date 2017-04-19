@@ -25,13 +25,7 @@ module.exports = {
             exclude: []
         }),
 
-        new CheckerPlugin()//,
-
-        // new webpack.optimize.UglifyJsPlugin({
-        //     mangle: {
-        //         keep_fnames: true
-        //     }
-        // })
+        new CheckerPlugin()
     ],
 
     module: {

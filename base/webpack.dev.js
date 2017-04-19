@@ -9,10 +9,14 @@ module.exports = webpackMerge(commonConfig, {
 
     devtool: "cheap-module-eval-source-map",
 
-    output: {
-        path: path.resolve(__dirname, "dist"),
-        filename: "[name].[hash].js"
-    },
+    plugins: [
+
+        new webpack.DefinePlugin({
+            "process.env": {
+                "ENV": JSON.stringify(ENV)
+            }
+        })
+    ],
 
     devServer: {
         contentBase: path.resolve(__dirname, "dist")

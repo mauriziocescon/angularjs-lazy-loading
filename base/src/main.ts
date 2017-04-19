@@ -12,7 +12,7 @@ class Main {
 
     static loadAngular(): void {
 		const config: ng.IAngularBootstrapConfig = {strictDi: /* @echo STRICT_DI */};
-        angular.bootstrap(app, [app], config);
+        angular.bootstrap(document.querySelector(app), [app], config);
     }
 }
 

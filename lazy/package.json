@@ -1,9 +1,9 @@
 {
   "name": "lazy",
   "scripts": {
-    "postinstall": "webpack --config ./webpack.prod.js",
+    "postinstall": "webpack --progress --profile --colors --env.name=prod",
 
-    "build": "webpack --config ./webpack.prod.js"
+    "build": "webpack --progress --colors --env.name=prod --env.strictDi=true"
   },
   "dependencies": {
     "angular": "1.6.4",

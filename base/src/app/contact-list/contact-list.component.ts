@@ -29,7 +29,7 @@ class ContactListController {
 	public loadModule(): void {
 		this.busy = true;
 
-		this.ocLazyLoad.load(["lazy.js"]).then(() => {
+		this.ocLazyLoad.load(["lazy.js", "lazy.css"]).then(() => {
 			this.busy = false;
 			console.log("Third-party module loaded!");
 		}, (e) => {

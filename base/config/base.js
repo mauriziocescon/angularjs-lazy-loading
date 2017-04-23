@@ -2,7 +2,7 @@ const webpack = require("webpack");
 const path = require("path");
 const CleanPlugin = require("clean-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
-const ExtractPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const {CheckerPlugin} = require("awesome-typescript-loader");
 
@@ -41,6 +41,8 @@ module.exports = function (env) {
 
             new CheckerPlugin(),
 
+            new ExtractTextPlugin("[name].[hash].css"),
+
             // insert file dynamically
             new HtmlWebpackPlugin({
                 template: "src/index.html",
@@ -65,11 +67,13 @@ module.exports = function (env) {
                 // compiles Sass to CSS
                 {
                     test: /\.scss$/,
-                    use: [
-                        {loader: "style-loader"},
-                        {loader: "css-loader"},
-                        {loader: "sass-loader"}
-                    ]
+                    use: ExtractTextPlugin.extract({
+                        fallback: "style-loader",
+                        use: [
+                            "css-loader",
+                            "sass-loader"
+                        ]
+                    })
                 },
 
                 // template loaders

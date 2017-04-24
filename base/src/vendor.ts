@@ -12,7 +12,7 @@ import "angular-translate-storage-local";
 import "angular-ui-router";
 import "babel-polyfill";
 import "oclazyload";
-
+import "roboto-fontface/css/roboto/sass/roboto-fontface-regular";
 
 
 

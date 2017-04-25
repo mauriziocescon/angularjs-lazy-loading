@@ -1,5 +1,4 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
     "allowJs": true,
     "allowUnreachableCode": true,
@@ -17,9 +16,13 @@
     "removeComments": false,
     "sourceMap": true,
     "target": "ES2015",
-    "types": []
+    "types": ["jasmine"]
   },
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "compileOnSave": false,
+  "atom": {
+    "rewriteTsconfig": false
+  }
 }

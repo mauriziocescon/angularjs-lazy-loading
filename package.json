@@ -13,7 +13,8 @@
     "postinstall": "cd lazy && npm install && cd ../base && npm install",
 
     "build": "cd lazy && npm run build && cd ../base && npm run build",
-    "serve": "cd lazy && npm run build && cd ../base && npm run serve"
+    "serve": "cd lazy && npm run build && cd ../base && npm run serve",
+    "test": "cd lazy && npm run test && cd ../base && npm run test"
   },
   "repository": {
     "type": "git",

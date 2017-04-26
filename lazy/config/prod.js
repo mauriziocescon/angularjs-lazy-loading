@@ -2,8 +2,6 @@ const webpack = require("webpack");
 const webpackMerge = require("webpack-merge");
 const commonConfig = require("./base.js");
 
-const ENV = process.env.NODE_ENV = process.env.ENV = "production";
-
 module.exports = function (env) {
     return webpackMerge(commonConfig(env), {
 
@@ -17,7 +15,7 @@ module.exports = function (env) {
 
             new webpack.DefinePlugin({
                 "process.env": {
-                    "ENV": JSON.stringify(ENV)
+                    "ENV": JSON.stringify("production")
                 }
             })
 

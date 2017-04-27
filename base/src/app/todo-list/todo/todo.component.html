@@ -1,7 +1,7 @@
 <md-list-item class="md-3-line">
     <div class="md-list-item-text" layout="column">
         <h3 class="description">{{ ::$ctrl.getTodoDesc($ctrl.todo) }}</h3>
-        <h4>{{ ::($ctrl.todo.date | date: 'short') }}</h4>
-        <p>{{ ::$ctrl.todo.note }}</p>
+        <h4>{{ ::$ctrl.todo.userId }}</h4>
+        <p>{{ ::$ctrl.todo.completed }}</p>
     </div>
 </md-list-item>

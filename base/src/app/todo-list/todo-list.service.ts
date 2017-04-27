@@ -1,18 +1,83 @@
+import * as ng from "angular";
 import Todo from "./todo/todo.model";
+import {
+	RequestWs,
+	ResponseWs
+} from "../shared/shared.module";
+import {
+	IAppConstantsService,
+	IUtilitiesService
+} from "../app.module";
 
-export default class TodoListService {
-	private todoList: Array<Todo>;
+export interface IUserTodosService {
+	getTodos(): ng.IPromise<ResponseWs<Array<Todo>>>;
+	cancelOngoingRequests(): void;
+}
 
-	constructor() {
-		this.todoList = [];
+export default class TodoListService implements IUserTodosService {
+	protected http: ng.IHttpService;
+	protected q: ng.IQService;
+	protected appConstantsService: IAppConstantsService;
+	protected utilitiesService: IUtilitiesService;
+
+	// requests
+	private getUserTodosRequest: RequestWs<Array<Todo>>;
+
+	static $inject = ["$http", "$q", "AppConstantsService", "UtilitiesService"];
+
+	constructor($http: ng.IHttpService,
+				$q: ng.IQService,
+				AppConstantsService: IAppConstantsService,
+				UtilitiesService: IUtilitiesService) {
+		this.http = $http;
+		this.q = $q;
+		this.appConstantsService = AppConstantsService;
+		this.utilitiesService = UtilitiesService;
+
+		this.getUserTodosRequest = new RequestWs();
+		this.http.defaults = this.httpDefaults;
 	}
 
-	public addTodo(): void {
-		let todo = new Todo("face", "Desc", "Note");
-		this.todoList.push(todo);
+	private get httpDefaults(): ng.IHttpProviderDefaults {
+		return {};
 	}
 
-	public getTodos(): Array<Todo> {
-		return this.todoList;
+	public getTodos(): ng.IPromise<ResponseWs<Array<Todo>>> {
+
+		// reset request
+		this.getUserTodosRequest.reset(this.utilitiesService);
+
+		// configure new request
+		this.getUserTodosRequest.canceler = this.q.defer();
+		let config: ng.IRequestShortcutConfig = {
+			params: {},
+			// set a promise that let you cancel the current request
+			timeout: this.getUserTodosRequest.canceler.promise
+		};
+
+		// setup a timeout for the request
+		this.getUserTodosRequest.setupTimeout(this, this.utilitiesService);
+
+		let url = this.appConstantsService.Application.WS_URL + "/todos";
+		this.utilitiesService.logRequest(url);
+		let startTime = this.utilitiesService.getTimeFrom1970();
+
+		// fetch data
+		this.getUserTodosRequest.promise = this.http.get<Array<Todo>>(url, config);
+
+		return this.getUserTodosRequest.promise.then((response: ng.IHttpPromiseCallbackArg<Array<Todo>>) => {
+			this.utilitiesService.logResponse(response, startTime);
+			return new ResponseWs(response.status == 200, response.statusText, response.data, true, response.status == -1);
+
+		}, (response: ng.IHttpPromiseCallbackArg<Array<Todo>>) => {
+			this.utilitiesService.logResponse(response, startTime);
+			return new ResponseWs(false, response.statusText, undefined, true, response.status == -1);
+		});
+	}
+
+	public cancelOngoingRequests(): void {
+
+		// reset requests
+		this.getUserTodosRequest.reset(this.utilitiesService);
 	}
 }

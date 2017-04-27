@@ -6,6 +6,6 @@ export default class TodoService {
 	}
 
 	public getDescription(todo: Todo): string {
-		return todo.desc + " of todo";
+		return todo.title + " of todo";
 	}
 }

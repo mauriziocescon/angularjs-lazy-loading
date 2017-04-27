@@ -80,10 +80,10 @@ export class UIUtilitiesService implements IUIUtilitiesService {
 				this.mdDialog.alert()
 					//.parent(angular.element(document.querySelector('#popupContainer')))
 					.clickOutsideToClose(true)
-					.title('This is an alert title')
-					.textContent('You can specify some description text in here.')
-					.ariaLabel('Alert Dialog Demo')
-					.ok('Got it!')
+					.title(title)
+					.textContent(message)
+					.ariaLabel("Alert Dialog")
+					.ok(buttonLabel)
 					//.targetEvent(ev)
 			);
 

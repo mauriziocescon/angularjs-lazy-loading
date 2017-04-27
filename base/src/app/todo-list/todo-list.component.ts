@@ -13,6 +13,7 @@ import Todo from "./todo/todo.model";
 
 class TodoListController {
 	private ocLazyLoad: oc.ILazyLoad;
+	private translate: ng.translate.ITranslateService;
 	private uiUtilitiesService: IUIUtilitiesService;
 	private utilitiesService: IUtilitiesService;
 	private todoListService: TodoListService;
@@ -20,13 +21,15 @@ class TodoListController {
 	private busy: boolean;
 	private todos: Array<Todo>;
 
-	static $inject = ["$ocLazyLoad", "UIUtilitiesService", "UtilitiesService", "TodoListService"];
+	static $inject = ["$ocLazyLoad", "$translate", "UIUtilitiesService", "UtilitiesService", "TodoListService"];
 
 	constructor($ocLazyLoad: oc.ILazyLoad,
+				$translate: ng.translate.ITranslateService,
 				UIUtilitiesService: IUIUtilitiesService,
 				UtilitiesService: IUtilitiesService,
 				TodoListService: TodoListService) {
 		this.ocLazyLoad = $ocLazyLoad;
+		this.translate = $translate;
 		this.uiUtilitiesService = UIUtilitiesService;
 		this.utilitiesService = UtilitiesService;
 		this.todoListService = TodoListService;
@@ -50,11 +53,20 @@ class TodoListController {
 				this.todos = response.getData();
 			}
 			else if (response.hasBeenCanceled() == false) {
+
 				// we do not notify the user in case of cancel request
-				// todo this.uiUtilitiesService.modalAlert(this.localizedStringService.getLocalizedString("ERROR_ACCESS_DATA"), response.getMessage(), this.localizedStringService.getLocalizedString("CLOSE"));
+				this.translate(["ERROR_ACCESS_DATA", "CLOSE"]).then((translations: any) => {
+					this.uiUtilitiesService.modalAlert(translations.ERROR_ACCESS_DATA, response.getMessage(), translations.CLOSE);
+				}, (translations: any) => {
+					this.uiUtilitiesService.modalAlert(translations.ERROR_ACCESS_DATA, response.getMessage(), translations.CLOSE);
+				});
 			}
 		}).catch((reason: any) => {
-			// todo this.uiUtilitiesService.modalAlert(this.localizedStringService.getLocalizedString("ERROR_ACCESS_DATA_COMPONENT"), reason.toString(), this.localizedStringService.getLocalizedString("CLOSE"));
+			this.translate(["ERROR_ACCESS_DATA_COMPONENT", "CLOSE"]).then((translations: any) => {
+				this.uiUtilitiesService.modalAlert(translations.ERROR_ACCESS_DATA, reason.toString(), translations.CLOSE);
+			}, (translations: any) => {
+				this.uiUtilitiesService.modalAlert(translations.ERROR_ACCESS_DATA, reason.toString(), translations.CLOSE);
+			});
 			Logger.log(reason);
 		}).finally(() => {
 			this.busy = false;

@@ -13,7 +13,9 @@
     "postinstall": "cd lazy && npm install && cd ../base && npm install",
 
     "build": "cd lazy && npm run build && cd ../base && npm run build",
+    "build_mock": "cd lazy && npm run build && cd ../base && npm run build_mock",
     "serve": "cd lazy && npm run build && cd ../base && npm run serve",
+    "serve_mock": "cd lazy && npm run build && cd ../base && npm run serve_mock",
     "test": "cd lazy && npm run test && cd ../base && npm run test"
   },
   "repository": {

@@ -2,8 +2,8 @@ import Todo from "./todo/todo.model";
 import {IAppConstantsService, IUtilitiesService} from "../app.module";
 
 export let todoListRunFuncMocks = ($httpBackend: ng.IHttpBackendService,
-									AppConstantsService: IAppConstantsService,
-									UtilitiesService: IUtilitiesService) => {
+								   AppConstantsService: IAppConstantsService,
+								   UtilitiesService: IUtilitiesService) => {
 
 	// returns the current list of todos per user
 	$httpBackend.whenGET((url: string) => {

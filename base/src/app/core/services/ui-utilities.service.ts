@@ -72,37 +72,17 @@ export class UIUtilitiesService implements IUIUtilitiesService {
 
 	public modalAlert(title: string, message: string, buttonLabel: string): void {
 		try {
-
 			// Appending dialog to document.body to cover sidenav in docs app
 			// Modal dialogs should fully cover application
 			// to prevent interaction outside of dialog
 			this.mdDialog.show(
 				this.mdDialog.alert()
-					//.parent(angular.element(document.querySelector('#popupContainer')))
 					.clickOutsideToClose(true)
 					.title(title)
 					.textContent(message)
-					.ariaLabel("Alert Dialog")
+					.ariaLabel("Alert dialog")
 					.ok(buttonLabel)
-					//.targetEvent(ev)
 			);
-
-			// const modalSettings: ng.ui.bootstrap.IModalSettings = {};
-			// modalSettings.templateUrl = "modal-alert.template.html";
-			// modalSettings.controller = "ModalAlertController";
-			// modalSettings.controllerAs = "$ctrl";
-			// modalSettings.size = "xs";
-			// modalSettings.resolve = {
-			// 	modalTitle: () => {
-			// 		return title;
-			// 	}, modalMessage: () => {
-			// 		return message;
-			// 	}, modalButtonLabel: () => {
-			// 		return buttonLabel;
-			// 	}
-			// };
-            //
-			// this.uibModal.open(modalSettings);
 		} catch (e) {
 			Logger.exception(this, e);
 		}
@@ -110,43 +90,18 @@ export class UIUtilitiesService implements IUIUtilitiesService {
 
 	public modalConfirmer(title: string, message: string, yesButtonLabel: string, noButtonLabel: string, callback: (result: boolean) => void): void {
 		try {
-			var confirm = this.mdDialog.confirm()
-				.title('Would you like to delete your debt?')
-				.textContent('All of the banks have agreed to forgive you your debts.')
-				.ariaLabel('Lucky day')
-				// .targetEvent(ev)
-				.ok('Please do it!')
-				.cancel('Sounds like a scam');
+			let confirm = this.mdDialog.confirm()
+				.title(title)
+				.textContent(message)
+				.ariaLabel("Modal confirmer")
+				.ok(yesButtonLabel)
+				.cancel(noButtonLabel);
 
-			this.mdDialog.show(confirm).then(function() {
+			this.mdDialog.show(confirm).then(() => {
 				callback(true);
-			}, function() {
+			}, () => {
 				callback(false);
 			});
-
-			// const modalSettings: ng.ui.bootstrap.IModalSettings = {};
-			// modalSettings.templateUrl = "modal-confirmer.template.html";
-			// modalSettings.controller = "ModalConfirmerController";
-			// modalSettings.controllerAs = "$ctrl";
-			// modalSettings.size = "xs";
-			// modalSettings.resolve = {
-			// 	modalTitle: () => {
-			// 		return title;
-			// 	}, modalMessage: () => {
-			// 		return message;
-			// 	}, modalYesButtonLabel: () => {
-			// 		return yesButtonLabel;
-			// 	}, modalNoButtonLabel: () => {
-			// 		return noButtonLabel;
-			// 	}
-			// };
-            //
-			// const modalInstance: ng.ui.bootstrap.IModalServiceInstance = this.uibModal.open(modalSettings);
-			// modalInstance.result.then(() => {
-			// 	callback(true);
-			// }, () => {
-			// 	callback(false);
-			// });
 		} catch (e) {
 			Logger.exception(this, e);
 		}

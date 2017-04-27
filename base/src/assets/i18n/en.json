@@ -1,6 +1,8 @@
 {
+  "CLOSE": "Close",
   "CONTACT_LIST_WELCOME": "Contact list where contact component is lazy loaded",
   "CONTACTS": "Contacts",
+  "ERROR_ACCESS_DATA": "Error access data",
   "TODO_LIST_WELCOME": "Regular todo list where todo component is bundled",
   "TODOS": "Todos"
 }

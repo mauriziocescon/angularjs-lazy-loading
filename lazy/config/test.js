@@ -6,7 +6,7 @@ const commonConfig = require("./base.js");
 module.exports = function (env) {
     return webpackMerge(commonConfig(env), {
         entry: {
-            app: "./src/index.ts",
+            lazy: "./src/index.ts",
             vendor: "./src/test.vendor.ts",
             test: "./src/test.spec.ts"
         },
@@ -24,7 +24,7 @@ module.exports = function (env) {
 
         output: {
             path: path.resolve(__dirname, "../dist"),
-            filename: "[name].[hash].js"
+            filename: "[name].js"
         }
     });
 };

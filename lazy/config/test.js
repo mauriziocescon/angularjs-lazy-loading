@@ -5,10 +5,11 @@ const commonConfig = require("./base.js");
 
 module.exports = function (env) {
     return webpackMerge(commonConfig(env), {
-        entry: [
-            "./src/index.ts",
-            "./src/test.spec.ts"
-        ],
+        entry: {
+            app: "./src/index.ts",
+            vendor: "./src/test.vendor.ts",
+            test: "./src/test.spec.ts"
+        },
 
         devtool: "inline-source-map",
 
@@ -19,6 +20,11 @@ module.exports = function (env) {
                     "ENV": JSON.stringify("test")
                 }
             })
-        ]
+        ],
+
+        output: {
+            path: path.resolve(__dirname, "../dist"),
+            filename: "[name].[hash].js"
+        }
     });
 };

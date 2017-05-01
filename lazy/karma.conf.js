@@ -10,14 +10,9 @@ module.exports = function(config) {
 
         // list of files / patterns to load in the browser
         files: [
-            "node_modules/jquery/dist/jquery.js",
-            "node_modules/angular/angular.js",
-            "node_modules/angular-animate/angular-animate.js",
-            "node_modules/angular-aria/angular-aria.js",
-            "node_modules/angular-messages/angular-messages.js",
-            "node_modules/angular-mocks/angular-mocks.js",
-            "node_modules/angular-sanitize/angular-sanitize.js",
-            "dist/lazy*.js"
+            "dist/test.vendor.*.js",
+            "dist/app.*.js",
+            "dist/test.*.js"
         ],
 
         // list of files to exclude

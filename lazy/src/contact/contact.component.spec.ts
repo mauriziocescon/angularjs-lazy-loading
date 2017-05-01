@@ -1,11 +1,4 @@
 import * as angular from "angular";
-import "jquery";
-import "angular";
-import "angular-animate";
-import "angular-aria";
-import "angular-messages";
-import "angular-mocks";
-import "angular-sanitize";
 import {ContactController} from "./contact.component";
 import {Contact} from "./contact.model";
 
@@ -33,14 +26,14 @@ describe("ContactController", () => {
 
 	it("controller.contact is not undefined after $onInit", () => {
 		let contact = new Contact("face", "Desc", "Note");
-		let controller = <ContactController>componentController("contact", null, contact);
+		let controller = <ContactController>componentController("contact", null, {contact: contact});
 		controller.$onInit();
 		expect(controller.contact).not.toBeUndefined("controller.contact is undefined...");
 	});
 
 	it("controller.contact is not null after $onInit", () => {
 		let contact = new Contact("face", "Desc", "Note");
-		let controller = <ContactController>componentController("contact", null, contact);
+		let controller = <ContactController>componentController("contact", null, {contact: contact});
 		controller.$onInit();
 		expect(controller.contact).not.toBeNull("controller.contact is null...");
 	});

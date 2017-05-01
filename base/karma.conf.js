@@ -10,7 +10,7 @@ module.exports = function(config) {
 
         // list of files / patterns to load in the browser
         files: [
-            "dist/vendor*.js",
+            "dist/vendor.*.js",
             "dist/app.*.js",
             "dist/test.*.js"
         ],

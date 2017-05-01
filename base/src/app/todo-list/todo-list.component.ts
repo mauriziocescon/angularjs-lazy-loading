@@ -57,14 +57,10 @@ class TodoListController {
 				// we do not notify the user in case of cancel request
 				this.translate(["ERROR_ACCESS_DATA", "CLOSE"]).then((translations: any) => {
 					this.uiUtilitiesService.modalAlert(translations.ERROR_ACCESS_DATA, response.getMessage(), translations.CLOSE);
-				}, (translations: any) => {
-					this.uiUtilitiesService.modalAlert(translations.ERROR_ACCESS_DATA, response.getMessage(), translations.CLOSE);
 				});
 			}
 		}).catch((reason: any) => {
 			this.translate(["ERROR_ACCESS_DATA_COMPONENT", "CLOSE"]).then((translations: any) => {
-				this.uiUtilitiesService.modalAlert(translations.ERROR_ACCESS_DATA, reason.toString(), translations.CLOSE);
-			}, (translations: any) => {
 				this.uiUtilitiesService.modalAlert(translations.ERROR_ACCESS_DATA, reason.toString(), translations.CLOSE);
 			});
 			Logger.log(reason);

@@ -63,7 +63,7 @@ export class ContactListController {
 		}, (e) => {
 			this.busy = false;
 			this.uiUtilitiesService.toast(e.toString());
-		})
+		});
 	}
 
 	public addContact(): void {

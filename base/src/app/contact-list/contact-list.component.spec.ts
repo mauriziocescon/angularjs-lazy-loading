@@ -41,11 +41,21 @@ describe("ContactListController", () => {
 		expect(controller.contacts).not.toBeNull("controller.contacts is null...");
 	});
 
-	it("controller loading status", () => {
+	it("controller.isLoadingData is false after $onInit", () => {
 		let controller = <ContactListController>componentController("contactList", null, null);
 		controller.$onInit();
 		expect(controller.isLoadingData).toBeFalsy("isLoadingData is true after the loading...");
+	});
+
+	it("controller.isLoadingData is false after $onInit", () => {
+		let controller = <ContactListController>componentController("contactList", null, null);
+		controller.$onInit();
 		expect(controller.shouldRetry).toBeFalsy("shouldRetry is true after the loading...");
+	});
+
+	it("controller.isLoadingData is false after $onInit", () => {
+		let controller = <ContactListController>componentController("contactList", null, null);
+		controller.$onInit();
 		expect(controller.showData).toBeTruthy("showData is false after the loading...");
 	});
 });

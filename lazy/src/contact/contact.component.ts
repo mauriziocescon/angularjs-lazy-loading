@@ -3,7 +3,7 @@ import "./contact.component.scss";
 import ContactService from "./contact.service";
 import {Contact} from "./contact.model";
 
-class ContactController {
+export class ContactController {
 	private contactService: ContactService;
 	public contact: Contact;
 

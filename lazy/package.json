@@ -1,7 +1,7 @@
 {
   "name": "lazy",
   "scripts": {
-    "postinstall": "webpack --progress --profile --colors --env.name=prod",
+    "postinstall": "webpack --progress --profile --colors --env.name=prod --env.strictDi=true",
 
     "build": "webpack --progress --colors --env.name=prod --env.strictDi=true",
     "pretest": "webpack --progress --colors --env.name=test --env.strictDi=true",
@@ -10,6 +10,7 @@
   "dependencies": {
     "angular": "1.6.4",
     "angular-animate": "1.6.4",
+    "angular-aria": "1.6.4",
     "angular-messages": "1.6.4",
     "angular-mocks": "1.6.4",
     "angular-sanitize": "1.6.4",

@@ -10,9 +10,9 @@ module.exports = function(config) {
 
         // list of files / patterns to load in the browser
         files: [
-            "dist/vendor.*.js",
-            "dist/lazy.*.js",
-            "dist/test.*.js"
+            "dist/vendor.js",
+            "dist/lazy.js",
+            "dist/test.js"
         ],
 
         // list of files to exclude

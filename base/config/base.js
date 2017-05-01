@@ -35,8 +35,6 @@ module.exports = function (env) {
                 from: "src/index.html"
             }, {
                 from: "src/assets/i18n", to: "assets/i18n"
-            }, {
-                from: "../lazy/dist"
             }]),
 
             new CheckerPlugin(),

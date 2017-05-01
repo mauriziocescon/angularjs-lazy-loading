@@ -1,4 +1,5 @@
 const webpack = require("webpack");
+const CopyPlugin = require("copy-webpack-plugin");
 const webpackMerge = require("webpack-merge");
 const commonConfig = require("./base.js");
 
@@ -6,6 +7,11 @@ module.exports = function (env) {
     return webpackMerge(commonConfig(env), {
 
         plugins: [
+
+            // copy lazy
+            new CopyPlugin([{
+                from: "../lazy/dist"
+            }]),
 
             new webpack.optimize.UglifyJsPlugin({
                 mangle: {

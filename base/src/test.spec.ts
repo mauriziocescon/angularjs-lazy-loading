@@ -1,1 +1,1 @@
-import "./app/app.spec";
+import "./app/todo-list/todo-list.component.spec";

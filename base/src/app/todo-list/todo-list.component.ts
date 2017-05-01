@@ -11,7 +11,7 @@ import {
 import TodoListService from "./todo-list.service";
 import Todo from "./todo/todo.model";
 
-class TodoListController {
+export class TodoListController {
 	private ocLazyLoad: oc.ILazyLoad;
 	private translate: ng.translate.ITranslateService;
 	private uiUtilitiesService: IUIUtilitiesService;
@@ -19,7 +19,7 @@ class TodoListController {
 	private todoListService: TodoListService;
 
 	private busy: boolean;
-	private todos: Array<Todo>;
+	public todos: Array<Todo>;
 
 	static $inject = ["$ocLazyLoad", "$translate", "UIUtilitiesService", "UtilitiesService", "TodoListService"];
 

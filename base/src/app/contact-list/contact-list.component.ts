@@ -7,7 +7,7 @@ import {
 import ContactListService from "./contact-list.service";
 import {Contact} from "../../../../lazy/src";
 
-class ContactListController {
+export class ContactListController {
 	private ocLazyLoad: oc.ILazyLoad;
 	private translate: ng.translate.ITranslateService;
 	private uiUtilitiesService: IUIUtilitiesService;

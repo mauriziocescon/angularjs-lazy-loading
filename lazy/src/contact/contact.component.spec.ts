@@ -1,38 +1,47 @@
-describe("Example", () => {
+import * as angular from "angular";
+import "jquery";
+import "angular";
+import "angular-animate";
+import "angular-aria";
+import "angular-messages";
+import "angular-mocks";
+import "angular-sanitize";
+import {ContactController} from "./contact.component";
+import {Contact} from "./contact.model";
 
-	beforeEach(() => {
+// Addition of angular-mocks and jasmine references is done on the gulpfile
+describe("ContactController", () => {
+	let httpBackend: ng.IHttpBackendService;
+	let componentController: ng.IComponentControllerService;
 
+	// Set up the module
+	beforeEach(angular.mock.module("lazy"));
+
+	beforeEach(inject((_$httpBackend_, _$componentController_) => {
+
+		// Set up the mock http service responses
+		httpBackend = _$httpBackend_;
+
+		// The $componentController service is used to create instances of controllers
+		componentController = _$componentController_;
+	}));
+
+	afterEach(() => {
+		httpBackend.verifyNoOutstandingExpectation();
+		httpBackend.verifyNoOutstandingRequest();
 	});
 
-	it("#setupDb should resolve a promise after the setup", () => {
-		expect("a").toBe("a", "setupDb reject");
+	it("controller.contact is not undefined after $onInit", () => {
+		let contact = new Contact("face", "Desc", "Note");
+		let controller = <ContactController>componentController("contact", null, contact);
+		controller.$onInit();
+		expect(controller.contact).not.toBeUndefined("controller.contact is undefined...");
 	});
 
-	it("#insertUpdateSection", () => {
-		expect("a").toBe("a", "setupDb reject");
-	});
-
-	it("#deleteSection", () => {
-		expect("a").toBe("a", "setupDb reject");
-	});
-
-	it("#getSections", () => {
-		expect("a").toBe("a", "setupDb reject");
-	});
-
-	it("#insertUpdateTaskForSection", () => {
-		expect("a").toBe("a", "setupDb reject");
-	});
-
-	it("#deleteTaskForSection", () => {
-		expect("a").toBe("a", "setupDb reject");
-	});
-
-	it("#getTasksForSections", () => {
-		expect("a").toBe("a", "setupDb reject");
-	});
-
-	it("#mergeSectionsTasksDb", () => {
-		expect("a").toBe("a", "setupDb reject");
+	it("controller.contact is not null after $onInit", () => {
+		let contact = new Contact("face", "Desc", "Note");
+		let controller = <ContactController>componentController("contact", null, contact);
+		controller.$onInit();
+		expect(controller.contact).not.toBeNull("controller.contact is null...");
 	});
 });

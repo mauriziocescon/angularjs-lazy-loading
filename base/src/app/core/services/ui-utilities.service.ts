@@ -33,21 +33,30 @@ export interface IUIUtilitiesService {
 	 * @param callback function executed when the user click on a button with the result
 	 */
 	modalConfirmer(title: string, message: string, yesButtonLabel: string, noButtonLabel: string, callback: (result: boolean) => void): void;
+	/**
+	 * Display a toaster
+	 *
+	 * @param message body of the toster
+	 */
+	toast(message: string): void;
 }
 
 export class UIUtilitiesService implements IUIUtilitiesService {
 	private mdDialog: ng.material.IDialogService;
+	private mdToast: ng.material.IToastService;
 	private appConstantsService: IAppConstantsService;
 	private utilitiesService: IUtilitiesService;
 	private uiUtilitiesConstants: IUIUtilitiesConstants;
 
-	static $inject = ["$mdDialog", "AppConstantsService", "UtilitiesService", "UIUtilitiesConstants"];
+	static $inject = ["$mdDialog", "$mdToast", "AppConstantsService", "UtilitiesService", "UIUtilitiesConstants"];
 
 	constructor($mdDialog: ng.material.IDialogService,
+				$mdToast: ng.material.IToastService,
 				AppConstantsService: IAppConstantsService,
 				UtilitiesService: IUtilitiesService,
 				UIUtilitiesConstants: IUIUtilitiesConstants) {
 		this.mdDialog = $mdDialog;
+		this.mdToast = $mdToast;
 		this.appConstantsService = AppConstantsService;
 		this.utilitiesService = UtilitiesService;
 		this.uiUtilitiesConstants = UIUtilitiesConstants;
@@ -102,6 +111,14 @@ export class UIUtilitiesService implements IUIUtilitiesService {
 			}, () => {
 				callback(false);
 			});
+		} catch (e) {
+			Logger.exception(this, e);
+		}
+	}
+
+	public toast(message: string): void {
+		try {
+			this.mdToast.show(this.mdToast.simple().textContent(message).position("bottom left"));
 		} catch (e) {
 			Logger.exception(this, e);
 		}

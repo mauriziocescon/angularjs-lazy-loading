@@ -2,13 +2,16 @@
 
     <h3>{{ "TODO_LIST_WELCOME" | translate }}</h3>
 
-    <md-list flex ng-if="!$ctrl.isLoadingData">
+    <md-list flex ng-if="$ctrl.showData">
         <todo ng-repeat="todo in $ctrl.todos" todo="todo"></todo>
     </md-list>
 
-    <md-button class="md-button md-fab md-fab-bottom-right" ng-click="$ctrl.addTodo()" aria-label="Add todo">
-        <md-icon md-font-icon="md">add</md-icon>
-    </md-button>
+    <div layout="row" layout-align="space-around">
+        <md-progress-circular ng-show="$ctrl.isLoadingData" md-mode="indeterminate"></md-progress-circular>
+        <md-button class="md-primary" ng-show="$ctrl.hasNoData">{{ "NO_RESULT" | translate }}</md-button>
+        <md-button class="md-primary" ng-show="$ctrl.shouldRetry" ng-click="$ctrl.loadTodoList()">{{ "RETRY" | translate }}</md-button>
+    </div>
+
 
     <!-- todo: clean code below -->
     <!--<div layout="row">-->

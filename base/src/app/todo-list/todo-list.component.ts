@@ -39,6 +39,18 @@ class TodoListController {
 		return this.busy == true;
 	}
 
+	public get hasNoData(): boolean {
+		return this.todos != undefined && this.todos.length == 0 && this.isLoadingData == false;
+	}
+
+	public get shouldRetry(): boolean {
+		return this.todos == undefined && this.isLoadingData == false;
+	}
+
+	public get showData(): boolean {
+		return this.isLoadingData == false && this.hasNoData == false && this.shouldRetry == false;
+	}
+
 	public $onInit(): void {
 		this.busy = false;
 		this.loadTodoList();

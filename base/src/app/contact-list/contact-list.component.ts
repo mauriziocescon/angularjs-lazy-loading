@@ -16,7 +16,7 @@ export class ContactListController {
 
 	private busy: boolean;
 	private downloadSucceed: boolean;
-	private contacts: Array<Contact>;
+	public contacts: Array<Contact>;
 
 	static $inject = ["$ocLazyLoad", "$translate", "UIUtilitiesService", "UtilitiesService", "ContactListService"];
 

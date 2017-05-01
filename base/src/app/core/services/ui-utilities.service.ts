@@ -118,7 +118,7 @@ export class UIUtilitiesService implements IUIUtilitiesService {
 
 	public toast(message: string): void {
 		try {
-			this.mdToast.show(this.mdToast.simple().textContent(message).position("top left"));
+			this.mdToast.show(this.mdToast.simple().textContent(message).position("bottom left"));
 		} catch (e) {
 			Logger.exception(this, e);
 		}

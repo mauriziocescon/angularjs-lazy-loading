@@ -8,7 +8,7 @@ import {
 	IUIUtilitiesService,
 	IUtilitiesService
 } from "../app.module";
-import TodoListService from "./todo-list.service";
+import TodoListService from "./todo-list.data-service";
 import Todo from "./todo/todo.model";
 
 export class TodoListController {

@@ -44,7 +44,11 @@ describe("ContactListController", () => {
 	it("controller.isLoadingData is false after $onInit", () => {
 		let controller = <ContactListController>componentController("contactList", null, null);
 		controller.$onInit();
-		expect(controller.isLoadingData).toBeFalsy("isLoadingData is true after the loading...");
+
+		// waiting fot lazy.js download
+		setTimeout(() => {
+			expect(controller.isLoadingData).toBeFalsy("isLoadingData is true after the loading...");
+		}, 2000);
 	});
 
 	it("controller.shouldRetry is false after $onInit", () => {
@@ -56,6 +60,10 @@ describe("ContactListController", () => {
 	it("controller.showData is false after $onInit", () => {
 		let controller = <ContactListController>componentController("contactList", null, null);
 		controller.$onInit();
-		expect(controller.showData).toBeTruthy("showData is false after the loading...");
+
+		// waiting fot lazy.js download
+		setTimeout(() => {
+			expect(controller.showData).toBeTruthy("showData is false after the loading...");
+		});
 	});
 });

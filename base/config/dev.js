@@ -7,6 +7,8 @@ const commonConfig = require("./base.js");
 module.exports = function (env) {
     return webpackMerge(commonConfig(env), {
 
+        devtool: "inline-source-map",
+
         plugins: [
 
             // copy lazy

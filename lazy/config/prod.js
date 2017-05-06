@@ -5,6 +5,8 @@ const commonConfig = require("./base.js");
 module.exports = function (env) {
     return webpackMerge(commonConfig(env), {
 
+        devtool: "source-map",
+
         plugins: [
 
             new webpack.optimize.UglifyJsPlugin({

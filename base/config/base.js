@@ -68,8 +68,8 @@ module.exports = function (env) {
                     use: ExtractTextPlugin.extract({
                         fallback: "style-loader",
                         use: [
-                            "css-loader",
-                            "sass-loader"
+                            {loader: "css-loader", options: {sourceMap: true}},
+                            {loader: "sass-loader", options: {sourceMap: true}}
                         ]
                     })
                 },
@@ -79,13 +79,7 @@ module.exports = function (env) {
                     test: /\.html?$/,
                     exclude: /index.html$/,
                     use: [
-                        {
-                            loader: "html-loader",
-                            options: {
-                                exportAsEs6Default: true,
-                                minimize: true
-                            }
-                        }
+                        {loader: "html-loader", options: {exportAsEs6Default: true, minimize: true}}
                     ]
                 },
 

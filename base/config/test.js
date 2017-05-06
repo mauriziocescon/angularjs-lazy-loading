@@ -12,7 +12,7 @@ module.exports = function (env) {
             test: "./src/test.spec.ts"
         },
 
-        devtool: "inline-source-map",
+        devtool: "cheap-module-eval-source-map",
 
         plugins: [
 

@@ -41,8 +41,8 @@ module.exports = function () {
                     test: /\.scss$/,
                     use: [
                         {loader: "style-loader"},
-                        {loader: "css-loader"},
-                        {loader: "sass-loader"}
+                        {loader: "css-loader", options: {sourceMap: true}},
+                        {loader: "sass-loader", options: {sourceMap: true}}
                     ]
                 },
 
@@ -51,13 +51,7 @@ module.exports = function () {
                     test: /\.html?$/,
                     exclude: /index.html$/,
                     use: [
-                        {
-                            loader: "html-loader",
-                            options: {
-                                exportAsEs6Default: true,
-                                minimize: true
-                            }
-                        }
+                        {loader: "html-loader", options: {exportAsEs6Default: true, minimize: true}}
                     ]
                 },
 

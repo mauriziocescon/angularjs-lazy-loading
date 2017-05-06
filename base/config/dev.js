@@ -7,8 +7,6 @@ const commonConfig = require("./base.js");
 module.exports = function (env) {
     return webpackMerge(commonConfig(env), {
 
-        devtool: "cheap-module-eval-source-map",
-
         plugins: [
 
             // copy lazy

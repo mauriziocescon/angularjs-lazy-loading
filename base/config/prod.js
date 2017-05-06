@@ -18,7 +18,8 @@ module.exports = function (env) {
             new webpack.optimize.UglifyJsPlugin({
                 mangle: {
                     keep_fnames: true
-                }
+                },
+                sourceMap: true
             }),
 
             new webpack.DefinePlugin({

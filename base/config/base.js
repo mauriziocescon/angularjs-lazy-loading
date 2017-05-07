@@ -101,6 +101,15 @@ module.exports = function (env) {
                     ]
                 },
 
+                // ts-lint
+                {
+                    test: /\.(ts|tsx)?$/,
+                    enforce: "pre",
+                    use: [
+                        {loader: "tslint-loader", options: {/* Loader options go here */}}
+                    ]
+                },
+
                 // All output ".js" files will have any sourcemaps re-processed by "source-map-loader".
                 {
                     test: /\.js$/,

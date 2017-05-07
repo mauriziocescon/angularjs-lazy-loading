@@ -1,37 +1,37 @@
 import template from "./contact.component.html";
 import "./contact.component.scss";
 import ContactService from "./contact.service";
-import {Contact} from "./contact.model";
+import { Contact } from "./contact.model";
 
 export class ContactController {
-	private contactService: ContactService;
-	public contact: Contact;
+    private contactService: ContactService;
+    public contact: Contact;
 
-	static $inject = ["ContactService"];
+    static $inject = ["ContactService"];
 
-	constructor(ContactService: ContactService) {
-		this.contactService = ContactService;
-	}
+    constructor(ContactService: ContactService) {
+        this.contactService = ContactService;
+    }
 
-	public $onInit(): void {
+    public $onInit(): void {
 
-	}
+    }
 
-	public getContactDesc(contact: Contact): string {
-		return this.contactService.getDescription(this.contact);
-	}
+    public getContactDesc(contact: Contact): string {
+        return this.contactService.getDescription(this.contact);
+    }
 
-	public $onDestroy(): void {
+    public $onDestroy(): void {
 
-	}
+    }
 }
 
 export const ContactComponent: ng.IComponentOptions = {
-	bindings: {
-		contact: "<"
-	},
-	controller: ContactController,
-	template: () => {
-		return template;
-	}
+    bindings: {
+        contact: "<"
+    },
+    controller: ContactController,
+    template: () => {
+        return template;
+    }
 };

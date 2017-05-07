@@ -1,5 +1,5 @@
 import * as angular from "angular";
-import {contact} from "./contact/contact.module";
+import { contact } from "./contact/contact.module";
 
 const lazyModule = angular.module("lazy", [contact]);
 

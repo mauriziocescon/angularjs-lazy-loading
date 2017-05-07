@@ -2,10 +2,10 @@ import Todo from "./todo.model";
 
 export default class TodoService {
 
-	constructor() {
-	}
+    constructor() {
+    }
 
-	public getDescription(todo: Todo): string {
-		return todo.title + " of todo";
-	}
+    public getDescription(todo: Todo): string {
+        return todo.title + " of todo";
+    }
 }

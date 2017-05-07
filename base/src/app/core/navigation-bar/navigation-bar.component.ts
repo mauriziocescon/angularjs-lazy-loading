@@ -3,40 +3,40 @@ import template from "./navigation-bar.component.html";
 import "./navigation-bar.component.scss";
 
 export class NavigationBarController {
-	private location: ng.ILocationService;
+    private location: ng.ILocationService;
 
-	public name: string;
-	public currentNavItem: string;
+    public name: string;
+    public currentNavItem: string;
 
-	static $inject = ["$location"];
+    static $inject = ["$location"];
 
-	constructor($location: ng.ILocationService) {
-		this.location = $location;
+    constructor($location: ng.ILocationService) {
+        this.location = $location;
 
-		this.name = "NavigationBarComponent";
-	}
+        this.name = "NavigationBarComponent";
+    }
 
-	public $onInit(): void {
-		this.currentNavItem = "todos";
-	}
+    public $onInit(): void {
+        this.currentNavItem = "todos";
+    }
 
-	public goToTodoList(): void {
-		this.location.path("/todo-list");
-	}
+    public goToTodoList(): void {
+        this.location.path("/todo-list");
+    }
 
-	public goToContactList(): void {
-		this.location.path("/contact-list");
-	}
+    public goToContactList(): void {
+        this.location.path("/contact-list");
+    }
 
-	public $onDestroy() {
+    public $onDestroy() {
 
-	}
+    }
 }
 
 export const NavigationBarComponent: ng.IComponentOptions = {
-	bindings: {},
-	controller: NavigationBarController,
-	template: () => {
-		return template;
-	}
+    bindings: {},
+    controller: NavigationBarController,
+    template: () => {
+        return template;
+    },
 };

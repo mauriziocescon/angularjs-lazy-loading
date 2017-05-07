@@ -3,24 +3,24 @@ import "./app.component.scss";
 
 export default class AppController {
 
-	static $inject = [];
+    static $inject = [];
 
-	constructor() {
+    constructor() {
 
-	}
+    }
 
-	public $onInit(): void {
+    public $onInit(): void {
 
-	}
+    }
 
-	public $onDestroy(): void {
+    public $onDestroy(): void {
 
-	}
+    }
 }
 
 export const AppComponent: ng.IComponentOptions = {
-	controller: AppController,
-	template: () => {
-		return template;
-	}
+    controller: AppController,
+    template: () => {
+        return template;
+    }
 };

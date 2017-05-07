@@ -1,37 +1,37 @@
 import * as ng from "angular";
-import {IUtilitiesService} from "../../app.module";
+import { IUtilitiesService } from "../../app.module";
 
 export class RequestWs<T> {
-	public promise: ng.IPromise<T>;
-	public canceler: ng.IDeferred<any>;
-	public timeout: ng.IPromise<any>;
+    public promise: ng.IPromise<T>;
+    public canceler: ng.IDeferred<any>;
+    public timeout: ng.IPromise<any>;
 
-	constructor(promise?: ng.IPromise<T>, canceler?: ng.IDeferred<any>, timeout?: ng.IPromise<any>) {
-		this.promise = promise;
-		this.canceler = canceler;
-		this.timeout = timeout;
-	}
+    constructor(promise?: ng.IPromise<T>, canceler?: ng.IDeferred<any>, timeout?: ng.IPromise<any>) {
+        this.promise = promise;
+        this.canceler = canceler;
+        this.timeout = timeout;
+    }
 
-	private cancel(): void {
+    public setupTimeout(scope: any, utilitiesService: IUtilitiesService): void {
+        this.timeout = utilitiesService.defer(() => {
+            this.cancel();
+        }, 60000, scope);
+    }
 
-		// abort http request if it's defined
-		if (this.canceler) {
-			this.canceler.resolve("Resolve $http request");
-		}
-	}
+    public reset(utilitiesService: IUtilitiesService): void {
 
-	public setupTimeout(scope: any, utilitiesService: IUtilitiesService): void {
-		this.timeout = utilitiesService.defer(() => {
-			this.cancel();
-		}, 60000, scope);
-	}
+        // reset request timeout
+        utilitiesService.clearDefer(this.timeout);
 
-	public reset(utilitiesService: IUtilitiesService): void {
+        // cancel ongoing request or do nothing
+        this.cancel();
+    }
 
-		// reset request timeout
-		utilitiesService.clearDefer(this.timeout);
+    private cancel(): void {
 
-		// cancel ongoing request or do nothing
-		this.cancel();
-	}
+        // abort http request if it's defined
+        if (this.canceler) {
+            this.canceler.resolve("Resolve $http request");
+        }
+    }
 }

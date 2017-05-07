@@ -1,12 +1,12 @@
 import * as angular from "angular";
-import {angularStats} from "angular-stats";
-import {appConfigFunc} from "./app-config.module";
-import {routingConfigFunc} from "./app-routing.module";
-import {AppComponent} from "./app.component";
-import {core} from "./core/core.module";
-import {shared} from "./shared/shared.module";
-import {todoList} from "./todo-list/todo-list.module";
-import {contactList} from "./contact-list/contact-list.module";
+import { angularStats } from "angular-stats";
+import { appConfigFunc } from "./app-config.module";
+import { routingConfigFunc } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { core } from "./core/core.module";
+import { shared } from "./shared/shared.module";
+import { todoList } from "./todo-list/todo-list.module";
+import { contactList } from "./contact-list/contact-list.module";
 
 export * from "./core/core.module";
 

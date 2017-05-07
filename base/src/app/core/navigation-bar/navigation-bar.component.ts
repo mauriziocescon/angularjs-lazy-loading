@@ -3,12 +3,12 @@ import template from "./navigation-bar.component.html";
 import "./navigation-bar.component.scss";
 
 export class NavigationBarController {
+    public static $inject = ["$location"];
+    public name: string;
+
     private location: ng.ILocationService;
 
-    public name: string;
     public currentNavItem: string;
-
-    static $inject = ["$location"];
 
     constructor($location: ng.ILocationService) {
         this.location = $location;
@@ -28,8 +28,8 @@ export class NavigationBarController {
         this.location.path("/contact-list");
     }
 
-    public $onDestroy() {
-
+    public $onDestroy(): void {
+        // do nothing
     }
 }
 

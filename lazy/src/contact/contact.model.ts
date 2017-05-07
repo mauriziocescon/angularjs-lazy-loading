@@ -1,9 +1,9 @@
 export class Contact {
-    id: string;
-    icon: string;
-    desc: string;
-    date: Date;
-    note: string;
+    public id: string;
+    public icon: string;
+    public desc: string;
+    public date: Date;
+    public note: string;
 
     constructor(icon: string, desc: string, note: string) {
         this.id = new Date().getTime().toString();

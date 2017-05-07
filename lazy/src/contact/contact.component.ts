@@ -4,10 +4,10 @@ import ContactService from "./contact.service";
 import { Contact } from "./contact.model";
 
 export class ContactController {
+    public static $inject = ["ContactService"];
+
     private contactService: ContactService;
     public contact: Contact;
-
-    static $inject = ["ContactService"];
 
     constructor(ContactService: ContactService) {
         this.contactService = ContactService;
@@ -28,10 +28,10 @@ export class ContactController {
 
 export const ContactComponent: ng.IComponentOptions = {
     bindings: {
-        contact: "<"
+        contact: "<",
     },
     controller: ContactController,
     template: () => {
         return template;
-    }
+    },
 };

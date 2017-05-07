@@ -11,18 +11,18 @@ import {contactList} from "./contact-list/contact-list.module";
 export * from "./core/core.module";
 
 const appModule = angular.module("app", [
-	"ngAnimate",
-	"ngMaterial",
-	"ngMessages",
-	"ngSanitize",
-	"oc.lazyLoad",
-	"pascalprecht.translate",
-	"ui.router",
-	angularStats,
-	core,
-	shared,
-	todoList,
-	contactList
+    "ngAnimate",
+    "ngMaterial",
+    "ngMessages",
+    "ngSanitize",
+    "oc.lazyLoad",
+    "pascalprecht.translate",
+    "ui.router",
+    angularStats,
+    core,
+    shared,
+    todoList,
+    contactList
 ]);
 
 // config providers

@@ -4,10 +4,10 @@ import TodoService from "./todo.service";
 import Todo from "./todo.model";
 
 class TodoController {
+    public static $inject = ["TodoService"];
+
     private todoService: TodoService;
     public todo: Todo;
-
-    static $inject = ["TodoService"];
 
     constructor(TodoService) {
         this.todoService = TodoService;
@@ -28,10 +28,10 @@ class TodoController {
 
 export const TodoComponent: ng.IComponentOptions = {
     bindings: {
-        todo: "<"
+        todo: "<",
     },
     controller: TodoController,
     template: () => {
         return template;
-    }
+    },
 };

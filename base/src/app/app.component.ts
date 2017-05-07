@@ -2,8 +2,7 @@ import template from "./app.component.html";
 import "./app.component.scss";
 
 export default class AppController {
-
-    static $inject = [];
+    public static $inject = [];
 
     constructor() {
 
@@ -22,5 +21,5 @@ export const AppComponent: ng.IComponentOptions = {
     controller: AppController,
     template: () => {
         return template;
-    }
+    },
 };

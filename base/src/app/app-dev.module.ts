@@ -5,7 +5,7 @@ import { todoListRunFuncMocks } from "./todo-list/todo-list.data-service-mocks";
 
 const appDevModule = angular.module("appDev", [app, "ngMockE2E"]);
 
-let defaultRunFuncMocks = ($httpBackend: ng.IHttpBackendService) => {
+const defaultRunFuncMocks = ($httpBackend: ng.IHttpBackendService) => {
 
     // by default call the real ws
     $httpBackend.whenGET((url: string) => {
@@ -19,9 +19,9 @@ let defaultRunFuncMocks = ($httpBackend: ng.IHttpBackendService) => {
 
 defaultRunFuncMocks.$inject = ["$httpBackend"];
 
-
 // run functions
 appDevModule.run(todoListRunFuncMocks);
+
 appDevModule.run(defaultRunFuncMocks);
 
 export const appDev = appDevModule.name;

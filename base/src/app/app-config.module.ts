@@ -1,11 +1,14 @@
-export const appConfigFunc = ($ocLazyLoadProvider: oc.ILazyLoadProvider, $translateProvider: ng.translate.ITranslateProvider, $mdIconProvider: ng.material.IIconProvider, $mdThemingProvider: ng.material.IThemingProvider) => {
+export const appConfigFunc = ($ocLazyLoadProvider: oc.ILazyLoadProvider,
+                              $translateProvider: ng.translate.ITranslateProvider,
+                              $mdIconProvider: ng.material.IIconProvider,
+                              $mdThemingProvider: ng.material.IThemingProvider) => {
     $ocLazyLoadProvider.config({
-        debug: true
+        debug: true,
     });
 
     $translateProvider.useStaticFilesLoader({
         prefix: "assets/i18n/",
-        suffix: ".json"
+        suffix: ".json",
     });
     $translateProvider.preferredLanguage("en");
 

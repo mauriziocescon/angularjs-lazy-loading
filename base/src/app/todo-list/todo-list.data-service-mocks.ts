@@ -11,17 +11,24 @@ export let todoListRunFuncMocks = ($httpBackend: ng.IHttpBackendService,
             url.startsWith(AppConstantsService.Application.WS_URL + "/todos");
     }).respond((method: string, url: string, data: string, headers: Object, params?: any) => {
 
-        let response = [];
-        let fakeText = "Lorem ipsum dolor sit amet, vidit clita vitae no vix. Melius utamur definiebas mei ad. No maluisset prodesset theophrastus eum. Nam sadipscing adversarium ut. Est rebum aperiam ex, ex vel regione forensibus contentiones, eos in numquam persecuti omittantur. Cu sumo illum has, meis assum eligendi ex sit.\n Option sapientem dissentias ad eam, cum virtute numquam ex, cum salutatus vituperata ne. Te omnes volumus pro. Eu errem albucius invenire qui, unum dolorem ne nec. Torquatos concludaturque ius et, cu viderer minimum voluptua duo, ex eligendi abhorreant vis. Sea posse legimus vituperata no, per at etiam deserunt inimicus.";
+        const response = [];
+        const fakeText = "Lorem ipsum dolor sit amet, vidit clita vitae no vix. " +
+            "Melius utamur definiebas mei ad. No maluisset prodesset theophrastus eum. " +
+            "Nam sadipscing adversarium ut. Est rebum aperiam ex, ex vel regione " +
+            "forensibus contentiones, eos in numquam persecuti omittantur. Cu sumo " +
+            "illum has, meis assum eligendi ex sit.\n Option sapientem dissentias ad eam, " +
+            "cum virtute numquam ex, cum salutatus vituperata ne. Te omnes volumus pro. " +
+            "Eu errem albucius invenire qui, unum dolorem ne nec. Torquatos concludaturque ius " +
+            "et, cu viderer minimum voluptua duo, ex eligendi abhorreant vis. Sea posse legimus " +
+            "vituperata no, per at etiam deserunt inimicus.";
 
         for (let i = 0; Math.round(Math.random() * 25); i++) {
-            let todo = new Todo();
+            const todo = new Todo();
 
             todo.userId = i + 10;
             todo.id = i;
             todo.title = fakeText.substring(0, (Math.random() * 10000) % 100);
             todo.completed = Math.random() < 0.5;
-
 
             response.push(todo);
         }

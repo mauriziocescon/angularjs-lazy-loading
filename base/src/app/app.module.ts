@@ -22,7 +22,7 @@ const appModule = angular.module("app", [
     core,
     shared,
     todoList,
-    contactList
+    contactList,
 ]);
 
 // config providers

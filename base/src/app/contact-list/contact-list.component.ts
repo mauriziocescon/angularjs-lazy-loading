@@ -2,12 +2,14 @@ import template from "./contact-list.component.html";
 import "./contact-list.component.scss";
 import {
     IUIUtilitiesService,
-    IUtilitiesService
+    IUtilitiesService,
 } from "../app.module";
 import ContactListService from "./contact-list.service";
 import { Contact } from "../../../../lazy/src";
 
 export class ContactListController {
+    public static $inject = ["$ocLazyLoad", "$translate", "UIUtilitiesService", "UtilitiesService", "ContactListService"];
+
     private ocLazyLoad: oc.ILazyLoad;
     private translate: ng.translate.ITranslateService;
     private uiUtilitiesService: IUIUtilitiesService;
@@ -16,9 +18,7 @@ export class ContactListController {
 
     private busy: boolean;
     private downloadSucceed: boolean;
-    public contacts: Array<Contact>;
-
-    static $inject = ["$ocLazyLoad", "$translate", "UIUtilitiesService", "UtilitiesService", "ContactListService"];
+    public contacts: Contact[];
 
     constructor($ocLazyLoad: oc.ILazyLoad,
                 $translate: ng.translate.ITranslateService,
@@ -33,15 +33,15 @@ export class ContactListController {
     }
 
     public get isLoadingData(): boolean {
-        return this.busy == true;
+        return this.busy === true;
     }
 
     public get shouldRetry(): boolean {
-        return this.downloadSucceed == false && this.isLoadingData == false;
+        return this.downloadSucceed === false && this.isLoadingData === false;
     }
 
     public get showData(): boolean {
-        return this.isLoadingData == false && this.shouldRetry == false;
+        return this.isLoadingData === false && this.shouldRetry === false;
     }
 
     public $onInit(): void {
@@ -80,5 +80,5 @@ export const ContactListComponent: ng.IComponentOptions = {
     controller: ContactListController,
     template: () => {
         return template;
-    }
+    },
 };

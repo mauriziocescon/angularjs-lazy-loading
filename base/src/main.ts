@@ -7,14 +7,14 @@ import { appDev } from "./app/app-dev.module";
 
 class Main {
 
-    static appReady(): void {
+    public static appReady(): void {
         Main.loadAngular();
     }
 
-    static loadAngular(): void {
+    protected static loadAngular(): void {
         const config: ng.IAngularBootstrapConfig = {strictDi: /* @echo STRICT_DI */};
 
-        //start angular
+        // start angular
 
         // @if MOCK_BACKEND = "false"
         angular.bootstrap(document.querySelector(app), [app], config);

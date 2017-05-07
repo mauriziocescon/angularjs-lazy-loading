@@ -1,18 +1,18 @@
 import { Contact } from "../../../../lazy/src";
 
 export default class ContactListService {
-    private contactList: Array<Contact>;
+    private contactList: Contact[];
 
     constructor() {
         this.contactList = [];
     }
 
     public addContact(): void {
-        let contact = new Contact("face", "Desc", "Note");
+        const contact = new Contact("face", "Desc", "Note");
         this.contactList.push(contact);
     }
 
-    public getContacts(): Array<Contact> {
+    public getContacts(): Contact[] {
         return this.contactList;
     }
 }

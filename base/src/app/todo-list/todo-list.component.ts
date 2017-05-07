@@ -2,16 +2,18 @@ import template from "./todo-list.component.html";
 import "./todo-list.component.scss";
 import {
     ResponseWs,
-    Logger
+    Logger,
 } from "../shared/shared.module";
 import {
     IUIUtilitiesService,
-    IUtilitiesService
+    IUtilitiesService,
 } from "../app.module";
 import TodoListService from "./todo-list.data-service";
 import Todo from "./todo/todo.model";
 
 export class TodoListController {
+    public static $inject = ["$ocLazyLoad", "$translate", "UIUtilitiesService", "UtilitiesService", "TodoListService"];
+
     private ocLazyLoad: oc.ILazyLoad;
     private translate: ng.translate.ITranslateService;
     private uiUtilitiesService: IUIUtilitiesService;
@@ -19,9 +21,7 @@ export class TodoListController {
     private todoListService: TodoListService;
 
     private busy: boolean;
-    public todos: Array<Todo>;
-
-    static $inject = ["$ocLazyLoad", "$translate", "UIUtilitiesService", "UtilitiesService", "TodoListService"];
+    public todos: Todo[];
 
     constructor($ocLazyLoad: oc.ILazyLoad,
                 $translate: ng.translate.ITranslateService,
@@ -36,19 +36,19 @@ export class TodoListController {
     }
 
     public get isLoadingData(): boolean {
-        return this.busy == true;
+        return this.busy === true;
     }
 
     public get hasNoData(): boolean {
-        return this.todos != undefined && this.todos.length == 0 && this.isLoadingData == false;
+        return this.todos !== undefined && this.todos.length === 0 && this.isLoadingData === false;
     }
 
     public get shouldRetry(): boolean {
-        return this.todos == undefined && this.isLoadingData == false;
+        return this.todos === undefined && this.isLoadingData === false;
     }
 
     public get showData(): boolean {
-        return this.isLoadingData == false && this.hasNoData == false && this.shouldRetry == false;
+        return this.isLoadingData === false && this.hasNoData === false && this.shouldRetry === false;
     }
 
     public $onInit(): void {
@@ -59,12 +59,12 @@ export class TodoListController {
     protected loadTodoList(): void {
         this.busy = true;
 
-        this.todoListService.getTodos().then((response: ResponseWs<Array<Todo>>) => {
+        this.todoListService.getTodos().then((response: ResponseWs<Todo[]>) => {
 
             if (response.isSuccess()) {
                 this.todos = response.getData();
             }
-            else if (response.hasBeenCanceled() == false) {
+            else if (response.hasBeenCanceled() === false) {
 
                 // we do not notify the user in case of cancel request
                 this.translate(["ERROR_ACCESS_DATA", "CLOSE"]).then((translations: any) => {
@@ -91,5 +91,5 @@ export const TodoListComponent: ng.IComponentOptions = {
     controller: TodoListController,
     template: () => {
         return template;
-    }
+    },
 };

@@ -54,7 +54,7 @@ export default class TodoListService implements IUserTodosService {
         const config: ng.IRequestShortcutConfig = {
             params: {},
             // set a promise that let you cancel the current request
-            timeout: this.getUserTodosRequest.canceler.promise
+            timeout: this.getUserTodosRequest.canceler.promise,
         };
 
         // setup a timeout for the request

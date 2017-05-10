@@ -1,8 +1,8 @@
 import { Logger } from "../../shared/shared.module";
 
 import { IAppConstantsService } from "./app-constants.service";
-import { IUtilitiesService } from "./utilities.service";
 import { IUIUtilitiesConstants } from "./ui-utilities.constants";
+import { IUtilitiesService } from "./utilities.service";
 
 /**
  * UI Utilities
@@ -91,7 +91,7 @@ export class UIUtilitiesService implements IUIUtilitiesService {
                     .title(title)
                     .textContent(message)
                     .ariaLabel("Alert dialog")
-                    .ok(buttonLabel)
+                    .ok(buttonLabel),
             );
         } catch (e) {
             Logger.exception(this, e);

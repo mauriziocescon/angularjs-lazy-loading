@@ -5,10 +5,9 @@ import "./navigation-bar.component.scss";
 export class NavigationBarController {
     public static $inject = ["$location"];
     public name: string;
-
-    private location: ng.ILocationService;
-
     public currentNavItem: string;
+
+    protected location: ng.ILocationService;
 
     constructor($location: ng.ILocationService) {
         this.location = $location;
@@ -20,16 +19,16 @@ export class NavigationBarController {
         this.currentNavItem = "todos";
     }
 
+    public $onDestroy(): void {
+        // do nothing
+    }
+
     public goToTodoList(): void {
         this.location.path("/todo-list");
     }
 
     public goToContactList(): void {
         this.location.path("/contact-list");
-    }
-
-    public $onDestroy(): void {
-        // do nothing
     }
 }
 

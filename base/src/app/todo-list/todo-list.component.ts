@@ -63,7 +63,7 @@ export class TodoListController {
     }
 
     public $onDestroy(): void {
-
+        // do nothing
     }
 
     public loadDataSource(): void {

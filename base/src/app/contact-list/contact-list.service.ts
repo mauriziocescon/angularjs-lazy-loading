@@ -1,7 +1,7 @@
 import { Contact } from "../../../../lazy/src";
 
 export default class ContactListService {
-    private contactList: Contact[];
+    protected contactList: Contact[];
 
     constructor() {
         this.contactList = [];

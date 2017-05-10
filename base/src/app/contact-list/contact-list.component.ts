@@ -1,24 +1,26 @@
 import template from "./contact-list.component.html";
 import "./contact-list.component.scss";
+
 import {
     IUIUtilitiesService,
     IUtilitiesService,
 } from "../app.module";
-import ContactListService from "./contact-list.service";
+
 import { Contact } from "../../../../lazy/src";
+import ContactListService from "./contact-list.service";
 
 export class ContactListController {
     public static $inject = ["$ocLazyLoad", "$translate", "UIUtilitiesService", "UtilitiesService", "ContactListService"];
-
-    private ocLazyLoad: oc.ILazyLoad;
-    private translate: ng.translate.ITranslateService;
-    private uiUtilitiesService: IUIUtilitiesService;
-    private utilitiesService: IUtilitiesService;
-    private contactListService: ContactListService;
-
-    private busy: boolean;
-    private downloadSucceed: boolean;
     public contacts: Contact[];
+
+    protected ocLazyLoad: oc.ILazyLoad;
+    protected translate: ng.translate.ITranslateService;
+    protected uiUtilitiesService: IUIUtilitiesService;
+    protected utilitiesService: IUtilitiesService;
+    protected contactListService: ContactListService;
+
+    protected busy: boolean;
+    protected downloadSucceed: boolean;
 
     constructor($ocLazyLoad: oc.ILazyLoad,
                 $translate: ng.translate.ITranslateService,
@@ -44,10 +46,18 @@ export class ContactListController {
         return this.isLoadingData === false && this.shouldRetry === false;
     }
 
+    public get dataSource(): Contact[] {
+        return this.contacts;
+    }
+
     public $onInit(): void {
         this.downloadSucceed = false;
         this.loadModule();
         this.contacts = this.contactListService.getContacts();
+    }
+
+    public $onDestroy(): void {
+        // do nothing
     }
 
     public loadModule(): void {
@@ -68,10 +78,6 @@ export class ContactListController {
 
     public addContact(): void {
         this.contactListService.addContact();
-    }
-
-    public $onDestroy(): void {
-
     }
 }
 

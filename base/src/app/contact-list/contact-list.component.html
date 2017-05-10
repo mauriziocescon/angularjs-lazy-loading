@@ -3,7 +3,7 @@
     <h3>{{ "CONTACT_LIST_WELCOME" | translate }}</h3>
 
     <md-list flex ng-if="$ctrl.showData">
-        <contact ng-repeat="contact in $ctrl.contacts" contact="contact"></contact>
+        <contact ng-repeat="contact in $ctrl.dataSource" contact="contact"></contact>
     </md-list>
 
     <div layout="row" layout-align="space-around">
@@ -16,7 +16,7 @@
         <md-icon md-font-icon="md">add</md-icon>
     </md-button>
 
-    <md-button class="md-button md-fab md-fab-bottom-right icon-button" ng-show="$ctrl.shouldRetry" ng-click="$ctrl.loadModule()" aria-label="Add contact">
+    <md-button class="md-button md-fab md-fab-bottom-right icon-button" ng-show="$ctrl.shouldRetry" ng-click="$ctrl.loadModule()" aria-label="Download module">
         <md-icon md-font-icon="md">file_download</md-icon>
     </md-button>
 </div>

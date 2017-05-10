@@ -5,15 +5,15 @@ export default class AppController {
     public static $inject = [];
 
     constructor() {
-
+        // do nothing
     }
 
     public $onInit(): void {
-
+        // do nothing
     }
 
     public $onDestroy(): void {
-
+        // do nothing
     }
 }
 

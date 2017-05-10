@@ -1,28 +1,29 @@
 import template from "./todo.component.html";
 import "./todo.component.scss";
-import TodoService from "./todo.service";
+
 import Todo from "./todo.model";
+import TodoService from "./todo.service";
 
 class TodoController {
     public static $inject = ["TodoService"];
-
-    private todoService: TodoService;
     public todo: Todo;
+
+    protected todoService: TodoService;
 
     constructor(TodoService) {
         this.todoService = TodoService;
     }
 
     public $onInit(): void {
+        // do nothing
+    }
 
+    public $onDestroy(): void {
+        // do nothing
     }
 
     public getTodoDesc(todo: Todo): string {
         return this.todoService.getDescription(this.todo);
-    }
-
-    public $onDestroy(): void {
-
     }
 }
 

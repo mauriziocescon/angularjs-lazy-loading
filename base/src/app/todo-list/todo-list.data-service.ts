@@ -1,13 +1,15 @@
 import * as ng from "angular";
-import Todo from "./todo/todo.model";
-import {
-    RequestWs,
-    ResponseWs,
-} from "../shared/shared.module";
+
 import {
     IAppConstantsService,
     IUtilitiesService,
 } from "../app.module";
+import {
+    RequestWs,
+    ResponseWs,
+} from "../shared/shared.module";
+
+import Todo from "./todo/todo.model";
 
 export interface IUserTodosService {
     getTodos(): ng.IPromise<ResponseWs<Todo[]>>;
@@ -23,7 +25,7 @@ export default class TodoListService implements IUserTodosService {
     protected utilitiesService: IUtilitiesService;
 
     // requests
-    private getUserTodosRequest: RequestWs<Todo[]>;
+    protected getUserTodosRequest: RequestWs<Todo[]>;
 
     constructor($http: ng.IHttpService,
                 $q: ng.IQService,

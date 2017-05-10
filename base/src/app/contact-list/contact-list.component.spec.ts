@@ -1,6 +1,8 @@
 import * as angular from "angular";
-import { ContactListController } from "./contact-list.component";
+
 import { IAppConstantsService, IUtilitiesService } from "../app.module";
+
+import { ContactListController } from "./contact-list.component";
 
 // Addition of angular-mocks and jasmine references is done on the gulpfile
 describe("ContactListController", () => {

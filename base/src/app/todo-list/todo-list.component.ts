@@ -1,27 +1,29 @@
 import template from "./todo-list.component.html";
 import "./todo-list.component.scss";
-import {
-    ResponseWs,
-    Logger,
-} from "../shared/shared.module";
+
 import {
     IUIUtilitiesService,
     IUtilitiesService,
 } from "../app.module";
+import {
+    Logger,
+    ResponseWs,
+} from "../shared/shared.module";
+
 import TodoListService from "./todo-list.data-service";
 import Todo from "./todo/todo.model";
 
 export class TodoListController {
     public static $inject = ["$ocLazyLoad", "$translate", "UIUtilitiesService", "UtilitiesService", "TodoListService"];
-
-    private ocLazyLoad: oc.ILazyLoad;
-    private translate: ng.translate.ITranslateService;
-    private uiUtilitiesService: IUIUtilitiesService;
-    private utilitiesService: IUtilitiesService;
-    private todoListService: TodoListService;
-
-    private busy: boolean;
     public todos: Todo[];
+
+    protected ocLazyLoad: oc.ILazyLoad;
+    protected translate: ng.translate.ITranslateService;
+    protected uiUtilitiesService: IUIUtilitiesService;
+    protected utilitiesService: IUtilitiesService;
+    protected todoListService: TodoListService;
+
+    protected busy: boolean;
 
     constructor($ocLazyLoad: oc.ILazyLoad,
                 $translate: ng.translate.ITranslateService,
@@ -51,12 +53,20 @@ export class TodoListController {
         return this.isLoadingData === false && this.hasNoData === false && this.shouldRetry === false;
     }
 
-    public $onInit(): void {
-        this.busy = false;
-        this.loadTodoList();
+    public get dataSource(): Todo[] {
+        return this.todos;
     }
 
-    protected loadTodoList(): void {
+    public $onInit(): void {
+        this.busy = false;
+        this.loadDataSource();
+    }
+
+    public $onDestroy(): void {
+
+    }
+
+    public loadDataSource(): void {
         this.busy = true;
 
         this.todoListService.getTodos().then((response: ResponseWs<Todo[]>) => {
@@ -79,10 +89,6 @@ export class TodoListController {
         }).finally(() => {
             this.busy = false;
         });
-    }
-
-    public $onDestroy(): void {
-
     }
 }
 

@@ -3,13 +3,13 @@
     <h3>{{ "TODO_LIST_WELCOME" | translate }}</h3>
 
     <md-list flex ng-if="$ctrl.showData">
-        <todo ng-repeat="todo in $ctrl.todos" todo="todo"></todo>
+        <todo ng-repeat="todo in $ctrl.dataSource" todo="todo"></todo>
     </md-list>
 
     <div layout="row" layout-align="space-around">
         <md-progress-circular ng-show="$ctrl.isLoadingData" md-mode="indeterminate"></md-progress-circular>
         <md-button class="md-primary" ng-show="$ctrl.hasNoData">{{ "NO_RESULT" | translate }}</md-button>
-        <md-button class="md-primary" ng-show="$ctrl.shouldRetry" ng-click="$ctrl.loadTodoList()">{{ "RETRY" | translate }}</md-button>
+        <md-button class="md-primary" ng-show="$ctrl.shouldRetry" ng-click="$ctrl.loadDataSource()">{{ "RETRY" | translate }}</md-button>
     </div>
 
 

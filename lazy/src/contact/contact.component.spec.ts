@@ -1,4 +1,5 @@
 import * as angular from "angular";
+
 import { ContactController } from "./contact.component";
 import { Contact } from "./contact.model";
 
@@ -25,15 +26,15 @@ describe("ContactController", () => {
     });
 
     it("controller.contact is not undefined after $onInit", () => {
-        let contact = new Contact("face", "Desc", "Note");
-        let controller = <ContactController>componentController("contact", null, {contact: contact});
+        const contact = new Contact("face", "Desc", "Note");
+        const controller = componentController("contact", null, {contact}) as ContactController;
         controller.$onInit();
         expect(controller.contact).not.toBeUndefined("controller.contact is undefined...");
     });
 
     it("controller.contact is not null after $onInit", () => {
-        let contact = new Contact("face", "Desc", "Note");
-        let controller = <ContactController>componentController("contact", null, {contact: contact});
+        const contact = new Contact("face", "Desc", "Note");
+        const controller = componentController("contact", null, {contact}) as ContactController;
         controller.$onInit();
         expect(controller.contact).not.toBeNull("controller.contact is null...");
     });

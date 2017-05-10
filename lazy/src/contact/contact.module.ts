@@ -1,6 +1,7 @@
 import * as angular from "angular";
-import ContactService from "./contact.service";
+
 import { ContactComponent } from "./contact.component";
+import ContactService from "./contact.service";
 
 export * from "./contact.model";
 export * from "./contact.service";

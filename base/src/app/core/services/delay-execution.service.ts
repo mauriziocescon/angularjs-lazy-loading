@@ -29,10 +29,10 @@ export interface IDelayExecutionService {
 }
 
 export class DelayExecutionService implements IDelayExecutionService {
-    private timeout: ng.ITimeoutService;
-    private functionList: {[key: string]: ng.IPromise<any>};
+    public static $inject = ["$timeout"];
 
-    static $inject = ["$timeout"];
+    protected timeout: ng.ITimeoutService;
+    protected functionList: {[key: string]: ng.IPromise<any>};
 
     constructor($timeout: ng.ITimeoutService) {
         this.timeout = $timeout;
@@ -42,7 +42,7 @@ export class DelayExecutionService implements IDelayExecutionService {
     public execute(func: () => void, key: Enum, delay?: number): void {
         this.cancel(key);
 
-        if (delay != undefined && delay > 0) {
+        if (delay !== undefined && delay > 0) {
             this.functionList[key.toString()] = this.timeout(func, delay);
         } else {
             func();

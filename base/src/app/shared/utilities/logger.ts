@@ -1,5 +1,6 @@
-import { TypeDetect } from "./type-detect";
 import * as StackTrace from "stacktrace-js";
+
+import { TypeDetect } from "./type-detect";
 
 export class Logger {
 
@@ -23,8 +24,11 @@ export class Logger {
                 try {
                     if (["constructor"]) {
                         const funcNameRegex = /function (.{1,})\(/;
-                        const results = (funcNameRegex).exec(scope["constructor"].toString());
-                        if (results && results.length > 1) className = results[1];
+                        const constructor = "constructor";
+                        const results = (funcNameRegex).exec(scope[constructor].toString());
+                        if (results && results.length > 1) {
+                            className = results[1];
+                        }
                     }
                 } catch (e) {
                     Logger.log("Logger.exception get className: " + e.message);
@@ -66,7 +70,7 @@ export class Logger {
         }
     }
 
-    private static getPath(url: string): string {
+    protected static getPath(url: string): string {
         try {
 
             if (TypeDetect.isString(url) === false || !url || url.length === 0) {

@@ -1,7 +1,8 @@
-import { IUIUtilitiesConstants, uiUtilitiesConstants } from "./ui-utilities.constants";
+import { Logger } from "../../shared/shared.module";
+
 import { IAppConstantsService } from "./app-constants.service";
 import { IUtilitiesService } from "./utilities.service";
-import { Logger } from "../../shared/shared.module";
+import { IUIUtilitiesConstants } from "./ui-utilities.constants";
 
 /**
  * UI Utilities
@@ -42,13 +43,13 @@ export interface IUIUtilitiesService {
 }
 
 export class UIUtilitiesService implements IUIUtilitiesService {
-    private mdDialog: ng.material.IDialogService;
-    private mdToast: ng.material.IToastService;
-    private appConstantsService: IAppConstantsService;
-    private utilitiesService: IUtilitiesService;
-    private uiUtilitiesConstants: IUIUtilitiesConstants;
+    public static $inject = ["$mdDialog", "$mdToast", "AppConstantsService", "UtilitiesService", "UIUtilitiesConstants"];
 
-    static $inject = ["$mdDialog", "$mdToast", "AppConstantsService", "UtilitiesService", "UIUtilitiesConstants"];
+    protected mdDialog: ng.material.IDialogService;
+    protected mdToast: ng.material.IToastService;
+    protected appConstantsService: IAppConstantsService;
+    protected utilitiesService: IUtilitiesService;
+    protected uiUtilitiesConstants: IUIUtilitiesConstants;
 
     constructor($mdDialog: ng.material.IDialogService,
                 $mdToast: ng.material.IToastService,
@@ -99,7 +100,7 @@ export class UIUtilitiesService implements IUIUtilitiesService {
 
     public modalConfirmer(title: string, message: string, yesButtonLabel: string, noButtonLabel: string, callback: (result: boolean) => void): void {
         try {
-            let confirm = this.mdDialog.confirm()
+            const confirm = this.mdDialog.confirm()
                 .title(title)
                 .textContent(message)
                 .ariaLabel("Modal confirmer")

@@ -6,7 +6,7 @@ export * from "./utilities/utilities.module";
 export * from "./ws/ws.module";
 
 const sharedModule = angular.module("app.shared", [
-    mcFilters
+    mcFilters,
 ]);
 
 export const shared = sharedModule.name;

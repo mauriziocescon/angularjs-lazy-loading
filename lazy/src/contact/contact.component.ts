@@ -15,7 +15,7 @@ export class ContactController {
     }
 
     public $onInit(): void {
-
+        // do nothing
     }
 
     public $onDestroy(): void {

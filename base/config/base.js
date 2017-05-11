@@ -106,7 +106,7 @@ module.exports = function (env) {
                     test: /\.(ts|tsx)?$/,
                     enforce: "pre",
                     use: [
-                        {loader: "tslint-loader", options: {emitErrors: false, failOnHint: false, typeCheck: false, formatter: "stylish"}}
+                        {loader: "tslint-loader", options: {emitErrors: true, failOnHint: true, typeCheck: true, formatter: "stylish"}}
                     ]
                 },
 

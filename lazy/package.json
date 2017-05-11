@@ -55,7 +55,7 @@
     "karma-spec-reporter": "0.0.31",
     "node-sass": "4.5.2",
     "preprocess-loader": "0.2.0",
-    "sass-loader": "6.0.4",
+    "sass-loader": "6.0.5",
     "source-map-loader": "0.2.1",
     "style-loader": "0.17.0",
     "tslint": "5.2.0",

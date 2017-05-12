@@ -106,7 +106,7 @@ module.exports = function (env) {
                     exclude: /node_modules/,
                     enforce: "pre",
                     use: [
-                        {loader: "tslint-loader", options: {emitErrors: true, formatter: "stylish"}},
+                        {loader: "tslint-loader", options: {emitErrors: false, formatter: "stylish"}},
                         {loader: "preprocess-loader", options: {MOCK_BACKEND: env.mock, STRICT_DI: env.strictDi}}
                     ]
                 },

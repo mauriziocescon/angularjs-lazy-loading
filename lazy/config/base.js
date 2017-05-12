@@ -78,7 +78,7 @@ module.exports = function () {
                     exclude: /node_modules/,
                     enforce: "pre",
                     use: [
-                        {loader: "tslint-loader", options: {emitErrors: true, formatter: "stylish"}},
+                        {loader: "tslint-loader", options: {emitErrors: false, formatter: "stylish"}},
                         {loader: "preprocess-loader", options: {}}
                     ]
                 },

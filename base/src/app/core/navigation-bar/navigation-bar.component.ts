@@ -1,22 +1,32 @@
 import * as ng from "angular";
+
+import { IUtilitiesService } from "../services/services.module";
+
 import template from "./navigation-bar.component.html";
 import "./navigation-bar.component.scss";
 
 export class NavigationBarController {
-    public static $inject = ["$location"];
+    public static $inject = ["$state", "UtilitiesService"];
     public name: string;
     public currentNavItem: string;
 
-    protected location: ng.ILocationService;
+    protected state: ng.ui.IStateService;
+    protected utilitiesService: IUtilitiesService;
 
-    constructor($location: ng.ILocationService) {
-        this.location = $location;
+    constructor($state: ng.ui.IStateService, UtilitiesService: IUtilitiesService) {
+        this.state = $state;
+        this.utilitiesService = UtilitiesService;
 
         this.name = "NavigationBarComponent";
     }
 
     public $onInit(): void {
-        this.currentNavItem = "todos";
+        if (this.utilitiesService.getCurrentPath() === "/todo-list") {
+            this.currentNavItem = "todos";
+        }
+        else {
+            this.currentNavItem = "contacts";
+        }
     }
 
     public $onDestroy(): void {
@@ -24,11 +34,11 @@ export class NavigationBarController {
     }
 
     public goToTodoList(): void {
-        this.location.path("/todo-list");
+        this.state.go("todo-list");
     }
 
     public goToContactList(): void {
-        this.location.path("/contact-list");
+        this.state.go("contact-list");
     }
 }
 

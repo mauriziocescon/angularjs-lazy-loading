@@ -24,9 +24,15 @@
   },
   "keywords": [
     "angular",
-    "oclazyload",
+    "cescon",
+    "es2017",
+    "material design",
     "maurizio",
-    "cescon"
+    "oclazyload",
+    "sass",
+    "typescript",
+    "vendor",
+    "webpack"
   ],
   "licenses": [
     {

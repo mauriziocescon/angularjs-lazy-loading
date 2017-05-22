@@ -1,4 +1,4 @@
-Demo application for lazy loading of angular 1.x components
+Demo of angular 1.x lazy loading components
 =========
 
 ## How to build the app

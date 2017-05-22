@@ -3,16 +3,34 @@ Demo application for lazy loading of angular 1.x components
 
 ## How to build the app
 
-1. Download and install [NodeJS](https://nodejs.org/en/)
+1. Before starting, take a look at the following [page](https://angular.io/docs/ts/latest/guide/webpack.html); it's also noteworthy [The Future of Declaration Files](https://blogs.msdn.microsoft.com/typescript/2016/06/15/the-future-of-declaration-files/)
 
-2. Download [Webstorm](https://www.jetbrains.com/webstorm/) or open your favourite IDE
+2. Download and install [NodeJS](https://nodejs.org/en/)
 
-3. From the console, run ``npm install``. You'll get a folder named *node_modules* with all necessary modules
+3. From the console, run ``npm install``
 
-4. Run ``npm run serve`` on the console in order to run ``webpack-dev-server``
+4. On the console, run ``npm run build`` in order to build the code inside *dist* 
 
-5. Run ``npm run build`` on the console in order to build the project 
+5. On the console, run ``npm run serve`` in order to launch the application 
+ 
+6. If you want to mock the backend, run ``npm run serve-mock`` or ``npm run build-mock``
+ 
+## Backend implementation 
+ 
+1. REST APIs from [jsonplaceholder](https://jsonplaceholder.typicode.com)
+
+## Analysis tools
+
+1. [TSLint](https://github.com/palantir/tslint)
+
+## Unit-tests (karma + jasmine)
+
+1. The unit-tests are written in typescript using Jasmine. You find all the files searching for *__.spec.ts*
+ 
+2. On the console, run ``npm test`` for execute the tests
+
+3. Tests are run automatically by [Travis CI](https://travis-ci.com/)
 
 ## Working with editors/IDEs supporting “safe write”
 
-Take a look at the following link if you use [IntelliJ or VIM] (https://webpack.github.io/docs/webpack-dev-server.html#working-with-editors-ides-supporting-safe-write)
+Take a look at the following [page](https://webpack.github.io/docs/webpack-dev-server.html#working-with-editors-ides-supporting-safe-write) if you use IntelliJ or VIM 

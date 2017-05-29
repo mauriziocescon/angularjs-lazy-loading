@@ -5,6 +5,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const {CheckerPlugin} = require("awesome-typescript-loader");
+const StyleLintPlugin = require("stylelint-webpack-plugin");
 
 module.exports = function (env) {
     return {
@@ -53,7 +54,9 @@ module.exports = function (env) {
                     // this assumes your vendor imports exist in the node_modules directory
                     return module.context && module.context.indexOf("node_modules") !== -1;
                 }
-            })
+            }),
+
+            new StyleLintPlugin()
         ],
 
         module: {

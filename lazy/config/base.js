@@ -4,6 +4,7 @@ const CleanPlugin = require("clean-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const {CheckerPlugin} = require("awesome-typescript-loader");
+const StyleLintPlugin = require("stylelint-webpack-plugin");
 
 module.exports = function () {
     return {
@@ -27,7 +28,9 @@ module.exports = function () {
                 exclude: []
             }),
 
-            new CheckerPlugin()
+            new CheckerPlugin(),
+
+            new StyleLintPlugin()
         ],
 
         module: {

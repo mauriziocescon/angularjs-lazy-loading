@@ -1,6 +1,6 @@
 import * as ng from "angular";
 
-import { IUtilitiesService } from "../services/services.module";
+import { IUtilitiesService } from "../../core/services/services.module";
 
 import template from "./navigation-bar.component.html";
 import "./navigation-bar.component.scss";

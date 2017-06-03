@@ -2,7 +2,6 @@
   "name": "base",
   "scripts": {
     "postinstall": "webpack --progress --profile --colors --env.name=prod --env.strictDi=true --env.mock=false",
-
     "build": "webpack --progress --colors --env.name=prod --env.strictDi=true --env.mock=false",
     "build-mock": "webpack --progress --colors --env.name=prod --env.strictDi=true --env.mock=true",
     "serve": "webpack-dev-server -d --progress --colors --inline --hot --open --env.name=dev --env.strictDi=false --env.mock=false",

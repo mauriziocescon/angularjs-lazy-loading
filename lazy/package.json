@@ -2,7 +2,6 @@
   "name": "lazy",
   "scripts": {
     "postinstall": "webpack --progress --profile --colors --env.name=prod --env.strictDi=true",
-
     "build": "webpack --progress --colors --env.name=prod --env.strictDi=true",
     "pretest": "webpack --progress --colors --env.name=test --env.strictDi=true",
     "test": "karma start karma.conf.js"

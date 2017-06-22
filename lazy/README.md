@@ -15,11 +15,27 @@ Lazy loading application
  
 1. REST APIs from [jsonplaceholder](https://jsonplaceholder.typicode.com)
 
-## Analysis tools
+## Tooling
 
-1. [TSLint](https://github.com/palantir/tslint)
+1. [Angular 1.x](https://angularjs.org/)
 
-2. [Stylelint](https://github.com/stylelint/stylelint)
+2. [Typescript](https://www.typescriptlang.org/)
+
+3. [Angular Material](https://material.angularjs.org/latest/) 
+
+4. [UI-Router](https://ui-router.github.io/) 
+
+5. [Sass](http://sass-lang.com/) 
+
+6. [Webpack](https://webpack.js.org/) 
+
+7. [Babel](https://babeljs.io/) 
+
+8. [TSLint](https://github.com/palantir/tslint) 
+
+9. [Stylelint](https://github.com/stylelint/stylelint) 
+
+10. [Bootlint](https://github.com/twbs/bootlint)
 
 ## Unit-tests (karma + jasmine)
 

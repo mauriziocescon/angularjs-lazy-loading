@@ -23,19 +23,21 @@ Lazy loading application
 
 3. [Angular Material](https://material.angularjs.org/latest/) 
 
-4. [UI-Router](https://ui-router.github.io/) 
+4. [ocLazyLoad](https://oclazyload.readme.io/)
 
-5. [Sass](http://sass-lang.com/) 
+5. [UI-Router](https://ui-router.github.io/) 
 
-6. [Webpack](https://webpack.js.org/) 
+6. [Sass](http://sass-lang.com/) 
 
-7. [Babel](https://babeljs.io/) 
+7. [Webpack](https://webpack.js.org/) 
 
-8. [TSLint](https://github.com/palantir/tslint) 
+8. [Babel](https://babeljs.io/) 
 
-9. [Stylelint](https://github.com/stylelint/stylelint) 
+9. [TSLint](https://github.com/palantir/tslint) 
 
-10. [Bootlint](https://github.com/twbs/bootlint)
+10. [Stylelint](https://github.com/stylelint/stylelint) 
+
+11. [Bootlint](https://github.com/twbs/bootlint)
 
 ## Unit-tests (karma + jasmine)
 

@@ -1,4 +1,4 @@
-Demo of angular 1.x lazy loading components
+Demo of angular 1.x lazy loading components, Typescript, ES2017
 =========
 
 ## How to build the app

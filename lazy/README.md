@@ -10,10 +10,6 @@ Lazy loading application
 3. From the console, run ``npm install``
 
 4. On the console, run ``npm run build`` in order to build the code inside *dist* 
-
-5. On the console, run ``npm run serve`` in order to launch the application 
- 
-6. If you want to mock the backend, run ``npm run serve-mock`` or ``npm run build-mock``
  
 ## Backend implementation 
  

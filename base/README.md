@@ -37,11 +37,9 @@ Base application
 
 8. [Babel](https://babeljs.io/) 
 
-9. [TSLint](https://github.com/palantir/tslint) 
+9. [TSLint](https://palantir.github.io/tslint/) 
 
-10. [Stylelint](https://github.com/stylelint/stylelint) 
-
-11. [Bootlint](https://github.com/twbs/bootlint)
+10. [Stylelint](https://stylelint.io/) 
 
 ## Unit-tests (karma + jasmine)
 

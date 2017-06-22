@@ -1,56 +1,38 @@
-# HOW TO COMPILE THE APP
+Base application
+=========
 
-1. Before starting, take a look at the following [post](http://www.typescriptlang.org/docs/handbook/gulp.html) from the typescript developer team; it's also noteworthy [The Future of Declaration Files](https://blogs.msdn.microsoft.com/typescript/2016/06/15/the-future-of-declaration-files/)
+## How to build the app
+
+1. Before starting, take a look at the following [page](https://angular.io/docs/ts/latest/guide/webpack.html); it's also noteworthy [The Future of Declaration Files](https://blogs.msdn.microsoft.com/typescript/2016/06/15/the-future-of-declaration-files/)
 
 2. Download and install [NodeJS](https://nodejs.org/en/)
 
-3. Download [Webstorm](https://www.jetbrains.com/webstorm/) or open your favourite IDE
+3. From the console, run ``npm install``
 
-4. From the console, run ``npm install``. You'll get a folder named *node_modules* with all necessary modules
+4. On the console, run ``npm run build`` in order to build the code inside *dist* 
 
-5. Run ``npm run dev`` or ``npm run prod`` on the console in order to deploy the code inside *dist* (``gulp default`` or ``gulp prod`` scripts inside ``package.json`` get executed). 
+5. On the console, run ``npm run serve`` in order to launch the application 
+ 
+6. If you want to mock the backend, run ``npm run serve-mock`` or ``npm run build-mock``
+ 
+## Backend implementation 
+ 
+1. REST APIs from [jsonplaceholder](https://jsonplaceholder.typicode.com)
 
-6. If you want to mock the backend, run ``npm run dev-mock`` or ``npm run prod-mock``
+## Analysis tools
 
-7. Using ``npm run dev`` or ``npm run dev-mock``, you get incremental buildings of typescript code (thanks to [watchify](https://www.npmjs.com/package/watchify)) and live update on multiple browsers (thanks to [browsersync](https://browsersync.io))   
+1. [TSLint](https://github.com/palantir/tslint)
 
-8. If you install gulp globally (``sudo npm install -g gulp``), you can use ``gulp default`` or ``gulp release``
+2. [Stylelint](https://github.com/stylelint/stylelint)
 
-9. In order to uninstall a package globally, run ``sudo npm uninstall -g gulp``
+## Unit-tests (karma + jasmine)
 
-# UNIT-TESTS (KARMA + JASMINE)
-
-1. The unit-tests are written in typescript using Jasmine. You fine all the files searching for *__.spec.ts*
+1. The unit-tests are written in typescript using Jasmine. You find all the files searching for *__.spec.ts*
  
 2. On the console, run ``npm test`` for execute the tests
 
-# E2E-TESTS (PROTRACTOR + JASMINE)
+3. Tests are run automatically by [Travis CI](https://travis-ci.com/)
 
-1. Run ``npm start`` and when the server is up and running, open another console and run ``npm run protractor``
+## Working with editors/IDEs supporting “safe write”
 
-2. Write e2e tests using Typescript
-
-# LIGHT REST-API-TESTS
-
-1. Take a look at [Frisby](http://frisbyjs.com) and write your own tests inside *rest-api-tests*
-
-2. Run ``npm run frisby`` on the console
-
-# UPDATING NODE MODULES
-
-1. Check versions using ``npm outdated``
-
-2. Update ``package.json`` modules using ``npm update``
-
-3. When you update the ``dependencies`` on ``package.json``, you get the new versions for free thanks to the automatic compile process
-
-4. Pay attention that you need to manually update sass files of ``bootstrap-sass`` and ``font-awesome`` 
-
-5. If you need to use a file that is not available through npm, just copy it in the ``lib`` folder and referece it in ``index.html``
-
-
-# USING JetBrains Chrome EXTENSION
-
-1. In order to debug the code using Chrome, take a look at [JetBrains IDE Support](https://www.jetbrains.com/help/webstorm/2016.1/using-jetbrains-chrome-extension.html)
-
-2. If you use Safari on a Mac, simply open ``dist/index.html``; alternatively, you can run ``/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --disable-web-security --allow-file-access-from-files --user-data-dir`` on the console and use Chrome
+Take a look at the following [page](https://webpack.github.io/docs/webpack-dev-server.html#working-with-editors-ides-supporting-safe-write) if you use IntelliJ or VIM 

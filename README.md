@@ -23,6 +23,8 @@ Demo of angular 1.x lazy loading components
 
 1. [TSLint](https://github.com/palantir/tslint)
 
+2. [Stylelint](https://github.com/stylelint/stylelint)
+
 ## Unit-tests (karma + jasmine)
 
 1. The unit-tests are written in typescript using Jasmine. You find all the files searching for *__.spec.ts*

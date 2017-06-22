@@ -24,6 +24,9 @@ module.exports = function (env) {
 
         plugins: [
 
+            // scope hoisting
+            new webpack.optimize.ModuleConcatenationPlugin(),
+
             // clean dist folder
             new CleanPlugin(["dist", "build"], {
                 root: path.resolve(__dirname, "../"),

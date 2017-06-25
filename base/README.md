@@ -19,7 +19,7 @@ Base application
  
 1. REST APIs from [jsonplaceholder](https://jsonplaceholder.typicode.com)
 
-## Tooling
+## Libs & Tooling
 
 1. [Angular 1.x](https://angularjs.org/)
 

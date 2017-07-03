@@ -12,11 +12,11 @@
   "scripts": {
     "postinstall": "cd lazy && npm install && cd ../base && npm install",
 
-    "build": "cd lazy && npm run build && cd ../base && npm run build",
-    "build-mock": "cd lazy && npm run build && cd ../base && npm run build-mock",
-    "serve": "cd lazy && npm run build && cd ../base && npm run serve",
-    "serve-mock": "cd lazy && npm run build && cd ../base && npm run serve-mock",
-    "test": "cd lazy && npm run test && cd ../base && npm run test"
+    "build": "npm run build --prefix lazy && npm run build --prefix base",
+    "build-mock": "npm run build --prefix lazy && npm run build-mock --prefix base",
+    "serve": "npm run build --prefix lazy && npm run serve --prefix base",
+    "serve-mock": "npm run build --prefix lazy && npm run serve-mock --prefix base",
+    "test": "npm run test --prefix lazy && npm run test --prefix base"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,11 @@
 import { Contact } from "../../../../lazy/src";
 
-export default class ContactListService {
+export interface IContactListService {
+    addContact(): void;
+    getContacts(): Contact[];
+}
+
+export default class ContactListService implements IContactListService {
     protected contactList: Contact[];
 
     constructor() {

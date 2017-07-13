@@ -10,7 +10,7 @@ import {
     ResponseWs,
 } from "../shared/shared.module";
 
-import TodoListService from "./todo-list.data-service";
+import { ITodoListService } from "./todo-list.data-service";
 import Todo from "./todo/todo.model";
 
 export class TodoListController {
@@ -21,7 +21,7 @@ export class TodoListController {
     protected translate: ng.translate.ITranslateService;
     protected uiUtilitiesService: IUIUtilitiesService;
     protected utilitiesService: IUtilitiesService;
-    protected todoListService: TodoListService;
+    protected todoListService: ITodoListService;
 
     protected busy: boolean;
 
@@ -29,7 +29,7 @@ export class TodoListController {
                 $translate: ng.translate.ITranslateService,
                 UIUtilitiesService: IUIUtilitiesService,
                 UtilitiesService: IUtilitiesService,
-                TodoListService: TodoListService) {
+                TodoListService: ITodoListService) {
         this.ocLazyLoad = $ocLazyLoad;
         this.translate = $translate;
         this.uiUtilitiesService = UIUtilitiesService;

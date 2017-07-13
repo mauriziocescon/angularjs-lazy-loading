@@ -11,12 +11,12 @@ import {
 
 import Todo from "./todo/todo.model";
 
-export interface IUserTodosService {
+export interface ITodoListService {
     getTodos(): ng.IPromise<ResponseWs<Todo[]>>;
     cancelOngoingRequests(): void;
 }
 
-export default class TodoListService implements IUserTodosService {
+export default class TodoListService implements ITodoListService {
     public static $inject = ["$http", "$q", "AppConstantsService", "UtilitiesService"];
 
     protected http: ng.IHttpService;

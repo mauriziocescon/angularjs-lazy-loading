@@ -1,6 +1,10 @@
 import Todo from "./todo.model";
 
-export default class TodoService {
+export interface ITodoService {
+    getDescription(todo: Todo): string;
+}
+
+export default class TodoService implements ITodoService {
 
     constructor() {
         // do nothing

@@ -2,15 +2,15 @@ import template from "./todo.component.html";
 import "./todo.component.scss";
 
 import Todo from "./todo.model";
-import TodoService from "./todo.service";
+import { ITodoService } from "./todo.service";
 
 class TodoController {
     public static $inject = ["TodoService"];
     public todo: Todo;
 
-    protected todoService: TodoService;
+    protected todoService: ITodoService;
 
-    constructor(TodoService) {
+    constructor(TodoService: ITodoService) {
         this.todoService = TodoService;
     }
 

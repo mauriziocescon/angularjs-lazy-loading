@@ -7,7 +7,7 @@ import {
 } from "../app.module";
 
 import { Contact } from "../../../../lazy/src";
-import ContactListService from "./contact-list.service";
+import { IContactListService } from "./contact-list.service";
 
 export class ContactListController {
     public static $inject = ["$ocLazyLoad", "$translate", "UIUtilitiesService", "UtilitiesService", "ContactListService"];
@@ -17,7 +17,7 @@ export class ContactListController {
     protected translate: ng.translate.ITranslateService;
     protected uiUtilitiesService: IUIUtilitiesService;
     protected utilitiesService: IUtilitiesService;
-    protected contactListService: ContactListService;
+    protected contactListService: IContactListService;
 
     protected busy: boolean;
     protected downloadSucceed: boolean;
@@ -26,7 +26,7 @@ export class ContactListController {
                 $translate: ng.translate.ITranslateService,
                 UIUtilitiesService: IUIUtilitiesService,
                 UtilitiesService: IUtilitiesService,
-                ContactListService: ContactListService) {
+                ContactListService: IContactListService) {
         this.ocLazyLoad = $ocLazyLoad;
         this.translate = $translate;
         this.uiUtilitiesService = UIUtilitiesService;

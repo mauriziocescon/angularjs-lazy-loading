@@ -1,6 +1,10 @@
 import { Contact } from "./contact.model";
 
-export default class ContactService {
+export interface IContactService {
+    getDescription(contact: Contact): string;
+}
+
+export default class ContactService implements IContactService {
 
     constructor() {
         // do nothing

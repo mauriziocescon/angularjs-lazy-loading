@@ -2,15 +2,15 @@ import template from "./contact.component.html";
 import "./contact.component.scss";
 
 import { Contact } from "./contact.model";
-import ContactService from "./contact.service";
+import { IContactService } from "./contact.service";
 
 export class ContactController {
     public static $inject = ["ContactService"];
     public contact: Contact;
 
-    protected contactService: ContactService;
+    protected contactService: IContactService;
 
-    constructor(ContactService: ContactService) {
+    constructor(ContactService: IContactService) {
         this.contactService = ContactService;
     }
 

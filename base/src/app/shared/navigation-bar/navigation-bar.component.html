@@ -11,6 +11,12 @@
                     {{ "CONTACTS" | translate }}
                 </md-nav-item>
             </md-nav-bar>
+            <span flex></span>
+            <md-select ng-model="$ctrl.selectedLanguage" placeholder="Language" class="md-no-underline">
+                <md-option ng-repeat="language in $ctrl.supportedLanguages" ng-click="$ctrl.selectLanguage(language)" ng-value="language">
+                    {{ language }}
+                </md-option>
+            </md-select>
         </div>
     </md-toolbar>
 </div>

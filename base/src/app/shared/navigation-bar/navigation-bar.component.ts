@@ -1,20 +1,29 @@
 import * as ng from "angular";
 
-import { IUtilitiesService } from "../../core/services/services.module";
+import { IAppConstantsService, IUtilitiesService } from "../../app.module";
 
 import template from "./navigation-bar.component.html";
 import "./navigation-bar.component.scss";
 
 export class NavigationBarController {
-    public static $inject = ["$state", "UtilitiesService"];
+    public static $inject = ["$state", "$translate", "AppConstantsService", "UtilitiesService"];
     public name: string;
     public currentNavItem: string;
+    public selectedLanguage: string;
+    public supportedLanguages: string[];
 
     protected state: ng.ui.IStateService;
+    protected translate: ng.translate.ITranslateService;
+    protected appConstantsService: IAppConstantsService;
     protected utilitiesService: IUtilitiesService;
 
-    constructor($state: ng.ui.IStateService, UtilitiesService: IUtilitiesService) {
+    constructor($state: ng.ui.IStateService,
+                $translateService: ng.translate.ITranslateService,
+                AppConstantsService: IAppConstantsService,
+                UtilitiesService: IUtilitiesService) {
         this.state = $state;
+        this.translate = $translateService;
+        this.appConstantsService = AppConstantsService;
         this.utilitiesService = UtilitiesService;
 
         this.name = "NavigationBarComponent";
@@ -27,6 +36,9 @@ export class NavigationBarController {
         else {
             this.currentNavItem = "contacts";
         }
+
+        this.supportedLanguages = this.appConstantsService.Languages.SUPPORTED_LANG;
+        this.selectedLanguage = this.translate.proposedLanguage();
     }
 
     public $onDestroy(): void {
@@ -39,6 +51,11 @@ export class NavigationBarController {
 
     public goToContactList(): void {
         this.state.go("contact-list");
+    }
+
+    public selectLanguage(language: string): void {
+        this.selectedLanguage = language;
+        this.translate.use(this.selectedLanguage);
     }
 }
 

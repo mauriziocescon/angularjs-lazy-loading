@@ -1,3 +1,9 @@
 .navigation-bar {
   // properties
+
+  // at the moment md-nav-item
+  // styling is not supported
+  .md-nav-bar .md-button._md-nav-button.md-unselected {
+    color: white;
+  }
 }

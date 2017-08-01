@@ -38,7 +38,7 @@
     "@types/angular-ui-router": "1.1.37",
     "@types/jasmine": "2.5.53",
     "@types/jquery": "3.2.10",
-    "@types/node": "8.0.17",
+    "@types/node": "8.0.19",
     "@types/oclazyload": "0.0.32",
     "awesome-typescript-loader": "3.2.2",
     "babel": "6.23.0",

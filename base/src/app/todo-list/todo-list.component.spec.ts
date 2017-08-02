@@ -28,7 +28,7 @@ describe("TodoListController", () => {
 
         // returns the current list of todos
         httpBackend.whenGET((url: string) => {
-            return url.startsWith(AppConstantsService.Application.WS_URL + "/todos");
+            return url.startsWith(AppConstantsService.Api.todos);
         }).respond((method: string, url: string, data: string, headers: Object, params?: any) => {
 
             const response = [];

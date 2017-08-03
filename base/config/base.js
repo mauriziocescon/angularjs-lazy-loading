@@ -102,7 +102,7 @@ module.exports = function (env) {
                     test: /\.(ts|tsx)?$/,
                     exclude: /node_modules/,
                     use: [
-                        {loader: "awesome-typescript-loader?useBabel=true"}
+                        {loader: "awesome-typescript-loader?useBabel=true", options: {useBabel: true}}
                     ]
                 },
 

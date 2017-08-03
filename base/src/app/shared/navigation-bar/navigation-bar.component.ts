@@ -1,12 +1,12 @@
 import * as ng from "angular";
 
-import { IAppConstantsService, IUtilitiesService } from "../../app.module";
+import { IAppConstantsService, IAppLanguageService, IUtilitiesService } from "../../app.module";
 
 import template from "./navigation-bar.component.html";
 import "./navigation-bar.component.scss";
 
 export class NavigationBarController {
-    public static $inject = ["$state", "$translate", "AppConstantsService", "UtilitiesService"];
+    public static $inject = ["$state", "AppConstantsService", "AppLanguageService", "UtilitiesService"];
     public name: string;
     public currentNavItem: string;
     public selectedLanguage: string;
@@ -15,15 +15,16 @@ export class NavigationBarController {
     protected state: ng.ui.IStateService;
     protected translate: ng.translate.ITranslateService;
     protected appConstantsService: IAppConstantsService;
+    protected appLanguageService: IAppLanguageService;
     protected utilitiesService: IUtilitiesService;
 
     constructor($state: ng.ui.IStateService,
-                $translateService: ng.translate.ITranslateService,
                 AppConstantsService: IAppConstantsService,
+                AppLanguageService: IAppLanguageService,
                 UtilitiesService: IUtilitiesService) {
         this.state = $state;
-        this.translate = $translateService;
         this.appConstantsService = AppConstantsService;
+        this.appLanguageService = AppLanguageService;
         this.utilitiesService = UtilitiesService;
 
         this.name = "NavigationBarComponent";
@@ -54,8 +55,10 @@ export class NavigationBarController {
     }
 
     public selectLanguage(language: string): void {
-        this.selectedLanguage = language;
-        this.translate.use(this.selectedLanguage);
+        if (this.appLanguageService.getLanguageId() !== language) {
+            this.selectedLanguage = language;
+            this.appLanguageService.setLanguageId(this.selectedLanguage);
+        }
     }
 }
 

@@ -7,6 +7,7 @@ import "angular-messages";
 import "angular-mocks";
 import "angular-sanitize";
 
+import "angular-dynamic-locale";
 import "angular-material";
 import "angular-stats";
 import "angular-translate";

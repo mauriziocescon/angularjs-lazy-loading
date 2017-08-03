@@ -20,6 +20,7 @@ const appModule = angular.module("app", [
     "ngMessages",
     "ngSanitize",
     "oc.lazyLoad",
+    "tmh.dynamicLocale",
     "pascalprecht.translate",
     "ui.router",
     angularStats,

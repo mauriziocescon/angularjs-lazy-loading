@@ -39,6 +39,8 @@ module.exports = function (env) {
                 from: "src/index.html"
             }, {
                 from: "src/assets/i18n", to: "assets/i18n"
+            }, {
+                from: "node_modules/angular-i18n/", to: "locals"
             }]),
 
             new CheckerPlugin(),

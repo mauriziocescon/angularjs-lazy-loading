@@ -1,5 +1,6 @@
 export const appConfigFunc = ($ocLazyLoadProvider: oc.ILazyLoadProvider,
                               $translateProvider: ng.translate.ITranslateProvider,
+                              tmhDynamicLocaleProvider: ng.dynamicLocale.tmhDynamicLocaleProvider,
                               $mdIconProvider: ng.material.IIconProvider,
                               $mdThemingProvider: ng.material.IThemingProvider) => {
     $ocLazyLoadProvider.config({
@@ -10,7 +11,8 @@ export const appConfigFunc = ($ocLazyLoadProvider: oc.ILazyLoadProvider,
         prefix: "assets/i18n/",
         suffix: ".json",
     });
-    $translateProvider.preferredLanguage("en");
+
+    tmhDynamicLocaleProvider.localeLocationPattern("lib/angular-locale_{{locale}}.js");
 
     $mdIconProvider
         .defaultFontSet("material-icons");
@@ -22,4 +24,4 @@ export const appConfigFunc = ($ocLazyLoadProvider: oc.ILazyLoadProvider,
         .backgroundPalette("grey");
 };
 
-appConfigFunc.$inject = ["$ocLazyLoadProvider", "$translateProvider", "$mdIconProvider", "$mdThemingProvider"];
+appConfigFunc.$inject = ["$ocLazyLoadProvider", "$translateProvider", "tmhDynamicLocaleProvider", "$mdIconProvider", "$mdThemingProvider"];

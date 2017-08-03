@@ -66,7 +66,7 @@ module.exports = function () {
                 {
                     test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
                     use: [
-                        {loader: "file-loader", option: {name: "[name].[hash].[ext]"}}
+                        {loader: "file-loader", options: {name: "[name].[hash].[ext]"}}
                     ]
                 },
 

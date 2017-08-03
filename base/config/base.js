@@ -94,7 +94,7 @@ module.exports = function (env) {
                 {
                     test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
                     use: [
-                        {loader: "file-loader", option: {name: "assets/imgs/[name].[hash].[ext]"}}
+                        {loader: "file-loader", option: {name: "[name].[hash].[ext]"}}
                     ]
                 },
 

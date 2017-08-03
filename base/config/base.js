@@ -75,6 +75,7 @@ module.exports = function (env) {
                         fallback: "style-loader",
                         use: [
                             {loader: "css-loader", options: {sourceMap: true}},
+                            {loader: "resolve-url-loader"},
                             {loader: "sass-loader", options: {sourceMap: true}}
                         ]
                     })

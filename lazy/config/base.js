@@ -48,6 +48,7 @@ module.exports = function () {
                     use: [
                         {loader: "style-loader"},
                         {loader: "css-loader", options: {sourceMap: true}},
+                        {loader: "resolve-url-loader"},
                         {loader: "sass-loader", options: {sourceMap: true}}
                     ]
                 },

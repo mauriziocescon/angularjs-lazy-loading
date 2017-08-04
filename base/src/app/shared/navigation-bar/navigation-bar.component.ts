@@ -13,7 +13,6 @@ export class NavigationBarController {
     public supportedLanguages: string[];
 
     protected state: ng.ui.IStateService;
-    protected translate: ng.translate.ITranslateService;
     protected appConstantsService: IAppConstantsService;
     protected appLanguageService: IAppLanguageService;
     protected utilitiesService: IUtilitiesService;
@@ -39,7 +38,7 @@ export class NavigationBarController {
         }
 
         this.supportedLanguages = this.appConstantsService.Languages.SUPPORTED_LANG;
-        this.selectedLanguage = this.translate.proposedLanguage();
+        this.selectedLanguage = this.appLanguageService.getLanguageId();
     }
 
     public $onDestroy(): void {

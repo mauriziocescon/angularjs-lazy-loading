@@ -7,6 +7,8 @@ import { ITodoService } from "./todo.service";
 class TodoController {
     public static $inject = ["TodoService"];
     public todo: Todo;
+    public date: Date;
+    public amount: number;
 
     protected todoService: ITodoService;
 
@@ -15,7 +17,8 @@ class TodoController {
     }
 
     public $onInit(): void {
-        // do nothing
+        this.date = new Date();
+        this.amount = 10000.12;
     }
 
     public $onDestroy(): void {

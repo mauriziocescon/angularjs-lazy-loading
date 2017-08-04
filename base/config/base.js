@@ -40,7 +40,7 @@ module.exports = function (env) {
             }, {
                 from: "src/assets/i18n", to: "assets/i18n"
             }, {
-                from: "node_modules/angular-i18n/", to: "locals"
+                from: "node_modules/angular-i18n/", to: "locales"
             }]),
 
             new CheckerPlugin(),

@@ -12,7 +12,7 @@ export const appConfigFunc = ($ocLazyLoadProvider: oc.ILazyLoadProvider,
         suffix: ".json",
     });
 
-    tmhDynamicLocaleProvider.localeLocationPattern("locals/angular-locale_{{locale}}.js");
+    tmhDynamicLocaleProvider.localeLocationPattern("locales/angular-locale_{{locale}}.js");
 
     $mdIconProvider
         .defaultFontSet("material-icons");

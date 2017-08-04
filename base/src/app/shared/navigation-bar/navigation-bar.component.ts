@@ -37,7 +37,7 @@ export class NavigationBarController {
             this.currentNavItem = "contacts";
         }
 
-        this.supportedLanguages = this.appConstantsService.Languages.SUPPORTED_LANG;
+        this.supportedLanguages = this.appLanguageService.getSupportedLanguagesList();
         this.selectedLanguage = this.appLanguageService.getLanguageId();
     }
 

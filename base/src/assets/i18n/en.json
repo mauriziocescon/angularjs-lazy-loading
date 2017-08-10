@@ -1,26 +1,19 @@
 {
-  "BACKWARD": "Back",
-  "CANCEL": "Cancel",
-  "CLOSE": "Close",
-  "CONTACT_LIST_WELCOME": "Contact list where contact component is lazy loaded",
-  "CONTACTS": "Contacts",
-  "DATE": "Date",
-  "DESCRIPTION": "Description",
-  "EMAIL": "Email",
-  "ERROR_ACCESS_DATA": "Error access data",
-  "FORWARD": "Forward",
-  "INPUT_TEXT_PLACEHOLDER": "Type some text",
-  "LOAD_COMPLETED": "Loading completed",
-  "LOADING": "Loading...",
-  "MODULE_LOADED": "Third-party module loaded!",
-  "NO": "No",
-  "NO_RESULT": "Empty",
-  "OK": "Ok",
-  "RESET": "Reset",
-  "RETRY": "Retry",
-  "SELECT_LANGUAGE": "Select the language",
-  "TODO_LIST_WELCOME": "Regular todo list where todo component is bundled",
-  "TODOS": "Todos",
-  "WARNING": "Warning",
-  "YES": "Yes"
+  "CONTACT_LIST": {
+    "CONTACT_LIST_WELCOME": "Contact list where contact component is lazy loaded",
+    "MODULE_LOADED": "Third-party module loaded!",
+    "NO_RESULT": "Empty",
+    "RETRY": "Retry"
+  },
+  "NAVIGATION_BAR": {
+    "CONTACTS": "Contacts",
+    "TODOS": "Todos"
+  },
+  "TODO_LIST": {
+    "CLOSE": "Close",
+    "ERROR_ACCESS_DATA": "Error access data",
+    "NO_RESULT": "Empty",
+    "RETRY": "Retry",
+    "TODO_LIST_WELCOME": "Regular todo list where todo component is bundled"
+  }
 }

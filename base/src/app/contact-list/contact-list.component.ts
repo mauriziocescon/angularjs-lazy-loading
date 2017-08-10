@@ -67,7 +67,7 @@ export class ContactListController {
             this.busy = false;
             this.downloadSucceed = true;
             this.addContact();
-            this.translate(["MODULE_LOADED"]).then((translations: any) => {
+            this.translate(["CONTACT_LIST.MODULE_LOADED"]).then((translations: any) => {
                 this.uiUtilitiesService.toast(translations.MODULE_LOADED);
             });
         }, (e) => {

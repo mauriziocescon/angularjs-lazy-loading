@@ -1,26 +1,19 @@
 {
-  "BACKWARD": "Indietro",
-  "CANCEL": "Annulla",
-  "CLOSE": "Chiudi",
-  "CONTACT_LIST_WELCOME": "Lista contatti dove contact component è scaricato in maniera lazy",
-  "CONTACTS": "Contatti",
-  "DATE": "Data",
-  "DESCRIPTION": "Descrizione",
-  "EMAIL": "Email",
-  "ERROR_ACCESS_DATA": "Errore accesso ai dati",
-  "FORWARD": "Avanti",
-  "INPUT_TEXT_PLACEHOLDER": "Inserisci testo",
-  "LOAD_COMPLETED": "Caricamento completato",
-  "LOADING": "Caricamento...",
-  "MODULE_LOADED": "Modulo scaricato ed integrato!",
-  "NO": "No",
-  "NO_RESULT": "Vuoto",
-  "OK": "Ok",
-  "RESET": "Reset",
-  "RETRY": "Riprova",
-  "SELECT_LANGUAGE": "Cambia lingua",
-  "TODO_LIST_WELCOME": "Todo list dove il todo-component è integrato",
-  "TODOS": "Todo",
-  "WARNING": "Attenzione",
-  "YES": "Sì"
+  "CONTACT_LIST": {
+    "CONTACT_LIST_WELCOME": "Lista contatti dove contact component è scaricato in maniera lazy",
+    "MODULE_LOADED": "Modulo scaricato ed integrato!",
+    "NO_RESULT": "Vuoto",
+    "RETRY": "Riprova"
+  },
+  "NAVIGATION_BAR": {
+    "CONTACTS": "Contatti",
+    "TODOS": "Todo"
+  },
+  "TODO_LIST": {
+    "CLOSE": "Chiudi",
+    "ERROR_ACCESS_DATA": "Errore accesso ai dati",
+    "NO_RESULT": "Vuoto",
+    "RETRY": "Riprova",
+    "TODO_LIST_WELCOME": "Todo list dove il todo-component è integrato"
+  }
 }

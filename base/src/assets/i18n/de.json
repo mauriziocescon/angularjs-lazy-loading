@@ -1,26 +1,19 @@
 {
-  "BACKWARD": "Zurück",
-  "CANCEL": "Abbrechen",
-  "CLOSE": "Schließen",
-  "CONTACT_LIST_WELCOME": "Willkommen zu Deiner Kontaktliste",
-  "CONTACTS": "Kontakte",
-  "DATE": "Datum",
-  "DESCRIPTION": "Bezeichnung",
-  "EMAIL": "E-mail",
-  "ERROR_ACCESS_DATA": "Fehler beim Datenzugriff",
-  "FORWARD": "Fortfahren",
-  "INPUT_TEXT_PLACEHOLDER": "Text eingeben",
-  "LOAD_COMPLETED": "Ladevorgang abgeschlossen",
-  "LOADING": "Daten werden geladen",
-  "MODULE_LOADED": "Module geladen",
-  "NO": "Nein",
-  "NO_RESULT": "Leer",
-  "OK": "Ok",
-  "RESET": "Reset",
-  "RETRY": "Erneut versuchen",
-  "SELECT_LANGUAGE": "Sprache ӓndern",
-  "TODO_LIST_WELCOME": "Willkommen zu Deiner ToDo Liste",
-  "TODOS": "Todos",
-  "WARNING": "Achtung",
-  "YES": "Ja"
+  "CONTACT_LIST": {
+    "CONTACT_LIST_WELCOME": "Willkommen zu Deiner Kontaktliste",
+    "MODULE_LOADED": "Module geladen",
+    "NO_RESULT": "Leer",
+    "RETRY": "Erneut versuchen"
+  },
+  "NAVIGATION_BAR": {
+    "CONTACTS": "Kontakte",
+    "TODOS": "Todos"
+  },
+  "TODO_LIST": {
+    "CLOSE": "Schließen",
+    "ERROR_ACCESS_DATA": "Fehler beim Datenzugriff",
+    "NO_RESULT": "Leer",
+    "RETRY": "Erneut versuchen",
+    "TODO_LIST_WELCOME": "Willkommen zu Deiner ToDo Liste"
+  }
 }

@@ -11,6 +11,7 @@ export const appConfigFunc = ($ocLazyLoadProvider: oc.ILazyLoadProvider,
         prefix: "assets/i18n/",
         suffix: ".json",
     });
+    $translateProvider.preferredLanguage("en");
 
     tmhDynamicLocaleProvider.localeLocationPattern("locales/angular-locale_{{locale}}.js");
 

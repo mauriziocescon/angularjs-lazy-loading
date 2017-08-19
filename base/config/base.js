@@ -42,7 +42,7 @@ module.exports = function (env) {
             },  {
                 from: "src/assets/i18n", to: "assets/i18n"
             }, {
-                from: "src/assets/imgs"
+                from: "src/assets/imgs", to: "assets/imgs"
             }, {
                 from: "node_modules/angular-i18n/", to: "locales"
             }]),

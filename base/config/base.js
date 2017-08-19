@@ -38,7 +38,11 @@ module.exports = function (env) {
             new CopyPlugin([{
                 from: "src/index.html"
             }, {
+                from: "src/manifest.json"
+            },  {
                 from: "src/assets/i18n", to: "assets/i18n"
+            }, {
+                from: "src/assets/imgs"
             }, {
                 from: "node_modules/angular-i18n/", to: "locales"
             }]),

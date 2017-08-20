@@ -22,4 +22,4 @@ import "stacktrace-js";
 // Take a look at http://thesassway.com/beginner/how-to-structure-a-sass-project
 // for more information
 
-import "./assets/stylesheets/all";
+import "./styles.scss";

@@ -80,7 +80,7 @@ module.exports = function (env) {
                     use: ExtractTextPlugin.extract({
                         fallback: "style-loader",
                         use: [
-                            {loader: "css-loader"},
+                            {loader: "css-loader", options: {modules: false, minimize: true}},
                             {loader: "resolve-url-loader"},
                             {loader: "sass-loader", options: {sourceMap: true}}
                         ]

@@ -32,7 +32,6 @@
     "@types/node": "8.0.24",
     "@types/oclazyload": "0.0.32",
     "awesome-typescript-loader": "3.2.3",
-    "babel": "6.23.0",
     "babel-core": "6.26.0",
     "babel-loader": "7.1.2",
     "babel-preset-env": "1.6.0",

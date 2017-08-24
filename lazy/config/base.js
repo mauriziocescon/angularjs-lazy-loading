@@ -75,7 +75,7 @@ module.exports = function () {
                     test: /\.(ts|tsx)?$/,
                     exclude: /node_modules/,
                     use: [
-                        {loader: "awesome-typescript-loader", options: {useBabel: true}}
+                        {loader: "awesome-typescript-loader", options: {useBabel: true, useCache: true}}
                     ]
                 },
 

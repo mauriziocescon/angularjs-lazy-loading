@@ -49,11 +49,6 @@ module.exports = function (env) {
 
             new CheckerPlugin(),
 
-            // avoid processing *.scss.d.ts
-            new webpack.WatchIgnorePlugin([
-                /css\.d\.ts$/
-            ]),
-
             // insert file dynamically
             new HtmlWebpackPlugin({
                 template: "src/index.html",

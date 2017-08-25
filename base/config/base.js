@@ -2,10 +2,9 @@ const webpack = require("webpack");
 const path = require("path");
 const CleanPlugin = require("clean-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const {CheckerPlugin} = require("awesome-typescript-loader");
 const StyleLintPlugin = require("stylelint-webpack-plugin");
+const {CheckerPlugin} = require("awesome-typescript-loader");
 
 module.exports = function (env) {
     return {
@@ -45,11 +44,15 @@ module.exports = function (env) {
                 from: "src/assets/imgs", to: "assets/imgs"
             }, {
                 from: "node_modules/angular-i18n/", to: "locales"
+                // from: {glob: "node_modules/angular-i18n/*_+(de|en|it).js"}, to: "locales"
             }]),
 
             new CheckerPlugin(),
 
-            new ExtractTextPlugin("[name].[hash].css"),
+            // avoid processing *.scss.d.ts
+            new webpack.WatchIgnorePlugin([
+                /css\.d\.ts$/
+            ]),
 
             // insert file dynamically
             new HtmlWebpackPlugin({
@@ -72,35 +75,12 @@ module.exports = function (env) {
 
             rules: [
 
-                // creates style nodes from JS strings
-                // translates CSS into CommonJS
-                // compiles Sass to CSS
-                {
-                    test: /\.scss$/,
-                    use: ExtractTextPlugin.extract({
-                        fallback: "style-loader",
-                        use: [
-                            {loader: "css-loader", options: {minimize: true, modules: false}},
-                            {loader: "resolve-url-loader"},
-                            {loader: "sass-loader", options: {sourceMap: true}}
-                        ]
-                    })
-                },
-
                 // template loaders
                 {
                     test: /\.html?$/,
                     exclude: /index.html$/,
                     use: [
                         {loader: "html-loader", options: {exportAsEs6Default: true, minimize: true}}
-                    ]
-                },
-
-                // images loader
-                {
-                    test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-                    use: [
-                        {loader: "file-loader", options: {name: "[name].[hash].[ext]"}}
                     ]
                 },
 
@@ -120,7 +100,7 @@ module.exports = function (env) {
                     enforce: "pre",
                     use: [
                         {loader: "tslint-loader", options: {emitErrors: false, formatter: "stylish"}},
-                        {loader: "preprocess-loader", options: {MOCK_BACKEND: env.mock, STRICT_DI: env.strictDi}}
+                        {loader: "preprocess-loader", options: {MOCK_BACKEND: env.mock}}
                     ]
                 },
 

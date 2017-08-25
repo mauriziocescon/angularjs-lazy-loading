@@ -62,15 +62,7 @@ module.exports = function () {
                     ]
                 },
 
-                // images loader
-                {
-                    test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-                    use: [
-                        {loader: "file-loader", options: {name: "[name].[hash].[ext]"}}
-                    ]
-                },
-
-                // all files with a ".ts" or ".tsx" extension will be handled by ts-loader
+                // all files with a ".ts" or ".tsx" extension will be handled by awesome-typescript-loader
                 {
                     test: /\.(ts|tsx)?$/,
                     exclude: /node_modules/,
@@ -99,11 +91,6 @@ module.exports = function () {
                     ]
                 }
             ]
-        },
-
-        output: {
-            path: path.resolve(__dirname, "../dist"),
-            filename: "lazy.js"
         }
     };
 };

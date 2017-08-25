@@ -6,20 +6,13 @@ const commonConfig = require("./base.js");
 module.exports = function (env) {
     return webpackMerge(commonConfig(env), {
 
-        devtool: "source-map",
+        devtool: "eval-cheap-module-source-map",
 
         plugins: [
 
-            new webpack.optimize.UglifyJsPlugin({
-                mangle: {
-                    keep_fnames: true
-                },
-                sourceMap: true
-            }),
-
             new webpack.DefinePlugin({
                 "process.env": {
-                    "ENV": JSON.stringify("production")
+                    "ENV": JSON.stringify("development")
                 }
             })
         ],
@@ -32,7 +25,7 @@ module.exports = function (env) {
                 {
                     test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
                     use: [
-                        {loader: "file-loader", options: {name: "[name].[hash].[ext]"}}
+                        {loader: "file-loader", options: {name: "[name].[ext]"}}
                     ]
                 }
             ]

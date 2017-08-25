@@ -1,7 +1,7 @@
 const webpack = require("webpack");
 const path = require("path");
-const CopyPlugin = require("copy-webpack-plugin");
 const webpackMerge = require("webpack-merge");
+const CopyPlugin = require("copy-webpack-plugin");
 const commonConfig = require("./base.js");
 
 module.exports = function (env) {
@@ -22,6 +22,38 @@ module.exports = function (env) {
                 }
             })
         ],
+
+        module:{
+
+            rules: [
+
+                // creates style nodes from JS strings
+                // translates CSS into CommonJS
+                // compiles Sass to CSS
+                {
+                    test: /\.scss$/,
+                    use: [
+                        {loader: "style-loader"},
+                        {loader: "css-loader", options: {minimize: true, modules: false}},
+                        {loader: "resolve-url-loader"},
+                        {loader: "sass-loader", options: {sourceMap: true}}
+                    ]
+                },
+
+                // images loader
+                {
+                    test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
+                    use: [
+                        {loader: "file-loader", options: {name: "[name].[ext]"}}
+                    ]
+                }
+            ]
+        },
+
+        output: {
+            path: path.resolve(__dirname, "../dist"),
+            filename: "[name].js"
+        },
 
         devServer: {
             clientLogLevel: "info",

@@ -17,7 +17,7 @@ class Main {
     protected static loadAngular(): void {
         // tslint:disable:no-consecutive-blank-lines
 
-        const config: ng.IAngularBootstrapConfig = {strictDi: /* @echo STRICT_DI */};
+        const config: ng.IAngularBootstrapConfig = {strictDi: true};
 
         // @if MOCK_BACKEND = "false"
         angular.bootstrap(document.querySelector(app), [app], config);

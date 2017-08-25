@@ -1,12 +1,12 @@
 {
   "name": "base",
   "scripts": {
-    "postinstall": "webpack --progress --profile --colors --env.name=prod --env.strictDi=true --env.mock=false",
-    "build": "webpack --progress --colors --env.name=prod --env.strictDi=true --env.mock=false",
-    "build-mock": "webpack --progress --colors --env.name=prod --env.strictDi=true --env.mock=true",
-    "serve": "webpack-dev-server --d --progress --colors --env.name=dev --env.strictDi=false --env.mock=false",
-    "serve-mock": "webpack-dev-server --d --progress --colors --env.name=dev --env.strictDi=false --env.mock=true",
-    "pretest": "webpack --progress --colors --env.name=test --env.strictDi=true --env.mock=false",
+    "postinstall": "webpack --progress --profile --colors --env.name=prod --env.mock=false",
+    "build": "webpack --progress --colors --env.name=prod --env.mock=false",
+    "build-mock": "webpack --progress --colors --env.name=prod --env.mock=true",
+    "serve": "webpack-dev-server --d --progress --colors --env.name=dev --env.mock=false",
+    "serve-mock": "webpack-dev-server --d --progress --colors --env.name=dev --env.mock=true",
+    "pretest": "webpack --progress --colors --env.name=test --env.mock=false",
     "test": "karma start karma.conf.js"
   },
   "dependencies": {
@@ -74,12 +74,15 @@
     "stylelint": "8.0.0",
     "stylelint-config-standard": "17.0.0",
     "stylelint-webpack-plugin": "0.9.0",
+    "sw-precache-webpack-plugin": "0.11.4",
     "tslint": "5.6.0",
     "tslint-loader": "3.5.3",
     "typescript": "2.4.2",
+    "typings-for-css-modules-loader": "1.5.0",
     "url-loader": "0.5.9",
     "webpack": "3.5.5",
     "webpack-dev-server": "2.7.1",
+    "webpack-manifest-plugin": "1.3.1",
     "webpack-merge": "4.1.0"
   }
 }

@@ -11,31 +11,26 @@ describe("ContactListController", () => {
     let q: ng.IQService;
     let ocLazyLoad: oc.ILazyLoad;
     let componentController: ng.IComponentControllerService;
-    let AppConstantsService: IAppConstantsService;
-    let UtilitiesService: IUtilitiesService;
 
     // Set up the module
     beforeEach(angular.mock.module("app"));
 
-    beforeEach(inject((_$rootScope_, _$httpBackend_, _$q_, _$componentController_, _$ocLazyLoad_, _AppConstantsService_, _UtilitiesService_) => {
+    beforeEach(inject(($rootScope, $httpBackend, $q, $componentController, $ocLazyLoad, AppConstantsService, UtilitiesService) => {
 
         // Update ui
-        rootScope = _$rootScope_;
+        rootScope = $rootScope;
 
         // Set up the mock http service responses
-        httpBackend = _$httpBackend_;
+        httpBackend = $httpBackend;
 
         // Manage fake promises
-        q = _$q_;
+        q = $q;
 
         // The $componentController service is used to create instances of controllers
-        componentController = _$componentController_;
+        componentController = $componentController;
 
         // ocLazyLoad service
-        ocLazyLoad = _$ocLazyLoad_;
-
-        AppConstantsService = _AppConstantsService_;
-        UtilitiesService = _UtilitiesService_;
+        ocLazyLoad = $ocLazyLoad;
     }));
 
     afterEach(() => {

@@ -11,13 +11,13 @@ describe("ContactController", () => {
     // Set up the module
     beforeEach(angular.mock.module("lazy"));
 
-    beforeEach(inject((_$httpBackend_, _$componentController_) => {
+    beforeEach(inject(($httpBackend, $componentController) => {
 
         // Set up the mock http service responses
-        httpBackend = _$httpBackend_;
+        httpBackend = $httpBackend;
 
         // The $componentController service is used to create instances of controllers
-        componentController = _$componentController_;
+        componentController = $componentController;
     }));
 
     afterEach(() => {

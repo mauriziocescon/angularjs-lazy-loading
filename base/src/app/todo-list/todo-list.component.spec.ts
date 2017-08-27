@@ -9,27 +9,22 @@ import Todo from "./todo/todo.model";
 describe("TodoListController", () => {
     let httpBackend: ng.IHttpBackendService;
     let componentController: ng.IComponentControllerService;
-    let AppConstantsService: IAppConstantsService;
-    let UtilitiesService: IUtilitiesService;
 
     // Set up the module
     beforeEach(angular.mock.module("app"));
 
-    beforeEach(inject((_$httpBackend_, _$componentController_, _AppConstantsService_, _UtilitiesService_) => {
+    beforeEach(inject(($httpBackend, $componentController, AppConstantsService, UtilitiesService) => {
 
         // Set up the mock http service responses
-        httpBackend = _$httpBackend_;
+        httpBackend = $httpBackend;
 
         // The $componentController service is used to create instances of controllers
-        componentController = _$componentController_;
-
-        AppConstantsService = _AppConstantsService_;
-        UtilitiesService = _UtilitiesService_;
+        componentController = $componentController;
 
         // returns the current list of todos
         httpBackend.whenGET((url: string) => {
             return url.startsWith(AppConstantsService.Api.todos);
-        }).respond((method: string, url: string, data: string, headers: Object, params?: any) => {
+        }).respond((method: string, url: string, data: string, headers: Object, params?: any) => { // tslint:disable-line:ban-types
 
             const response = [];
 

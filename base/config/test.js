@@ -18,7 +18,7 @@ module.exports = function (env) {
 
             // copy lazy
             new CopyPlugin([{
-                from: "../lazy/dist/lazy.js"
+                from: "../lazy/dist"
             }]),
 
             new webpack.DefinePlugin({

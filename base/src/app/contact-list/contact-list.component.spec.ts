@@ -1,7 +1,5 @@
 import * as angular from "angular";
 
-import { IAppConstantsService, IUtilitiesService } from "../app.module";
-
 import { ContactListController } from "./contact-list.component";
 
 // Addition of angular-mocks and jasmine references is done on the gulpfile
@@ -15,7 +13,7 @@ describe("ContactListController", () => {
     // Set up the module
     beforeEach(angular.mock.module("app"));
 
-    beforeEach(inject(($rootScope, $httpBackend, $q, $componentController, $ocLazyLoad, AppConstantsService, UtilitiesService) => {
+    beforeEach(inject(($rootScope, $httpBackend, $q, $componentController, $ocLazyLoad) => {
 
         // Update ui
         rootScope = $rootScope;

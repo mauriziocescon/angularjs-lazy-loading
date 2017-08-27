@@ -13,7 +13,7 @@ describe("TodoListController", () => {
     // Set up the module
     beforeEach(angular.mock.module("app"));
 
-    beforeEach(inject(($httpBackend, $componentController, AppConstantsService, UtilitiesService) => {
+    beforeEach(inject(($httpBackend, $componentController, AppConstantsService: IAppConstantsService) => {
 
         // Set up the mock http service responses
         httpBackend = $httpBackend;

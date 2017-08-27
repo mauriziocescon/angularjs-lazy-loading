@@ -108,11 +108,6 @@ module.exports = function (env) {
                     ]
                 }
             ]
-        },
-
-        output: {
-            path: path.resolve(__dirname, "../dist"),
-            filename: "[name].[hash].js"
         }
     };
 };

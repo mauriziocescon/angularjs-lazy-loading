@@ -1,12 +1,12 @@
 {
   "name": "base",
   "scripts": {
-    "postinstall": "webpack --progress --profile --colors --env.name=prod --env.mock=false",
-    "build": "webpack --progress --colors --env.name=prod --env.mock=false",
-    "build-mock": "webpack --progress --colors --env.name=prod --env.mock=true",
-    "serve": "webpack-dev-server --d --progress --colors --env.name=dev --env.mock=false",
-    "serve-mock": "webpack-dev-server --d --progress --colors --env.name=dev --env.mock=true",
-    "pretest": "webpack --progress --colors --env.name=test --env.mock=false",
+    "postinstall": "webpack --profile --profile --colors --env.name=prod --env.mock=false",
+    "build": "webpack --profile --colors --env.name=prod --env.mock=false",
+    "build-mock": "webpack --profile --colors --env.name=prod --env.mock=true",
+    "serve": "webpack-dev-server --d --profile --colors --env.name=dev --env.mock=false",
+    "serve-mock": "webpack-dev-server --d --profile --colors --env.name=dev --env.mock=true",
+    "pretest": "webpack --profile --colors --env.name=test --env.mock=false",
     "test": "karma start karma.conf.js"
   },
   "dependencies": {

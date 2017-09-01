@@ -13,7 +13,9 @@ describe("TodoListController", () => {
     // Set up the module
     beforeEach(angular.mock.module("app"));
 
-    beforeEach(inject(($httpBackend, $componentController, AppConstantsService: IAppConstantsService) => {
+    beforeEach(inject(($httpBackend: ng.IHttpBackendService,
+                       $componentController: ng.IComponentControllerService,
+                       AppConstantsService: IAppConstantsService) => {
 
         // Set up the mock http service responses
         httpBackend = $httpBackend;
@@ -49,27 +51,27 @@ describe("TodoListController", () => {
     });
 
     it("expect controller fetches data after $onInit", () => {
-        const controller = componentController("todoList", null, null) as TodoListController;
+        const controller = componentController("todoList", {}, null) as TodoListController;
         controller.$onInit();
         httpBackend.flush();
     });
 
     it("controller.todos is not undefined after $onInit", () => {
-        const controller = componentController("todoList", null, null) as TodoListController;
+        const controller = componentController("todoList", {}, null) as TodoListController;
         controller.$onInit();
         httpBackend.flush();
         expect(controller.todos).not.toBeUndefined("controller.todos is undefined...");
     });
 
     it("controller.todos is not null after $onInit", () => {
-        const controller = componentController("todoList", null, null) as TodoListController;
+        const controller = componentController("todoList", {}, null) as TodoListController;
         controller.$onInit();
         httpBackend.flush();
         expect(controller.todos).not.toBeNull("controller.todos is null...");
     });
 
     it("controller.isLoadingData is false after $onInit", () => {
-        const controller = componentController("todoList", null, null) as TodoListController;
+        const controller = componentController("todoList", {}, null) as TodoListController;
         controller.$onInit();
         httpBackend.flush();
         expect(controller.isLoadingData).toBeFalsy("isLoadingData is true after the loading...");

@@ -7,13 +7,17 @@ describe("ContactListController", () => {
     let rootScope: ng.IRootScopeService;
     let httpBackend: ng.IHttpBackendService;
     let q: ng.IQService;
-    let ocLazyLoad: oc.ILazyLoad;
     let componentController: ng.IComponentControllerService;
+    let ocLazyLoad: oc.ILazyLoad;
 
     // Set up the module
     beforeEach(angular.mock.module("app"));
 
-    beforeEach(inject(($rootScope, $httpBackend, $q, $componentController, $ocLazyLoad) => {
+    beforeEach(inject(($rootScope: ng.IRootScopeService,
+                       $httpBackend: ng.IHttpBackendService,
+                       $q: ng.IQService,
+                       $componentController: ng.IComponentControllerService,
+                       $ocLazyLoad: oc.ILazyLoad) => {
 
         // Update ui
         rootScope = $rootScope;
@@ -37,19 +41,19 @@ describe("ContactListController", () => {
     });
 
     it("controller.contacts is not undefined after $onInit", () => {
-        const controller = componentController("contactList", null, null) as ContactListController;
+        const controller = componentController("contactList", {}, null) as ContactListController;
         controller.$onInit();
         expect(controller.contacts).not.toBeUndefined("controller.contacts is undefined...");
     });
 
     it("controller.contacts is not null after $onInit", () => {
-        const controller = componentController("contactList", null, null) as ContactListController;
+        const controller = componentController("contactList", {}, null) as ContactListController;
         controller.$onInit();
         expect(controller.contacts).not.toBeNull("controller.contacts is null...");
     });
 
     it("controller.isLoadingData is false after $onInit", () => {
-        const controller = componentController("contactList", null, null) as ContactListController;
+        const controller = componentController("contactList", {}, null) as ContactListController;
         spyOn(ocLazyLoad, "load").and.callFake(() => {
             const deferred = q.defer();
             deferred.resolve();
@@ -61,7 +65,7 @@ describe("ContactListController", () => {
     });
 
     it("controller.shouldRetry is false after $onInit", () => {
-        const controller = componentController("contactList", null, null) as ContactListController;
+        const controller = componentController("contactList", {}, null) as ContactListController;
         spyOn(ocLazyLoad, "load").and.callFake(() => {
             const deferred = q.defer();
             deferred.resolve();
@@ -73,7 +77,7 @@ describe("ContactListController", () => {
     });
 
     it("controller.showData is false after $onInit", () => {
-        const controller = componentController("contactList", null, null) as ContactListController;
+        const controller = componentController("contactList", {}, null) as ContactListController;
         spyOn(ocLazyLoad, "load").and.callFake(() => {
             const deferred = q.defer();
             deferred.resolve();

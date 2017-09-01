@@ -1,6 +1,6 @@
 export class Enum {
 
-    public static toEnum(val: string): Enum {
+    public static toEnum(val: string): Enum | undefined {
         return (val === undefined || val === null) ? undefined : new Enum(val);
     }
 

@@ -98,7 +98,7 @@ export interface IUtilitiesService {
      *
      * @param url
      */
-    parseQueryString(url): any;
+    parseQueryString(url: string): any;
     /**
      * Count the number of scopes / watchers
      * for every component. Analyze the DOM
@@ -244,8 +244,10 @@ export class UtilitiesService implements IUtilitiesService {
             script.setAttribute("src", src);
             script.setAttribute("type", "text/javascript");
             script.setAttribute("charset", "utf-8");
-            const head: HTMLElement = this.document[0].getElementById("head");
-            head.appendChild(script);
+            const head = this.document[0].getElementById("head");
+            if (head) {
+                head.appendChild(script);
+            }
         }
         else {
             const line = "<script type='text/javascript' charset='utf-8' src='" + src + "'></script>";

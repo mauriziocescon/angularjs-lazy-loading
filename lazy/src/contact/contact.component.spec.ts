@@ -11,7 +11,8 @@ describe("ContactController", () => {
     // Set up the module
     beforeEach(angular.mock.module("lazy"));
 
-    beforeEach(inject(($httpBackend, $componentController) => {
+    beforeEach(inject(($httpBackend: ng.IHttpBackendService,
+                       $componentController: ng.IComponentControllerService) => {
 
         // Set up the mock http service responses
         httpBackend = $httpBackend;
@@ -27,14 +28,14 @@ describe("ContactController", () => {
 
     it("controller.contact is not undefined after $onInit", () => {
         const contact = new Contact("face", "Desc", "Note");
-        const controller = componentController("contact", null, {contact}) as ContactController;
+        const controller = componentController("contact", {}, {contact}) as ContactController;
         controller.$onInit();
         expect(controller.contact).not.toBeUndefined("controller.contact is undefined...");
     });
 
     it("controller.contact is not null after $onInit", () => {
         const contact = new Contact("face", "Desc", "Note");
-        const controller = componentController("contact", null, {contact}) as ContactController;
+        const controller = componentController("contact", {}, {contact}) as ContactController;
         controller.$onInit();
         expect(controller.contact).not.toBeNull("controller.contact is null...");
     });

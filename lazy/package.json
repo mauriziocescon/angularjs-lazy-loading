@@ -1,10 +1,10 @@
 {
   "name": "lazy",
   "scripts": {
-    "postinstall": "webpack --progress --profile --colors --env.name=prod",
-    "build": "webpack --progress --colors --env.name=prod",
-    "dev": "webpack --progress --colors --env.name=dev",
-    "pretest": "webpack --progress --colors --env.name=test",
+    "postinstall": "webpack --profile --profile --colors --env.name=prod",
+    "build": "webpack --profile --colors --env.name=prod",
+    "dev": "webpack --profile --colors --env.name=dev",
+    "pretest": "webpack --profile --colors --env.name=test",
     "test": "karma start karma.conf.js"
   },
   "dependencies": {

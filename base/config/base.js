@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const StyleLintPlugin = require("stylelint-webpack-plugin");
 const {CheckerPlugin} = require("awesome-typescript-loader");
 
-module.exports = function (env) {
+module.exports = (env) => {
     return {
         entry: {
             app: "./src/main.ts",
@@ -57,7 +57,7 @@ module.exports = function (env) {
 
             new webpack.optimize.CommonsChunkPlugin({
                 name: "vendor",
-                minChunks: function (module) {
+                minChunks: (module) => {
                     // this assumes your vendor imports exist in the node_modules directory
                     return module.context && module.context.indexOf("node_modules") !== -1;
                 }
@@ -105,6 +105,15 @@ module.exports = function (env) {
                     enforce: "pre",
                     use: [
                         {loader: "source-map-loader"}
+                    ]
+                },
+
+                // add jQuery to the global object
+                {
+                    test: require.resolve("jquery"),
+                    use: [
+                        {loader: "expose-loader", options: "jQuery"},
+                        {loader: "expose-loader", options: "$"}
                     ]
                 }
             ]

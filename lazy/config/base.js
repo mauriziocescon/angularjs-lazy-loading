@@ -6,7 +6,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const {CheckerPlugin} = require("awesome-typescript-loader");
 const StyleLintPlugin = require("stylelint-webpack-plugin");
 
-module.exports = function () {
+module.exports = () => {
     return {
         entry: "./src/index.ts",
 

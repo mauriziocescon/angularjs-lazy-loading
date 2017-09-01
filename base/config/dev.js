@@ -4,7 +4,7 @@ const webpackMerge = require("webpack-merge");
 const CopyPlugin = require("copy-webpack-plugin");
 const commonConfig = require("./base.js");
 
-module.exports = function (env) {
+module.exports = (env) => {
     return webpackMerge(commonConfig(env), {
 
         devtool: "eval-cheap-module-source-map",

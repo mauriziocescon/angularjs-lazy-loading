@@ -12,9 +12,9 @@ module.exports = (env) => {
 
             new webpack.DefinePlugin({
                 "process.env": {
-                    "ENV": JSON.stringify("development")
-                }
-            })
+                    "ENV": JSON.stringify("development"),
+                },
+            }),
         ],
 
         module:{
@@ -25,15 +25,15 @@ module.exports = (env) => {
                 {
                     test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
                     use: [
-                        {loader: "file-loader", options: {name: "[name].[ext]"}}
-                    ]
-                }
-            ]
+                        {loader: "file-loader", options: {name: "[name].[ext]"}},
+                    ],
+                },
+            ],
         },
 
         output: {
             path: path.resolve(__dirname, "../dist"),
-            filename: "lazy.js"
+            filename: "lazy.js",
         },
 
         // When importing a module whose path matches one of the following, just
@@ -42,7 +42,7 @@ module.exports = (env) => {
         // dependencies, which allows browsers to cache those libraries between builds.
         externals: {
             "angular": "angular",
-            "jquery": "$"
-        }
+            "jquery": "$",
+        },
     });
 };

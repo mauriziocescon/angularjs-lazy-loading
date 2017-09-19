@@ -9,7 +9,7 @@ module.exports = (env) => {
         entry: {
             lazy: "./src/index.ts",
             vendor: "./src/test.vendor.ts",
-            test: "./src/test.spec.ts"
+            test: "./src/test.spec.ts",
         },
 
         devtool: "cheap-module-eval-source-map",
@@ -18,9 +18,9 @@ module.exports = (env) => {
 
             new webpack.DefinePlugin({
                 "process.env": {
-                    "ENV": JSON.stringify("test")
-                }
-            })
+                    "ENV": JSON.stringify("test"),
+                },
+            }),
         ],
 
         module:{
@@ -31,15 +31,15 @@ module.exports = (env) => {
                 {
                     test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
                     use: [
-                        {loader: "file-loader", options: {name: "[name].[ext]"}}
-                    ]
-                }
-            ]
+                        {loader: "file-loader", options: {name: "[name].[ext]"}},
+                    ],
+                },
+            ],
         },
 
         output: {
             path: path.resolve(__dirname, "../dist"),
-            filename: "[name].js"
-        }
+            filename: "[name].js",
+        },
     });
 };

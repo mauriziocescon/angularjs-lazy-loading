@@ -16,7 +16,7 @@ module.exports = () => {
 
         resolve: {
             // Add ".ts" and ".tsx" as a resolvable extension.
-            extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js", ".scss", ".html", ".json"]
+            extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js", ".scss", ".html", ".json"],
         },
 
         plugins: [
@@ -29,7 +29,7 @@ module.exports = () => {
                 root: path.resolve(__dirname, "../"),
                 verbose: true,
                 dry: false,
-                exclude: []
+                exclude: [],
             }),
 
             new CheckerPlugin(),
@@ -50,7 +50,7 @@ module.exports = () => {
                         {loader: "style-loader"},
                         {loader: "css-loader", options: {minimize: true, modules: false}},
                         {loader: "resolve-url-loader"},
-                        {loader: "sass-loader", options: {sourceMap: true}}
+                        {loader: "sass-loader", options: {sourceMap: true}},
                     ]
                 },
 
@@ -59,28 +59,28 @@ module.exports = () => {
                     test: /\.html?$/,
                     exclude: /index.html$/,
                     use: [
-                        {loader: "html-loader", options: {exportAsEs6Default: true, minimize: true}}
-                    ]
+                        {loader: "html-loader", options: {exportAsEs6Default: true, minimize: true}},
+                    ],
                 },
 
-                // all files with a ".ts" or ".tsx" extension will be handled by awesome-typescript-loader
+                // all files with ".js .ts .tsx" extensions will be handled by ts-loader
                 {
-                    test: /\.(ts|tsx)?$/,
-                    exclude: /node_modules/,
+                    test: /\.(js|ts|tsx)?$/,
+                    exclude: [/node_modules/, /config/],
                     use: [
-                        {loader: "awesome-typescript-loader", options: {useBabel: true, useCache: true}}
-                    ]
+                        {loader: "awesome-typescript-loader", options: {useBabel: true, useCache: true}},
+                    ],
                 },
 
                 // preprocess + ts-lint
                 {
-                    test: /\.(ts|tsx)?$/,
-                    exclude: /node_modules/,
+                    test: /\.(js|ts|tsx)?$/,
+                    exclude: [/node_modules/, /config/],
                     enforce: "pre",
                     use: [
                         {loader: "tslint-loader", options: {emitErrors: false, formatter: "stylish"}},
-                        {loader: "preprocess-loader", options: {}}
-                    ]
+                        {loader: "preprocess-loader", options: {}},
+                    ],
                 },
 
                 // All output ".js" files will have any sourcemaps re-processed by "source-map-loader".
@@ -88,10 +88,10 @@ module.exports = () => {
                     test: /\.js$/,
                     enforce: "pre",
                     use: [
-                        {loader: "source-map-loader"}
-                    ]
-                }
-            ]
-        }
+                        {loader: "source-map-loader"},
+                    ],
+                },
+            ],
+        },
     };
 };

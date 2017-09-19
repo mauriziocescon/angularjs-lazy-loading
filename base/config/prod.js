@@ -88,8 +88,8 @@ module.exports = (env) => {
                             {loader: "css-loader", options: {minimize: true, modules: false}},
                             {loader: "resolve-url-loader"},
                             {loader: "sass-loader", options: {sourceMap: true}},
-                        ]
-                    })
+                        ],
+                    }),
                 },
 
                 // images loader
@@ -97,9 +97,9 @@ module.exports = (env) => {
                     test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
                     use: [
                         {loader: "file-loader", options: {name: "[name].[hash].[ext]"}},
-                    ]
-                }
-            ]
+                    ],
+                },
+            ],
         },
 
         output: {

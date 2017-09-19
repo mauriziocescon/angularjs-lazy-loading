@@ -1,3 +1,4 @@
+// tslint:disable:object-literal-sort-keys max-line-length no-console
 const webpack = require("webpack");
 const path = require("path");
 const CleanPlugin = require("clean-webpack-plugin");
@@ -11,7 +12,7 @@ module.exports = (env) => {
 
         entry: {
             app: "./src/main.ts",
-            vendor: "./src/vendor.ts"
+            vendor: "./src/vendor.ts",
         },
 
         // Enable sourcemaps for debugging webpack's output.
@@ -19,7 +20,7 @@ module.exports = (env) => {
 
         resolve: {
             // Add ".ts" and ".tsx" as a resolvable extension.
-            extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js", ".scss", ".html", ".json"]
+            extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js", ".scss", ".html", ".json"],
         },
 
         plugins: [
@@ -32,20 +33,20 @@ module.exports = (env) => {
                 root: path.resolve(__dirname, "../"),
                 verbose: true,
                 dry: false,
-                exclude: []
+                exclude: [],
             }),
 
             new CopyPlugin([{
-                from: "src/index.html"
+                from: "src/index.html",
             }, {
-                from: "src/manifest.json"
+                from: "src/manifest.json",
             },  {
-                from: "src/assets/i18n", to: "assets/i18n"
+                from: "src/assets/i18n", to: "assets/i18n",
             }, {
-                from: "src/assets/imgs", to: "assets/imgs"
+                from: "src/assets/imgs", to: "assets/imgs",
             }, {
-                from: "node_modules/angular-i18n/", to: "locales"
-                // from: {glob: "node_modules/angular-i18n/*_+(de|en|it).js"}, to: "locales"
+                from: "node_modules/angular-i18n/", to: "locales",
+                // from: {glob: "node_modules/angular-i18n/*_+(de|en|it).js"}, to: "locales",
             }]),
 
             new CheckerPlugin(),
@@ -53,7 +54,7 @@ module.exports = (env) => {
             // insert file dynamically
             new HtmlWebpackPlugin({
                 template: "src/index.html",
-                inject: "head"
+                inject: "head",
             }),
 
             new webpack.optimize.CommonsChunkPlugin({
@@ -61,10 +62,10 @@ module.exports = (env) => {
                 minChunks: (module) => {
                     // this assumes your vendor imports exist in the node_modules directory
                     return module.context && module.context.indexOf("node_modules") !== -1;
-                }
+                },
             }),
 
-            new StyleLintPlugin()
+            new StyleLintPlugin(),
         ],
 
         module: {
@@ -76,28 +77,28 @@ module.exports = (env) => {
                     test: /\.html?$/,
                     exclude: /index.html$/,
                     use: [
-                        {loader: "html-loader", options: {exportAsEs6Default: true, minimize: true}}
-                    ]
+                        {loader: "html-loader", options: {exportAsEs6Default: true, minimize: true}},
+                    ],
                 },
 
-                // all files with a ".ts" or ".tsx" extension will be handled by ts-loader
+                // all files with ".js .ts .tsx" extensions will be handled by ts-loader
                 {
-                    test: /\.(ts|tsx)?$/,
-                    exclude: /node_modules/,
+                    test: /\.(js|ts|tsx)?$/,
+                    exclude: [/node_modules/, /config/],
                     use: [
-                        {loader: "awesome-typescript-loader", options: {useBabel: true, useCache: true}}
-                    ]
+                        {loader: "awesome-typescript-loader", options: {useBabel: true, useCache: true}},
+                    ],
                 },
 
-                // preprocess + ts-lint
+                // preprocess
                 {
-                    test: /\.(ts|tsx)?$/,
-                    exclude: /node_modules/,
+                    test: /\.(js|ts|tsx)?$/,
+                    exclude: [/node_modules/, /config/],
                     enforce: "pre",
                     use: [
                         {loader: "tslint-loader", options: {emitErrors: false, formatter: "stylish"}},
-                        {loader: "preprocess-loader", options: {MOCK_BACKEND: env.mock}}
-                    ]
+                        {loader: "preprocess-loader", options: {MOCK_BACKEND: env.mock}},
+                    ],
                 },
 
                 // All output ".js" files will have any sourcemaps re-processed by "source-map-loader".
@@ -105,8 +106,8 @@ module.exports = (env) => {
                     test: /\.js$/,
                     enforce: "pre",
                     use: [
-                        {loader: "source-map-loader"}
-                    ]
+                        {loader: "source-map-loader"},
+                    ],
                 },
 
                 // add jQuery to the global object
@@ -114,10 +115,10 @@ module.exports = (env) => {
                     test: require.resolve("jquery"),
                     use: [
                         {loader: "expose-loader", options: "jQuery"},
-                        {loader: "expose-loader", options: "$"}
-                    ]
-                }
-            ]
-        }
+                        {loader: "expose-loader", options: "$"},
+                    ],
+                },
+            ],
+        },
     };
 };

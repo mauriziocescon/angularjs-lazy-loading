@@ -24,7 +24,7 @@ module.exports = (env) => {
             }),
         ],
 
-        module:{
+        module: {
 
             rules: [
 
@@ -38,7 +38,7 @@ module.exports = (env) => {
                         {loader: "css-loader", options: {minimize: true, modules: false}},
                         {loader: "resolve-url-loader"},
                         {loader: "sass-loader", options: {sourceMap: true}},
-                    ]
+                    ],
                 },
 
                 // images loader

@@ -1,10 +1,8 @@
 const webpack = require("webpack");
 const path = require("path");
 const CleanPlugin = require("clean-webpack-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const {CheckerPlugin} = require("awesome-typescript-loader");
 const StyleLintPlugin = require("stylelint-webpack-plugin");
+const {CheckerPlugin} = require("awesome-typescript-loader");
 
 module.exports = () => {
     return {

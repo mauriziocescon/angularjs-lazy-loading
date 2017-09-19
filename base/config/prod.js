@@ -1,3 +1,4 @@
+// tslint:disable:object-literal-sort-keys max-line-length no-console
 const webpack = require("webpack");
 const path = require("path");
 const webpackMerge = require("webpack-merge");
@@ -16,13 +17,13 @@ module.exports = (env) => {
 
             new webpack.DefinePlugin({
                 "process.env": {
-                    "ENV": JSON.stringify("production")
-                }
+                    "ENV": JSON.stringify("production"),
+                },
             }),
 
             // copy lazy
             new CopyPlugin([{
-                from: "../lazy/dist"
+                from: "../lazy/dist",
             }]),
 
             new ExtractTextPlugin("[name].[hash].css"),
@@ -31,7 +32,7 @@ module.exports = (env) => {
             // to their corresponding output file so that tools can pick it up without
             // having to parse `index.html`.
             new ManifestPlugin({
-                fileName: "asset-manifest.json"
+                fileName: "asset-manifest.json",
             }),
             // Generate a service worker script that will precache, and keep up to date,
             // the HTML & assets that are part of the Webpack build.
@@ -61,14 +62,14 @@ module.exports = (env) => {
                 // https://github.com/facebookincubator/create-react-app/issues/2237#issuecomment-302693219
                 navigateFallbackWhitelist: [/^(?!\/__).*/],
                 // Don't precache sourcemaps (they're large) and build asset manifest:
-                staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/]
+                staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
             }),
 
             new webpack.optimize.UglifyJsPlugin({
                 mangle: {
-                    keep_fnames: true
+                    keep_fnames: true,
                 },
-                sourceMap: true
+                sourceMap: true,
             }),
         ],
 
@@ -86,7 +87,7 @@ module.exports = (env) => {
                         use: [
                             {loader: "css-loader", options: {minimize: true, modules: false}},
                             {loader: "resolve-url-loader"},
-                            {loader: "sass-loader", options: {sourceMap: true}}
+                            {loader: "sass-loader", options: {sourceMap: true}},
                         ]
                     })
                 },
@@ -95,7 +96,7 @@ module.exports = (env) => {
                 {
                     test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
                     use: [
-                        {loader: "file-loader", options: {name: "[name].[hash].[ext]"}}
+                        {loader: "file-loader", options: {name: "[name].[hash].[ext]"}},
                     ]
                 }
             ]
@@ -103,7 +104,7 @@ module.exports = (env) => {
 
         output: {
             path: path.resolve(__dirname, "../dist"),
-            filename: "[name].[hash].js"
-        }
+            filename: "[name].[hash].js",
+        },
     });
 };

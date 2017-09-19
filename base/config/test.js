@@ -1,3 +1,4 @@
+// tslint:disable:object-literal-sort-keys max-line-length no-console
 const webpack = require("webpack");
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
@@ -10,7 +11,7 @@ module.exports = (env) => {
         entry: {
             app: "./src/main.ts",
             vendor: "./src/vendor.ts",
-            test: "./src/test.spec.ts"
+            test: "./src/test.spec.ts",
         },
 
         devtool: "cheap-module-eval-source-map",
@@ -19,14 +20,14 @@ module.exports = (env) => {
 
             // copy lazy
             new CopyPlugin([{
-                from: "../lazy/dist"
+                from: "../lazy/dist",
             }]),
 
             new webpack.DefinePlugin({
                 "process.env": {
-                    "ENV": JSON.stringify("test")
-                }
-            })
+                    "ENV": JSON.stringify("test"),
+                },
+            }),
         ],
 
         module:{
@@ -42,7 +43,7 @@ module.exports = (env) => {
                         {loader: "style-loader"},
                         {loader: "css-loader", options: {minimize: true, modules: false}},
                         {loader: "resolve-url-loader"},
-                        {loader: "sass-loader", options: {sourceMap: true}}
+                        {loader: "sass-loader", options: {sourceMap: true}},
                     ]
                 },
 
@@ -50,7 +51,7 @@ module.exports = (env) => {
                 {
                     test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
                     use: [
-                        {loader: "file-loader", options: {name: "[name].[ext]"}}
+                        {loader: "file-loader", options: {name: "[name].[ext]"}},
                     ]
                 }
             ]
@@ -58,7 +59,7 @@ module.exports = (env) => {
 
         output: {
             path: path.resolve(__dirname, "../dist"),
-            filename: "[name].js"
-        }
+            filename: "[name].js",
+        },
     });
 };

@@ -84,7 +84,7 @@ module.exports = (env) => {
                 // all files with ".js .ts .tsx" extensions will be handled by ts-loader
                 {
                     test: /\.(js|ts|tsx)?$/,
-                    exclude: [/node_modules/, /config/],
+                    exclude: [/node_modules/],
                     use: [
                         {loader: "awesome-typescript-loader", options: {useBabel: true, useCache: true}},
                     ],
@@ -93,7 +93,7 @@ module.exports = (env) => {
                 // preprocess
                 {
                     test: /\.(js|ts|tsx)?$/,
-                    exclude: [/node_modules/, /config/],
+                    exclude: [/node_modules/],
                     enforce: "pre",
                     use: [
                         {loader: "tslint-loader", options: {emitErrors: false, formatter: "stylish"}},

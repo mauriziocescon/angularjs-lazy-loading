@@ -8,6 +8,7 @@ const {CheckerPlugin} = require("awesome-typescript-loader");
 
 module.exports = (env) => {
     return {
+
         entry: {
             app: "./src/main.ts",
             vendor: "./src/vendor.ts"

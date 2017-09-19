@@ -5,6 +5,7 @@ const commonConfig = require("./base.js");
 
 module.exports = (env) => {
     return webpackMerge(commonConfig(env), {
+
         entry: {
             lazy: "./src/index.ts",
             vendor: "./src/test.vendor.ts",

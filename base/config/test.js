@@ -6,6 +6,7 @@ const commonConfig = require("./base.js");
 
 module.exports = (env) => {
     return webpackMerge(commonConfig(env), {
+
         entry: {
             app: "./src/main.ts",
             vendor: "./src/vendor.ts",

@@ -8,6 +8,7 @@ const StyleLintPlugin = require("stylelint-webpack-plugin");
 
 module.exports = () => {
     return {
+
         entry: "./src/index.ts",
 
         // Enable sourcemaps for debugging webpack's output.

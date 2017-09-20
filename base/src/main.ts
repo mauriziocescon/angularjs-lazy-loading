@@ -13,14 +13,17 @@ class Main {
         // tslint:disable:no-consecutive-blank-lines
 
         const config: ng.IAngularBootstrapConfig = {strictDi: true};
+        const element = document.querySelector(app);
 
-        // @if MOCK_BACKEND = "false"
-        angular.bootstrap(document.querySelector(app), [app], config);
-        // @endif
+        if (element) {
+            // @if MOCK_BACKEND = "false"
+            angular.bootstrap(element, [app], config);
+            // @endif
 
-        // @if MOCK_BACKEND = "true"
-        angular.bootstrap(document.querySelector(app), [appDev], config);
-        // @endif
+            // @if MOCK_BACKEND = "true"
+            angular.bootstrap(element, [appDev], config);
+            // @endif
+        }
 
         // tslint:enable:no-consecutive-blank-lines
     }

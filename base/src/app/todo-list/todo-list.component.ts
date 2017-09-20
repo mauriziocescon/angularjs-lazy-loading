@@ -15,7 +15,7 @@ import Todo from "./todo/todo.model";
 
 export class TodoListController {
     public static $inject = ["$ocLazyLoad", "$translate", "UIUtilitiesService", "UtilitiesService", "TodoListService"];
-    public todos: Todo[];
+    public todos: Todo[] | undefined;
 
     protected ocLazyLoad: oc.ILazyLoad;
     protected translate: ng.translate.ITranslateService;
@@ -53,7 +53,7 @@ export class TodoListController {
         return this.isLoadingData === false && this.hasNoData === false && this.shouldRetry === false;
     }
 
-    public get dataSource(): Todo[] {
+    public get dataSource(): Todo[] | undefined {
         return this.todos;
     }
 

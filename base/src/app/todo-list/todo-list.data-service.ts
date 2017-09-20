@@ -12,7 +12,7 @@ import {
 import Todo from "./todo/todo.model";
 
 export interface ITodoListService {
-    getTodos(): ng.IPromise<ResponseWs<Todo[]>>;
+    getTodos(): ng.IPromise<ResponseWs<Todo[] | undefined>>;
     cancelOngoingRequests(): void;
 }
 
@@ -44,7 +44,7 @@ export default class TodoListService implements ITodoListService {
         return {};
     }
 
-    public getTodos(): ng.IPromise<ResponseWs<Todo[]>> {
+    public getTodos(): ng.IPromise<ResponseWs<Todo[] | undefined>> {
 
         // reset request
         this.getUserTodosRequest.reset(this.utilitiesService);

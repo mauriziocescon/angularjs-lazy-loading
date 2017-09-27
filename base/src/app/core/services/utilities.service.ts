@@ -59,13 +59,6 @@ export interface IUtilitiesService {
      */
     isDefinedAndNotEmpty(text: string): boolean;
     /**
-     * Java style format
-     *
-     * @param text accepts %[argument_index$][flags][width][.precision]conversion
-     * @param param
-     */
-    formatString(text: string, ...params: Array<string | number>): string;
-    /**
      * Get today
      */
     getToday(): Date;
@@ -212,17 +205,6 @@ export class UtilitiesService implements IUtilitiesService {
         }
 
         return (text as string).replace(/^\s*/, "").replace(/\s*$/, "").length > 0;
-    }
-
-    public formatString(text: string, ...params: Array<string | number>): string {
-        if (this.isDefinedAndNotEmpty(text) === false || params === undefined || params.length === 0) {
-            return text;
-        } else {
-            // "arguments": https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/arguments
-            // format method from format4js library
-            const format = "format";
-            return String[format].apply(this, arguments);
-        }
     }
 
     public getToday(): Date {

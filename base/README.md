@@ -23,7 +23,7 @@ Base application
 
 1. [Angular 1.x](https://angularjs.org/)
 
-2. [Typescript](https://www.typescriptlang.org/)
+2. [Typescript](https://www.typescriptlang.org/) (with ``--strict true``)
 
 3. [Angular Material](https://material.angularjs.org/latest/) 
 

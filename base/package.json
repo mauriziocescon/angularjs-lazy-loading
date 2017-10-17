@@ -41,7 +41,7 @@
     "@types/angular-ui-router": "1.1.40",
     "@types/jasmine": "2.6.0",
     "@types/jquery": "3.2.15",
-    "@types/node": "8.0.31",
+    "@types/node": "8.0.44",
     "@types/oclazyload": "0.0.32",
     "@types/stacktrace-js": "0.0.32",
     "awesome-typescript-loader": "3.2.3",

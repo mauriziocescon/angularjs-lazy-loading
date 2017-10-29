@@ -1,5 +1,6 @@
 {
   "name": "lazy",
+  "version": "1.0.0",
   "scripts": {
     "postinstall": "webpack --profile --profile --colors --env.name=prod",
     "build": "webpack --profile --colors --env.name=prod",

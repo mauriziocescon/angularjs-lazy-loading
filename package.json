@@ -10,7 +10,7 @@
     "npm": ">=3.10.10"
   },
   "scripts": {
-    "postinstall": "cd lazy && npm install && cd ../base && npm install",
+    "lerna": "lerna bootstrap",
     "build": "npm run build --prefix lazy && npm run build --prefix base",
     "build-mock": "npm run build --prefix lazy && npm run build-mock --prefix base",
     "serve": "npm run dev --prefix lazy && npm run serve --prefix base",

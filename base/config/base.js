@@ -45,8 +45,7 @@ module.exports = (env) => {
             }, {
                 from: "src/assets/imgs", to: "assets/imgs",
             }, {
-                from: "node_modules/angular-i18n/", to: "locales",
-                // from: {glob: "node_modules/angular-i18n/*_+(de|en|it).js"}, to: "locales",
+                from: {glob: "node_modules/angular-i18n/**_+(de|en|it).js"}, to: "locales",
             }]),
 
             new CheckerPlugin(),

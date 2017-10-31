@@ -11,8 +11,8 @@ module.exports = (env) => {
     return {
 
         entry: {
-            app: "./src/main.ts",
             vendor: "./src/vendor.ts",
+            app: "./src/main.ts",
         },
 
         // Enable sourcemaps for debugging webpack's output.

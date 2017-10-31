@@ -10,6 +10,9 @@
     "test": "karma start karma.conf.js"
   },
   "dependencies": {
+
+    "lazy": "1.0.0",
+
     "angular": "1.6.6",
     "angular-animate": "1.6.6",
     "angular-aria": "1.6.6",

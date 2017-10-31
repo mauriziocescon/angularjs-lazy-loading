@@ -4,7 +4,9 @@
   "main": "dist/lazy.js",
   "scripts": {
     "build": "webpack --profile --colors --env.name=prod",
-    "dev": "webpack --profile --colors --env.name=dev",
+    "build-mock": "webpack --profile --colors --env.name=prod",
+    "serve": "webpack --profile --colors --env.name=dev",
+    "serve-mock": "webpack --profile --colors --env.name=dev",
     "pretest": "webpack --profile --colors --env.name=test",
     "test": "karma start karma.conf.js"
   },

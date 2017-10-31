@@ -10,14 +10,12 @@
     "npm": ">=5.5.1"
   },
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "lbuild": "lerna run build",
-
-    "build": "npm run build --prefix lazy && npm run build --prefix base",
-    "build-mock": "npm run build --prefix lazy && npm run build-mock --prefix base",
-    "serve": "npm run dev --prefix lazy && npm run serve --prefix base",
-    "serve-mock": "npm run dev --prefix lazy && npm run serve-mock --prefix base",
-    "test": "npm run test --prefix lazy && npm run test --prefix base"
+    "postinstall": "lerna bootstrap",
+    "build": "lerna run build",
+    "build-mock": "lerna run build-mock",
+    "serve": "lerna run serve",
+    "serve-mock": "lerna run serve-mock",
+    "test": "lerna run test"
   },
   "repository": {
     "type": "git",

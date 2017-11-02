@@ -4,11 +4,11 @@
   "main": "dist/lazy.js",
   "typings": "interfaces/index.d.ts",
   "scripts": {
-    "build": "webpack --profile --colors --env.name=prod",
-    "build-mock": "webpack --profile --colors --env.name=prod",
-    "serve": "webpack --profile --colors --env.name=dev",
-    "serve-mock": "webpack --profile --colors --env.name=dev",
-    "pretest": "webpack --profile --colors --env.name=test",
+    "build": "webpack --progress --profile --colors --env.name=prod",
+    "build-mock": "webpack --progress --profile --colors --env.name=prod",
+    "serve": "webpack --progress --profile --colors --env.name=dev",
+    "serve-mock": "webpack --progress --profile --colors --env.name=dev",
+    "pretest": "webpack --progress --profile --colors --env.name=test",
     "test": "karma start karma.conf.js"
   },
   "dependencies": {

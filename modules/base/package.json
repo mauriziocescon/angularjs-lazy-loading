@@ -2,17 +2,14 @@
   "name": "base",
   "version": "1.0.0",
   "scripts": {
-    "build": "webpack --profile --colors --env.name=prod --env.mock=false",
-    "build-mock": "webpack --profile --colors --env.name=prod --env.mock=true",
-    "serve": "webpack-dev-server --d --profile --colors --env.name=dev --env.mock=false",
-    "serve-mock": "webpack-dev-server --d --profile --colors --env.name=dev --env.mock=true",
-    "pretest": "webpack --profile --colors --env.name=test --env.mock=false",
+    "build": "webpack --progress --profile --colors --env.name=prod --env.mock=false",
+    "build-mock": "webpack --progress --profile --colors --env.name=prod --env.mock=true",
+    "serve": "webpack-dev-server --d --progress --profile --colors --env.name=dev --env.mock=false",
+    "serve-mock": "webpack-dev-server --d --progress --profile --colors --env.name=dev --env.mock=true",
+    "pretest": "webpack --progress --profile --colors --env.name=test --env.mock=false",
     "test": "karma start karma.conf.js"
   },
   "dependencies": {
-
-    "lazy": "1.0.0",
-
     "angular": "1.6.6",
     "angular-animate": "1.6.6",
     "angular-aria": "1.6.6",
@@ -31,7 +28,9 @@
     "jquery": "3.2.1",
     "oclazyload": "1.1.0",
     "roboto-fontface": "0.8.0",
-    "stacktrace-js": "2.0.0"
+    "stacktrace-js": "2.0.0",
+
+    "lazy": "1.0.0"
   },
   "devDependencies": {
     "@types/angular": "1.6.36",

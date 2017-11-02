@@ -11,10 +11,10 @@
   },
   "scripts": {
     "postinstall": "lerna bootstrap",
-    "build": "lerna run build",
-    "build-mock": "lerna run build-mock",
-    "serve": "lerna run serve",
-    "serve-mock": "lerna run serve-mock",
+    "build": "npm run build --prefix modules/base",
+    "build-mock": "npm run build-mock --prefix modules/base",
+    "serve": "npm run serve --prefix modules/base",
+    "serve-mock": "npm run serve-mock --prefix modules/base",
     "test": "lerna run test"
   },
   "repository": {

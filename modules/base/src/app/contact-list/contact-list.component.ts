@@ -6,7 +6,7 @@ import {
     IUtilitiesService,
 } from "../app.module";
 
-import { Contact } from "../../../../lazy/src/contact/contact.module";
+import { Contact } from "lazy";
 import { IContactListService } from "./contact-list.service";
 
 export class ContactListController {

@@ -1,4 +1,4 @@
-import { Contact } from "lazy";
+import { Contact } from "../../../../lazy/src/contact/contact.module";
 
 export interface IContactListService {
     addContact(): void;

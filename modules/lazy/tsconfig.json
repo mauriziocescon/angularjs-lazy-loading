@@ -3,6 +3,8 @@
     "allowJs": false,
     "checkJs": false,
     "diagnostics": true,
+    "declaration": true,
+    "declarationDir": "interfaces",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "module": "CommonJS",

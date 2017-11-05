@@ -41,6 +41,8 @@ module.exports = (env) => {
         output: {
             path: path.resolve(__dirname, "../dist"),
             filename: "lazy.js",
+            library: "Lazy",
+            libraryTarget: "umd",
         },
 
         // When importing a module whose path matches one of the following, just

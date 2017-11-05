@@ -13,6 +13,7 @@ module.exports = (env) => {
         entry: {
             vendor: "./src/vendor.ts",
             app: "./src/main.ts",
+            lazy: "./src/lazy.ts",
         },
 
         // Enable sourcemaps for debugging webpack's output.

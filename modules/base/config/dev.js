@@ -2,7 +2,6 @@
 const webpack = require("webpack");
 const path = require("path");
 const webpackMerge = require("webpack-merge");
-const CopyPlugin = require("copy-webpack-plugin");
 const commonConfig = require("./base.js");
 
 module.exports = (env) => {
@@ -11,11 +10,6 @@ module.exports = (env) => {
         devtool: "eval-cheap-module-source-map",
 
         plugins: [
-
-            // copy lazy
-            new CopyPlugin([{
-                from: "../lazy/dist",
-            }]),
 
             new webpack.DefinePlugin({
                 "process.env": {

@@ -1,8 +1,7 @@
 {
   "name": "lazy",
   "version": "1.0.0",
-  "main": "dist/lazy.js",
-  "typings": "interfaces/index.d.ts",
+  "main": "src/index.ts",
   "scripts": {
     "build": "webpack --progress --profile --colors --env.name=prod",
     "dev": "webpack --progress --profile --colors --env.name=dev",

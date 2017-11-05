@@ -2,7 +2,6 @@
 const webpack = require("webpack");
 const path = require("path");
 const webpackMerge = require("webpack-merge");
-const CopyPlugin = require("copy-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const ManifestPlugin = require("webpack-manifest-plugin");
 const SWPrecacheWebpackPlugin = require("sw-precache-webpack-plugin");
@@ -20,11 +19,6 @@ module.exports = (env) => {
                     "ENV": JSON.stringify("production"),
                 },
             }),
-
-            // copy lazy
-            new CopyPlugin([{
-                from: "../lazy/dist",
-            }]),
 
             new ExtractTextPlugin("[name].[hash].css"),
 

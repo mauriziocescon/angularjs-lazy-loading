@@ -1,12 +1,14 @@
 import template from "./contact-list.component.html";
 import "./contact-list.component.scss";
 
+import { Contact } from "lazy";
+
 import {
     IUIUtilitiesService,
     IUtilitiesService,
 } from "../app.module";
+import { Logger } from "../shared/shared.module";
 
-import { Contact } from "lazy";
 import { IContactListService } from "./contact-list.service";
 
 export class ContactListController {
@@ -63,17 +65,21 @@ export class ContactListController {
     public loadModule(): void {
         this.busy = true;
 
-        this.ocLazyLoad.load(["lazy.js"]).then(() => {
-            this.busy = false;
-            this.downloadSucceed = true;
-            this.addContact();
-            this.translate(["CONTACT_LIST.MODULE_LOADED"]).then((translations: any) => {
-                this.uiUtilitiesService.toast(translations["CONTACT_LIST.MODULE_LOADED"]);
+        this.ocLazyLoad.load(["lazy.js"])
+            .then(() => {
+                this.busy = false;
+                this.downloadSucceed = true;
+                this.addContact();
+                this.translate(["CONTACT_LIST.MODULE_LOADED"])
+                    .then((translations: any) => {
+                        this.uiUtilitiesService.toast(translations["CONTACT_LIST.MODULE_LOADED"]);
+                    });
+            })
+            .catch((e) => {
+                this.busy = false;
+                Logger.warn(e.toString());
+                this.uiUtilitiesService.toast(e.toString());
             });
-        }, (e) => {
-            this.busy = false;
-            this.uiUtilitiesService.toast(e.toString());
-        });
     }
 
     public addContact(): void {

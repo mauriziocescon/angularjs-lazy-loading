@@ -1,5 +1,6 @@
 // tslint:disable:object-literal-sort-keys max-line-length no-console
 const webpack = require("webpack");
+const CopyPlugin = require("copy-webpack-plugin");
 const path = require("path");
 const webpackMerge = require("webpack-merge");
 const commonConfig = require("./base.js");
@@ -16,6 +17,11 @@ module.exports = (env) => {
                     "ENV": JSON.stringify("development"),
                 },
             }),
+
+            // copy lazy
+            new CopyPlugin([{
+                from: "../lazy/dist",
+            }]),
         ],
 
         module: {

@@ -92,7 +92,7 @@ module.exports = (env) => {
 
                 // preprocess
                 {
-                    test: /\.(js|ts|tsx)?$/,
+                    test: /\.(ts|tsx)?$/,
                     exclude: [/node_modules/],
                     enforce: "pre",
                     use: [

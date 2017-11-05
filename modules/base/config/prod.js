@@ -2,6 +2,7 @@
 const webpack = require("webpack");
 const path = require("path");
 const webpackMerge = require("webpack-merge");
+const CopyPlugin = require("copy-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const ManifestPlugin = require("webpack-manifest-plugin");
 const SWPrecacheWebpackPlugin = require("sw-precache-webpack-plugin");
@@ -20,7 +21,12 @@ module.exports = (env) => {
                 },
             }),
 
-            new ExtractTextPlugin("[name].[hash].css"),
+            // copy lazy
+            new CopyPlugin([{
+                from: "../lazy/dist",
+            }]),
+
+            new ExtractTextPlugin("[name].css"),
 
             // Generate a manifest file which contains a mapping of all asset filenames
             // to their corresponding output file so that tools can pick it up without
@@ -90,7 +96,7 @@ module.exports = (env) => {
                 {
                     test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
                     use: [
-                        {loader: "file-loader", options: {name: "[name].[hash].[ext]"}},
+                        {loader: "file-loader", options: {name: "[name].[ext]"}},
                     ],
                 },
             ],
@@ -98,7 +104,7 @@ module.exports = (env) => {
 
         output: {
             path: path.resolve(__dirname, "../dist"),
-            filename: "[name].[hash].js",
+            filename: "[name].js",
         },
     });
 };

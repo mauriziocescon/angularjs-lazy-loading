@@ -1,9 +1,9 @@
 // import * as angular from "angular";
 //
-// import { ContactListController } from "./contact-list.component";
+// import { ContactLoaderController } from "./contact-loader.component";
 //
 // // Addition of angular-mocks and jasmine references is done on the gulpfile
-// describe("ContactListController", () => {
+// describe("ContactLoaderController", () => {
 //     let rootScope: ng.IRootScopeService;
 //     let httpBackend: ng.IHttpBackendService;
 //     let q: ng.IQService;
@@ -41,19 +41,19 @@
 //     });
 //
 //     it("controller.contacts is not undefined after $onInit", () => {
-//         const controller = componentController("contactList", {}, null) as ContactListController;
+//         const controller = componentController("contactList", {}, null) as ContactLoaderController;
 //         controller.$onInit();
 //         expect(controller.contacts).not.toBeUndefined("controller.contacts is undefined...");
 //     });
 //
 //     it("controller.contacts is not null after $onInit", () => {
-//         const controller = componentController("contactList", {}, null) as ContactListController;
+//         const controller = componentController("contactList", {}, null) as ContactLoaderController;
 //         controller.$onInit();
 //         expect(controller.contacts).not.toBeNull("controller.contacts is null...");
 //     });
 //
 //     it("controller.isLoadingData is false after $onInit", () => {
-//         const controller = componentController("contactList", {}, null) as ContactListController;
+//         const controller = componentController("contactList", {}, null) as ContactLoaderController;
 //         spyOn(ocLazyLoad, "load").and.callFake(() => {
 //             const deferred = q.defer();
 //             deferred.resolve();
@@ -65,7 +65,7 @@
 //     });
 //
 //     it("controller.shouldRetry is false after $onInit", () => {
-//         const controller = componentController("contactList", {}, null) as ContactListController;
+//         const controller = componentController("contactList", {}, null) as ContactLoaderController;
 //         spyOn(ocLazyLoad, "load").and.callFake(() => {
 //             const deferred = q.defer();
 //             deferred.resolve();
@@ -77,7 +77,7 @@
 //     });
 //
 //     it("controller.showData is false after $onInit", () => {
-//         const controller = componentController("contactList", {}, null) as ContactListController;
+//         const controller = componentController("contactList", {}, null) as ContactLoaderController;
 //         spyOn(ocLazyLoad, "load").and.callFake(() => {
 //             const deferred = q.defer();
 //             deferred.resolve();

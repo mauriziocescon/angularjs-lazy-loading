@@ -1,5 +1,5 @@
-import template from "./contact-list.component.html";
-import "./contact-list.component.scss";
+import template from "./contact-loader.component.html";
+import "./contact-loader.component.scss";
 
 import {
     IUIUtilitiesService,
@@ -7,7 +7,7 @@ import {
 } from "../app.module";
 import { Logger } from "../shared/shared.module";
 
-export class ContactListController {
+export class ContactLoaderController {
     public static $inject = ["$ocLazyLoad", "$translate", "UIUtilitiesService", "UtilitiesService"];
 
     protected ocLazyLoad: oc.ILazyLoad;
@@ -40,6 +40,10 @@ export class ContactListController {
         return this.isLoadingData === false && this.shouldRetry === false;
     }
 
+    public get showDownload(): boolean {
+        return this.shouldRetry || !this.showData;
+    }
+
     public $onInit(): void {
         this.downloadSucceed = false;
         this.loadModule();
@@ -69,9 +73,9 @@ export class ContactListController {
     }
 }
 
-export const ContactListComponent: ng.IComponentOptions = {
+export const ContactLoaderComponent: ng.IComponentOptions = {
     bindings: {},
-    controller: ContactListController,
+    controller: ContactLoaderController,
     template: () => {
         return template;
     },

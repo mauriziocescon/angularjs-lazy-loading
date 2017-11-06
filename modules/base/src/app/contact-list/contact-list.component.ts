@@ -1,25 +1,19 @@
 import template from "./contact-list.component.html";
 import "./contact-list.component.scss";
 
-import { Contact } from "lazy";
-
 import {
     IUIUtilitiesService,
     IUtilitiesService,
 } from "../app.module";
 import { Logger } from "../shared/shared.module";
 
-import { IContactListService } from "./contact-list.service";
-
 export class ContactListController {
-    public static $inject = ["$ocLazyLoad", "$translate", "UIUtilitiesService", "UtilitiesService", "ContactListService"];
-    public contacts: Contact[];
+    public static $inject = ["$ocLazyLoad", "$translate", "UIUtilitiesService", "UtilitiesService"];
 
     protected ocLazyLoad: oc.ILazyLoad;
     protected translate: ng.translate.ITranslateService;
     protected uiUtilitiesService: IUIUtilitiesService;
     protected utilitiesService: IUtilitiesService;
-    protected contactListService: IContactListService;
 
     protected busy: boolean;
     protected downloadSucceed: boolean;
@@ -27,13 +21,11 @@ export class ContactListController {
     constructor($ocLazyLoad: oc.ILazyLoad,
                 $translate: ng.translate.ITranslateService,
                 UIUtilitiesService: IUIUtilitiesService,
-                UtilitiesService: IUtilitiesService,
-                ContactListService: IContactListService) {
+                UtilitiesService: IUtilitiesService) {
         this.ocLazyLoad = $ocLazyLoad;
         this.translate = $translate;
         this.uiUtilitiesService = UIUtilitiesService;
         this.utilitiesService = UtilitiesService;
-        this.contactListService = ContactListService;
     }
 
     public get isLoadingData(): boolean {
@@ -48,14 +40,9 @@ export class ContactListController {
         return this.isLoadingData === false && this.shouldRetry === false;
     }
 
-    public get dataSource(): Contact[] {
-        return this.contacts;
-    }
-
     public $onInit(): void {
         this.downloadSucceed = false;
         this.loadModule();
-        this.contacts = this.contactListService.getContacts();
     }
 
     public $onDestroy(): void {
@@ -69,7 +56,6 @@ export class ContactListController {
             .then(() => {
                 this.busy = false;
                 this.downloadSucceed = true;
-                this.addContact();
                 this.translate(["CONTACT_LIST.MODULE_LOADED"])
                     .then((translations: any) => {
                         this.uiUtilitiesService.toast(translations["CONTACT_LIST.MODULE_LOADED"]);
@@ -80,10 +66,6 @@ export class ContactListController {
                 Logger.warn(e.toString());
                 this.uiUtilitiesService.toast(e.toString());
             });
-    }
-
-    public addContact(): void {
-        this.contactListService.addContact();
     }
 }
 

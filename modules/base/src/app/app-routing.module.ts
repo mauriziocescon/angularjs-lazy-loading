@@ -8,7 +8,7 @@ export const routingConfigFunc = ($locationProvider: ng.ILocationProvider,
     });
     $stateProvider.state({
         name: "contact-list",
-        template: "<contact-list></contact-list>",
+        template: "<contact-list-container></contact-list-container>",
         url: "/contact-list",
     });
     $urlRouterProvider.otherwise("/todo-list");

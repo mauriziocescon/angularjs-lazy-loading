@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@types/angular": "1.6.39",
-    "@types/angular-animate": "1.5.8",
+    "@types/angular-animate": "1.5.9",
     "@types/angular-dynamic-locale": "0.1.33",
     "@types/angular-material": "1.1.55",
     "@types/angular-mocks": "1.5.11",

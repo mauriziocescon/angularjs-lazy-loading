@@ -1,6 +1,9 @@
 {
   "lerna": "2.4.0",
-  "packages": ["modules/*"],
+  "packages": [
+    "modules/*",
+    "modules/interfaces/*"
+  ],
   "command": {
     "init": {
       "exact": true

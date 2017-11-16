@@ -1,0 +1,234 @@
+{
+  "users": [
+    {
+      "id": 0,
+      "name": "Mr. Ransom Rice",
+      "username": "Leon77",
+      "email": "Carson_Breitenberg11@yahoo.com",
+      "address": {
+        "street": "Casper Crescent",
+        "suite": "Trace",
+        "city": "South Terrence",
+        "zipcode": "28875",
+        "geo": {
+          "lat": "-67.9954",
+          "lng": "-42.3531"
+        }
+      },
+      "phone": "(392) 991-0050 x9603",
+      "website": "http://brady.biz",
+      "company": {
+        "name": "Brakus - Hammes",
+        "catchPhrase": "intermediate",
+        "bs": "experiences"
+      }
+    },
+    {
+      "id": 1,
+      "name": "Alexis Christiansen",
+      "username": "Stephen50",
+      "email": "Jaleel_McDermott42@yahoo.com",
+      "address": {
+        "street": "Dagmar Motorway",
+        "suite": "Island",
+        "city": "Kayleeborough",
+        "zipcode": "61070-4757",
+        "geo": {
+          "lat": "-0.1232",
+          "lng": "-139.3365"
+        }
+      },
+      "phone": "(275) 263-3896",
+      "website": "https://elva.com",
+      "company": {
+        "name": "Dach - Goldner",
+        "catchPhrase": "clear-thinking",
+        "bs": "e-commerce"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Alayna Zieme",
+      "username": "Nathaniel74",
+      "email": "Rhiannon.Casper@gmail.com",
+      "address": {
+        "street": "Chandler Freeway",
+        "suite": "Bypass",
+        "city": "Scottiemouth",
+        "zipcode": "10235",
+        "geo": {
+          "lat": "22.1475",
+          "lng": "-102.1845"
+        }
+      },
+      "phone": "590-451-1703 x4702",
+      "website": "http://amparo.biz",
+      "company": {
+        "name": "Bednar - Davis",
+        "catchPhrase": "intangible",
+        "bs": "communities"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Mrs. Brock Schumm",
+      "username": "Woodrow50",
+      "email": "Julianne.Moore26@hotmail.com",
+      "address": {
+        "street": "Macejkovic Garden",
+        "suite": "Burgs",
+        "city": "New Minervaport",
+        "zipcode": "97524",
+        "geo": {
+          "lat": "-22.3153",
+          "lng": "109.2080"
+        }
+      },
+      "phone": "1-657-682-1587 x071",
+      "website": "https://luigi.biz",
+      "company": {
+        "name": "Miller, Hodkiewicz and Stoltenberg",
+        "catchPhrase": "user-facing",
+        "bs": "partnerships"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Samantha Ortiz",
+      "username": "Nora.West90",
+      "email": "Ford80@hotmail.com",
+      "address": {
+        "street": "Nelson Key",
+        "suite": "Mountain",
+        "city": "Schadenshire",
+        "zipcode": "50282-5442",
+        "geo": {
+          "lat": "-27.7603",
+          "lng": "3.7935"
+        }
+      },
+      "phone": "681.695.3891 x824",
+      "website": "https://logan.com",
+      "company": {
+        "name": "Hettinger - Bechtelar",
+        "catchPhrase": "responsive",
+        "bs": "ROI"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Helen Ullrich Jr.",
+      "username": "Anya.Reilly",
+      "email": "Filiberto.Gutkowski@yahoo.com",
+      "address": {
+        "street": "Hilll Tunnel",
+        "suite": "Inlet",
+        "city": "Lake Henriettechester",
+        "zipcode": "23309",
+        "geo": {
+          "lat": "-77.5122",
+          "lng": "165.8610"
+        }
+      },
+      "phone": "(374) 110-9289 x6106",
+      "website": "http://muhammad.info",
+      "company": {
+        "name": "Mayert, Zulauf and Moore",
+        "catchPhrase": "coherent",
+        "bs": "infomediaries"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Angie McLaughlin",
+      "username": "Rosalinda.McLaughlin41",
+      "email": "Otho_Kerluke@yahoo.com",
+      "address": {
+        "street": "Maribel Isle",
+        "suite": "Court",
+        "city": "North Fay",
+        "zipcode": "76955",
+        "geo": {
+          "lat": "-33.0912",
+          "lng": "65.6377"
+        }
+      },
+      "phone": "(152) 601-0746 x23289",
+      "website": "http://ludwig.com",
+      "company": {
+        "name": "Jenkins - Jacobs",
+        "catchPhrase": "empowering",
+        "bs": "relationships"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Lilliana Walter",
+      "username": "Monserrate60",
+      "email": "Rhiannon_Dibbert@hotmail.com",
+      "address": {
+        "street": "Constantin Rue",
+        "suite": "Estates",
+        "city": "Andersonshire",
+        "zipcode": "80525",
+        "geo": {
+          "lat": "-41.7422",
+          "lng": "160.1315"
+        }
+      },
+      "phone": "352.722.3303 x3495",
+      "website": "https://eden.biz",
+      "company": {
+        "name": "McKenzie Group",
+        "catchPhrase": "incremental",
+        "bs": "models"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Sammy Grady",
+      "username": "Brando2",
+      "email": "Lazaro.Auer@hotmail.com",
+      "address": {
+        "street": "Nathaniel Plaza",
+        "suite": "Branch",
+        "city": "Gaetanochester",
+        "zipcode": "37267-5144",
+        "geo": {
+          "lat": "-50.9425",
+          "lng": "-76.5578"
+        }
+      },
+      "phone": "192-714-6492",
+      "website": "http://mary.biz",
+      "company": {
+        "name": "Eichmann, Bednar and Thiel",
+        "catchPhrase": "optimal",
+        "bs": "markets"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Patrick Quitzon",
+      "username": "Luigi.Daugherty",
+      "email": "Aiyana_Veum28@hotmail.com",
+      "address": {
+        "street": "Schimmel Plain",
+        "suite": "Track",
+        "city": "Aidanport",
+        "zipcode": "88203-0641",
+        "geo": {
+          "lat": "-76.2786",
+          "lng": "60.9292"
+        }
+      },
+      "phone": "1-144-373-1535",
+      "website": "https://jennings.com",
+      "company": {
+        "name": "Powlowski - Bradtke",
+        "catchPhrase": "clear-thinking",
+        "bs": "e-services"
+      }
+    }
+  ]
+}

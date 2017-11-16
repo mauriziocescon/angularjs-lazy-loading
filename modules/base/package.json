@@ -2,10 +2,15 @@
   "name": "base",
   "version": "1.0.0",
   "scripts": {
-    "build": "webpack --progress --profile --colors --env.name=prod --env.mock=false",
-    "build-mock": "webpack --progress --profile --colors --env.name=prod --env.mock=true",
+    "postinstall": "node ./mock-server/db-creator.js",
+    "prestart": "npm run build",
+    "start": "npm run json-server",
+    "json-server": "nodemon ./mock-server/server.js",
+
     "serve": "webpack-dev-server --d --progress --profile --colors --env.name=dev --env.mock=false",
     "serve-mock": "webpack-dev-server --d --progress --profile --colors --env.name=dev --env.mock=true",
+    "build": "webpack --progress --profile --colors --env.name=prod --env.mock=false",
+    "build-mock": "webpack --progress --profile --colors --env.name=prod --env.mock=true",
     "pretest": "webpack --progress --profile --colors --env.name=test --env.mock=false",
     "test": "karma start karma.conf.js"
   },

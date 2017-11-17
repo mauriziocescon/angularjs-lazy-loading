@@ -17,13 +17,13 @@ Demo of angular 1.x lazy loading components
  
 ## Backend implementation 
  
-1. REST APIs from [jsonplaceholder](https://jsonplaceholder.typicode.com)
+Definition of mock responses using [json-server](https://github.com/typicode/json-server) and [faker](https://github.com/Marak/faker.js) (APIs available at `http://localhost:5000/api/`)
 
 ## Libs & Tooling
 
 1. [Angular 1.x](https://angularjs.org/)
 
-2. [Typescript](https://www.typescriptlang.org/)
+2. [Typescript](https://www.typescriptlang.org/) (with ``--strict true``) 
 
 3. [Angular Material](https://material.angularjs.org/latest/) 
 
@@ -41,13 +41,15 @@ Demo of angular 1.x lazy loading components
 
 10. [Stylelint](https://stylelint.io/) 
 
+11. [JSON Server](https://github.com/typicode/json-server) 
+
 ## Unit-tests (karma + jasmine)
 
 1. The unit-tests are written in typescript using Jasmine. You find all the files searching for *__.spec.ts*
  
-2. On the console, run ``npm test`` for execute the tests
+2. On the console, run ``npm test`` for executing them 
 
-3. Tests are run automatically by [Travis CI](https://travis-ci.com/)
+3. Tests are also executed automatically by [Travis CI](https://travis-ci.com/)
 
 ## Working with editors/IDEs supporting “safe write”
 

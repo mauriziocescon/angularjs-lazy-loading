@@ -10,7 +10,11 @@ describe("ContactListController", () => {
     let componentController: ng.IComponentControllerService;
 
     // Set up the module
-    beforeEach(angular.mock.module("app"));
+    beforeEach(angular.mock.module("lazy", ($provide: ng.auto.IProvideService) => {
+        $provide.value("$translate", () => {});
+        $provide.value("UIUtilitiesService", () => {});
+        $provide.value("UtilitiesService", () => {});
+    }));
 
     beforeEach(inject(($rootScope: ng.IRootScopeService,
                        $httpBackend: ng.IHttpBackendService,

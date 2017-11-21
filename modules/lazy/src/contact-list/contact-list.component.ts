@@ -1,10 +1,10 @@
 import template from "./contact-list.component.html";
 import "./contact-list.component.scss";
 
-// import {
-//     IUIUtilitiesService,
-//     IUtilitiesService,
-// } from "../app.module";
+import {
+    IUIUtilitiesService,
+    IUtilitiesService,
+} from "icore";
 
 import { Contact } from "./contact/contact.module";
 
@@ -15,15 +15,15 @@ export class ContactListController {
     public contacts: Contact[];
 
     protected translate: ng.translate.ITranslateService;
-    protected uiUtilitiesService: any; // IUIUtilitiesService;
-    protected utilitiesService: any; // IUtilitiesService;
+    protected uiUtilitiesService: IUIUtilitiesService;
+    protected utilitiesService: IUtilitiesService;
     protected contactListService: IContactListService;
 
     protected busy: boolean;
 
     constructor($translate: ng.translate.ITranslateService,
-                UIUtilitiesService: any /*IUIUtilitiesService*/,
-                UtilitiesService: any /*IUtilitiesService*/,
+                UIUtilitiesService: IUIUtilitiesService,
+                UtilitiesService: IUtilitiesService,
                 ContactListService: IContactListService) {
         this.translate = $translate;
         this.uiUtilitiesService = UIUtilitiesService;

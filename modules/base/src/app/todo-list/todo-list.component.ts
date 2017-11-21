@@ -14,10 +14,9 @@ import { ITodoListService } from "./todo-list.data-service";
 import Todo from "./todo/todo.model";
 
 export class TodoListController {
-    public static $inject = ["$ocLazyLoad", "$translate", "UIUtilitiesService", "UtilitiesService", "TodoListService"];
+    public static $inject = ["$translate", "UIUtilitiesService", "UtilitiesService", "TodoListService"];
     public todos: Todo[] | undefined;
 
-    protected ocLazyLoad: oc.ILazyLoad;
     protected translate: ng.translate.ITranslateService;
     protected uiUtilitiesService: IUIUtilitiesService;
     protected utilitiesService: IUtilitiesService;
@@ -25,12 +24,10 @@ export class TodoListController {
 
     protected busy: boolean;
 
-    constructor($ocLazyLoad: oc.ILazyLoad,
-                $translate: ng.translate.ITranslateService,
+    constructor($translate: ng.translate.ITranslateService,
                 UIUtilitiesService: IUIUtilitiesService,
                 UtilitiesService: IUtilitiesService,
                 TodoListService: ITodoListService) {
-        this.ocLazyLoad = $ocLazyLoad;
         this.translate = $translate;
         this.uiUtilitiesService = UIUtilitiesService;
         this.utilitiesService = UtilitiesService;

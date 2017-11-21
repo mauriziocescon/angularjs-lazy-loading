@@ -71,6 +71,7 @@
     "karma-safari-launcher": "1.0.0",
     "karma-spec-reporter": "0.0.31",
     "node-sass": "4.7.2",
+    "nodemon": "1.12.1",
     "preprocess-loader": "0.2.2",
     "resolve-url-loader": "2.2.0",
     "sass-loader": "6.0.6",

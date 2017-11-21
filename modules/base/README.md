@@ -3,21 +3,19 @@ Base application
 
 ## How to build the app
 
-1. Before starting, take a look at the following [page](https://angular.io/docs/ts/latest/guide/webpack.html); it's also noteworthy [The Future of Declaration Files](https://blogs.msdn.microsoft.com/typescript/2016/06/15/the-future-of-declaration-files/)
+1. Download and install [NodeJS](https://nodejs.org/en/)
 
-2. Download and install [NodeJS](https://nodejs.org/en/)
+2. On the console, run ``npm install``
 
-3. From the console, run ``npm install``
+3. Run ``npm run build`` in order to build the code inside *dist* for distribution 
 
-4. On the console, run ``npm run build`` in order to build the code inside *dist* 
-
-5. On the console, run ``npm run serve`` in order to launch the application 
- 
-6. If you want to mock the backend, run ``npm run serve-mock`` or ``npm run build-mock``
+4. Run ``npm run serve`` in order to launch the application for development 
  
 ## Backend implementation 
- 
-1. REST APIs from [jsonplaceholder](https://jsonplaceholder.typicode.com)
+
+1. Based on [json-server](https://github.com/typicode/json-server) with mocks from [faker](https://github.com/Marak/faker.js) (APIs available at `http://localhost:5000/api/`)
+
+2. Run ``npm start`` in order to launch the server (``http://localhost:5000``) with the distribution version of the app 
 
 ## Libs & Tooling
 
@@ -45,9 +43,9 @@ Base application
 
 1. The unit-tests are written in typescript using Jasmine. You find all the files searching for *__.spec.ts*
  
-2. On the console, run ``npm test`` for execute the tests
+2. On the console, run ``npm test`` for executing them 
 
-3. Tests are run automatically by [Travis CI](https://travis-ci.com/)
+3. Tests are also executed automatically by [Travis CI](https://travis-ci.com/)
 
 ## Working with editors/IDEs supporting “safe write”
 

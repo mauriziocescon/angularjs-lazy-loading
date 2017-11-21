@@ -12,9 +12,7 @@
   "scripts": {
     "postinstall": "lerna bootstrap",
     "serve": "npm run dev --prefix modules/lazy && npm run serve --prefix modules/base",
-    "serve-mock": "npm run dev --prefix modules/lazy && npm run serve-mock --prefix modules/base",
     "build": "npm run build --prefix modules/lazy && npm run build --prefix modules/base",
-    "build-mock": "npm run build --prefix modules/lazy && npm run build-mock --prefix modules/base",
     "test": "lerna run test"
   },
   "repository": {

@@ -3,18 +3,12 @@ Lazy loading application
 
 ## How to build the app
 
-1. Before starting, take a look at the following [page](https://angular.io/docs/ts/latest/guide/webpack.html); it's also noteworthy [The Future of Declaration Files](https://blogs.msdn.microsoft.com/typescript/2016/06/15/the-future-of-declaration-files/)
+1. Download and install [NodeJS](https://nodejs.org/en/)
 
-2. Download and install [NodeJS](https://nodejs.org/en/)
+2. On the console, run ``npm install``
 
-3. From the console, run ``npm install``
-
-4. On the console, run ``npm run build`` in order to build the code inside *dist* 
+3. Run ``npm run build`` in order to build the code inside *dist* for distribution 
  
-## Backend implementation 
- 
-1. REST APIs from [jsonplaceholder](https://jsonplaceholder.typicode.com)
-
 ## Libs & Tooling
 
 1. [Angular 1.x](https://angularjs.org/)

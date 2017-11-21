@@ -2,7 +2,7 @@ const webpack = require("webpack");
 const path = require("path");
 const CleanPlugin = require("clean-webpack-plugin");
 const StyleLintPlugin = require("stylelint-webpack-plugin");
-const {CheckerPlugin} = require("awesome-typescript-loader");
+const { CheckerPlugin } = require("awesome-typescript-loader");
 
 module.exports = () => {
     return {
@@ -21,8 +21,10 @@ module.exports = () => {
 
             // environment variables
             new webpack.NormalModuleReplacementPlugin(/\/environments\/environment/, (resource) => {
-                const newResource = `environments/environment${env.name === "dev" ? "" : `.${env.name}`}`;
-                resource.request = resource.request.replace("environments/environment", newResource);
+                const newResource = `environments/environment.${env.name}`;
+                if (fs.existsSync(newResource)) {
+                    resource.request = resource.request.replace("environments/environment", newResource);
+                }
             }),
 
             // scope hoisting

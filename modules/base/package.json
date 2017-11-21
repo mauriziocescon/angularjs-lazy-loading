@@ -6,7 +6,7 @@
     "prestart": "npm run build",
     "start": "npm run json-server",
     "json-server": "nodemon ./mock-server/server.js",
-    "serve": "webpack-dev-server --d --progress --profile --colors --env.name=dev",
+    "serve": "webpack-dev-server --d --progress --profile --colors --env.name=dev | npm run json-server",
     "build": "webpack --progress --profile --colors --env.name=prod",
     "pretest": "webpack --progress --profile --colors --env.name=test",
     "test": "karma start karma.conf.js"

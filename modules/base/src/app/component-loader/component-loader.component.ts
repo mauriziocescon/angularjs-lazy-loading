@@ -1,5 +1,5 @@
-import template from "./contact-loader.component.html";
-import "./contact-loader.component.scss";
+import template from "./component-loader.component.html";
+import "./component-loader.component.scss";
 
 import {
     IUIUtilitiesService,
@@ -7,13 +7,15 @@ import {
 } from "../app.module";
 import { Logger } from "../shared/shared.module";
 
-export class ContactLoaderController {
+export class ComponentLoaderController {
     public static $inject = ["$ocLazyLoad", "$translate", "UIUtilitiesService", "UtilitiesService"];
 
     protected ocLazyLoad: oc.ILazyLoad;
     protected translate: ng.translate.ITranslateService;
     protected uiUtilitiesService: IUIUtilitiesService;
     protected utilitiesService: IUtilitiesService;
+
+    protected paths: string[];
 
     protected busy: boolean;
     protected downloadSucceed: boolean;
@@ -56,13 +58,13 @@ export class ContactLoaderController {
     public loadModule(): void {
         this.busy = true;
 
-        this.ocLazyLoad.load(["lazy.js"])
+        this.ocLazyLoad.load(this.paths)
             .then(() => {
                 this.busy = false;
                 this.downloadSucceed = true;
-                this.translate(["CONTACT_LIST.MODULE_LOADED"])
+                this.translate(["COMPONENT_LOADER.MODULE_LOADED"])
                     .then((translations: any) => {
-                        this.uiUtilitiesService.toast(translations["CONTACT_LIST.MODULE_LOADED"]);
+                        this.uiUtilitiesService.toast(translations["COMPONENT_LOADER.MODULE_LOADED"]);
                     });
             })
             .catch((e) => {
@@ -73,10 +75,13 @@ export class ContactLoaderController {
     }
 }
 
-export const ContactLoaderComponent: ng.IComponentOptions = {
-    bindings: {},
-    controller: ContactLoaderController,
+export const ComponentLoaderComponent: ng.IComponentOptions = {
+    bindings: {
+        paths: "<",
+    },
+    controller: ComponentLoaderController,
     template: () => {
         return template;
     },
+    transclude: true,
 };

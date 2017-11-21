@@ -9,7 +9,7 @@ import "angular-i18n/angular-locale_it.js";
 import { core } from "./core/core.module";
 import { shared } from "./shared/shared.module";
 
-import { contactLoader } from "./contact-loader/contact-loader.module";
+import { componentLoader } from "./component-loader/component-loader.module";
 import { todoList } from "./todo-list/todo-list.module";
 
 import { appConfigFunc } from "./app-config.module";
@@ -33,7 +33,7 @@ const appModule = angular.module("app", [
     core,
     shared,
     todoList,
-    contactLoader,
+    componentLoader,
 ]);
 
 // config providers

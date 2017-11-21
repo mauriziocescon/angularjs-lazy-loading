@@ -1,7 +1,9 @@
 {
+  "COMPONENT_LOADER": {
+    "MODULE_LOADED": "Modulo scaricato ed integrato!"
+  },
   "CONTACT_LIST": {
     "CONTACT_LIST_WELCOME": "Lista contatti dove contact component è scaricato in maniera lazy",
-    "MODULE_LOADED": "Modulo scaricato ed integrato!",
     "NO_RESULT": "Vuoto",
     "RETRY": "Riprova"
   },

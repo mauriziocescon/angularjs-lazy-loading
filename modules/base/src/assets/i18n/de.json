@@ -1,7 +1,9 @@
 {
+  "COMPONENT_LOADER": {
+    "MODULE_LOADED": "Module geladen"
+  },
   "CONTACT_LIST": {
     "CONTACT_LIST_WELCOME": "Willkommen zu Deiner Kontaktliste",
-    "MODULE_LOADED": "Module geladen",
     "NO_RESULT": "Leer",
     "RETRY": "Erneut versuchen"
   },

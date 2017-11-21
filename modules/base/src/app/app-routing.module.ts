@@ -8,7 +8,17 @@ export const routingConfigFunc = ($locationProvider: ng.ILocationProvider,
     });
     $stateProvider.state({
         name: "contact-list",
-        template: "<contact-loader></contact-loader>",
+        resolve: {
+            paths: () => {
+                return ["lazy.js"];
+            },
+        },
+        template: () => {
+            return `
+                <component-loader paths='$resolve.paths'>
+                    <contact-list></contact-list>
+                </component-loader>`;
+        },
         url: "/contact-list",
     });
     $urlRouterProvider.otherwise("/todo-list");

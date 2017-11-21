@@ -1,0 +1,12 @@
+<div layout="column" flex md-sroll-y ng-if="!$ctrl.showData">
+
+    <div layout="row" layout-align="space-around">
+        <md-progress-circular ng-show="$ctrl.isLoadingData" md-mode="indeterminate"></md-progress-circular>
+    </div>
+
+    <md-button class="md-button md-fab md-fab-bottom-right icon-button" ng-show="$ctrl.showDownload" ng-click="$ctrl.loadModule()" aria-label="Download module">
+        <md-icon md-font-icon="md">file_download</md-icon>
+    </md-button>
+</div>
+
+<ng-transclude ng-if="$ctrl.showData"></ng-transclude>

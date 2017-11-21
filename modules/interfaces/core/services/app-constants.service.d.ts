@@ -1,3 +1,5 @@
+import * as Constants from "./app-constants.model";
+
 /**
  * Get application constants
  * saved in app-constants.model

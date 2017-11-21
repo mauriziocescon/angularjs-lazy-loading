@@ -19,6 +19,7 @@ export interface IUtilitiesService {
      * @param promise
      */
     clearDefer(promise: ng.IPromise<any>): void;
+
     /**
      * Call func on a particular scope
      *
@@ -33,6 +34,7 @@ export interface IUtilitiesService {
      * @param original
      */
     clone<T>(original: T): T;
+
     /**
      * Compare the objects
      * using angular equal
@@ -41,10 +43,12 @@ export interface IUtilitiesService {
      * @param value2
      */
     equals<T>(value1: T, value2: T): boolean;
+
     /**
      * Create a unique id
      */
     createUUID(): string;
+
     /**
      * Determine is a string is
      * not undefined and not empty
@@ -52,18 +56,22 @@ export interface IUtilitiesService {
      * @param text
      */
     isDefinedAndNotEmpty(text: string | undefined): boolean;
+
     /**
      * Get today
      */
     getToday(): Date;
+
     /**
      * Get now
      */
     getNow(): Date;
+
     /**
      * Get absolute time
      */
     getTimeFrom1970(): number;
+
     /**
      * Add a script to the DOM
      * and load it
@@ -71,40 +79,31 @@ export interface IUtilitiesService {
      * @param src
      */
     addScript(src: string): void;
+
     /**
      *
      * @param url
      */
     getPath(url: string | undefined): string;
+
     /**
      *
      */
     getCurrentPath(): string;
+
     /**
      * Return params of a url
      *
      * @param url
      */
     parseQueryString(url: string): any;
+
     /**
      * Count the number of scopes / watchers
      * for every component. Analyze the DOM
      */
     analyzeWebApp(): string;
-    /**
-     * Log an $http request
-     *
-     * @param url
-     * @param requestData
-     */
-    logRequest(url: string, requestData?: any): void;
-    /**
-     * Log an $http response
-     *
-     * @param {angular.IHttpResponse<any> | Array<angular.IHttpResponse<any>>} response
-     * @param {number} startTime
-     */
-    logResponse(response: ng.IHttpResponse<any> | Array<ng.IHttpResponse<any>>, startTime: number): void;
+
     /**
      * Create a random response
      * with common http code
@@ -113,6 +112,7 @@ export interface IUtilitiesService {
      * @param headers
      */
     randomHttpStatusCode(data?: any, headers?: any): any;
+
     /**
      * Parse link property
      * inside headers

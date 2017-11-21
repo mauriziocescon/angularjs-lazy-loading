@@ -10,12 +10,12 @@ import { Logger } from "../shared/shared.module";
 export class ComponentLoaderController {
     public static $inject = ["$ocLazyLoad", "$translate", "UIUtilitiesService", "UtilitiesService"];
 
+    public paths: string[];
+
     protected ocLazyLoad: oc.ILazyLoad;
     protected translate: ng.translate.ITranslateService;
     protected uiUtilitiesService: IUIUtilitiesService;
     protected utilitiesService: IUtilitiesService;
-
-    protected paths: string[];
 
     protected busy: boolean;
     protected downloadSucceed: boolean;

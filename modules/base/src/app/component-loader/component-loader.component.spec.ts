@@ -40,20 +40,23 @@ describe("ComponentLoaderController", () => {
         httpBackend.verifyNoOutstandingRequest();
     });
 
-    // it("controller.contacts is not undefined after $onInit", () => {
-    //     const controller = componentController("componentLoader", {}, null) as ComponentLoaderController;
-    //     controller.$onInit();
-    //     expect(controller.contacts).not.toBeUndefined("controller.contacts is undefined...");
-    // });
-    //
-    // it("controller.contacts is not null after $onInit", () => {
-    //     const controller = componentController("componentLoader", {}, null) as ComponentLoaderController;
-    //     controller.$onInit();
-    //     expect(controller.contacts).not.toBeNull("controller.contacts is null...");
-    // });
+    it("controller.paths is not undefined after $onInit", () => {
+        const paths = ["file1.js", "file2.js"];
+        const controller = componentController("componentLoader", {}, {paths}) as ComponentLoaderController;
+        controller.$onInit();
+        expect(controller.paths).not.toBeUndefined("controller.paths is undefined...");
+    });
+
+    it("controller.paths is not null after $onInit", () => {
+        const paths = ["file1.js", "file2.js"];
+        const controller = componentController("componentLoader", {}, {paths}) as ComponentLoaderController;
+        controller.$onInit();
+        expect(controller.paths).not.toBeNull("controller.paths is null...");
+    });
 
     it("controller.isLoadingData is false after $onInit", () => {
-        const controller = componentController("componentLoader", {}, null) as ComponentLoaderController;
+        const paths = ["file1.js", "file2.js"];
+        const controller = componentController("componentLoader", {}, {paths}) as ComponentLoaderController;
         spyOn(ocLazyLoad, "load").and.callFake(() => {
             const deferred = q.defer();
             deferred.resolve();
@@ -65,7 +68,8 @@ describe("ComponentLoaderController", () => {
     });
 
     it("controller.shouldRetry is false after $onInit", () => {
-        const controller = componentController("componentLoader", {}, null) as ComponentLoaderController;
+        const paths = ["file1.js", "file2.js"];
+        const controller = componentController("componentLoader", {}, {paths}) as ComponentLoaderController;
         spyOn(ocLazyLoad, "load").and.callFake(() => {
             const deferred = q.defer();
             deferred.resolve();
@@ -77,7 +81,8 @@ describe("ComponentLoaderController", () => {
     });
 
     it("controller.showData is false after $onInit", () => {
-        const controller = componentController("componentLoader", {}, null) as ComponentLoaderController;
+        const paths = ["file1.js", "file2.js"];
+        const controller = componentController("componentLoader", {}, {paths}) as ComponentLoaderController;
         spyOn(ocLazyLoad, "load").and.callFake(() => {
             const deferred = q.defer();
             deferred.resolve();

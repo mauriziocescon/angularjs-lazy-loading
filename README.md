@@ -25,25 +25,27 @@ Demo of angular 1.x lazy loading components
 
 1. [Angular 1.x](https://angularjs.org/)
 
-2. [Typescript](https://www.typescriptlang.org/) (with ``--strict true``) 
+2. [Lerna](https://lernajs.io/)
 
-3. [Angular Material](https://material.angularjs.org/latest/) 
+3. [Typescript](https://www.typescriptlang.org/) (with ``--strict true``) 
 
-4. [ocLazyLoad](https://oclazyload.readme.io/)
+4. [Angular Material](https://material.angularjs.org/latest/) 
 
-5. [UI-Router](https://ui-router.github.io/) 
+5. [ocLazyLoad](https://oclazyload.readme.io/)
 
-6. [Sass](http://sass-lang.com/) 
+6. [UI-Router](https://ui-router.github.io/) 
 
-7. [Webpack](https://webpack.js.org/) 
+7. [Sass](http://sass-lang.com/) 
 
-8. [Babel](https://babeljs.io/) 
+8. [Webpack](https://webpack.js.org/) 
 
-9. [TSLint](https://palantir.github.io/tslint/) 
+9. [Babel](https://babeljs.io/) 
 
-10. [Stylelint](https://stylelint.io/) 
+10. [TSLint](https://palantir.github.io/tslint/) 
 
-11. [JSON Server](https://github.com/typicode/json-server) 
+11. [Stylelint](https://stylelint.io/) 
+
+12. [JSON Server](https://github.com/typicode/json-server) 
 
 ## Unit-tests (karma + jasmine)
 

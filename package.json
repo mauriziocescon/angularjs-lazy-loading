@@ -11,8 +11,10 @@
   },
   "scripts": {
     "postinstall": "lerna bootstrap",
-    "serve": "npm run dev --prefix modules/lazy && npm run serve --prefix modules/base",
-    "build": "npm run build --prefix modules/lazy && npm run build --prefix modules/base",
+    "prestart": "lerna run build",
+    "start": "npm run json-server --prefix modules/base",
+    "serve": "lerna run serve",
+    "build": "lerna run build",
     "test": "lerna run test"
   },
   "repository": {

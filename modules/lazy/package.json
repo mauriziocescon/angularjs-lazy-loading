@@ -4,7 +4,7 @@
   "main": "./dist/lazy.js",
   "types": "./interfaces/index.d.ts",
   "scripts": {
-    "dev": "webpack --progress --profile --colors --env.name=dev",
+    "serve": "webpack --progress --profile --colors --env.name=dev",
     "build": "webpack --progress --profile --colors --env.name=prod",
     "pretest": "webpack --progress --profile --colors --env.name=test",
     "test": "karma start karma.conf.js"

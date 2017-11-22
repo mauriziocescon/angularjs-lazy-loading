@@ -17,6 +17,8 @@ Base application
 
 2. Run ``npm start`` in order to launch the server (``http://localhost:5000``) with the distribution version of the app 
 
+3. The server randomly simulates delays and errors for testing purposes
+
 ## Libs & Tooling
 
 1. [Angular 1.x](https://angularjs.org/)

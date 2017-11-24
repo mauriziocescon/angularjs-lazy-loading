@@ -11,7 +11,6 @@
   },
   "scripts": {
     "postinstall": "lerna bootstrap",
-    "prestart": "lerna run build",
     "start": "npm run start --prefix modules/base",
     "serve": "lerna run serve",
     "build": "lerna run build",

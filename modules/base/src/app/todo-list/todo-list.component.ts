@@ -66,26 +66,31 @@ export class TodoListController {
     public loadDataSource(): void {
         this.busy = true;
 
-        this.todoListService.getTodos().then((response: ResponseWs<Todo[]>) => {
+        this.todoListService.getTodos()
+            .then((response: ResponseWs<Todo[]>) => {
 
-            if (response.isSuccess()) {
-                this.todos = response.getData();
-            }
-            else if (response.hasBeenCanceled() === false) {
+                if (response.isSuccess()) {
+                    this.todos = response.getData();
+                }
+                else if (response.hasBeenCanceled() === false) {
 
-                // we do not notify the user in case of cancel request
-                this.translate(["TODO_LIST.ERROR_ACCESS_DATA", "TODO_LIST.CLOSE"]).then((translations: any) => {
-                    this.uiUtilitiesService.modalAlert(translations.ERROR_ACCESS_DATA, response.getMessage(), translations.CLOSE);
-                });
-            }
-        }).catch((reason: any) => {
-            this.translate(["TODO_LIST.ERROR_ACCESS_DATA_COMPONENT", "TODO_LIST.CLOSE"]).then((translations: any) => {
-                this.uiUtilitiesService.modalAlert(translations.ERROR_ACCESS_DATA, reason.toString(), translations.CLOSE);
+                    // we do not notify the user in case of cancel request
+                    this.translate(["TODO_LIST.ERROR_ACCESS_DATA", "TODO_LIST.CLOSE"])
+                        .then((translations: any) => {
+                            this.uiUtilitiesService.modalAlert(translations.ERROR_ACCESS_DATA, response.getMessage(), translations.CLOSE);
+                        });
+                }
+            })
+            .catch((reason: any) => {
+                this.translate(["TODO_LIST.ERROR_ACCESS_DATA_COMPONENT", "TODO_LIST.CLOSE"])
+                    .then((translations: any) => {
+                        this.uiUtilitiesService.modalAlert(translations.ERROR_ACCESS_DATA, reason.toString(), translations.CLOSE);
+                    });
+                Logger.log(reason);
+            })
+            .finally(() => {
+                this.busy = false;
             });
-            Logger.log(reason);
-        }).finally(() => {
-            this.busy = false;
-        });
     }
 }
 

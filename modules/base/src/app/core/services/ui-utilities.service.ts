@@ -24,6 +24,7 @@ export interface IUIUtilitiesService {
      * @param buttonLabel label of the button
      */
     modalAlert(title: string, message: string, buttonLabel: string): void;
+
     /**
      * Display a confirm alert
      *
@@ -34,6 +35,7 @@ export interface IUIUtilitiesService {
      * @param callback function executed when the user click on a button with the result
      */
     modalConfirmer(title: string, message: string, yesButtonLabel: string, noButtonLabel: string, callback: (result: boolean) => void): void;
+
     /**
      * Display a toaster
      *
@@ -107,11 +109,12 @@ export class UIUtilitiesService implements IUIUtilitiesService {
                 .ok(yesButtonLabel)
                 .cancel(noButtonLabel);
 
-            this.mdDialog.show(confirm).then(() => {
-                callback(true);
-            }, () => {
-                callback(false);
-            });
+            this.mdDialog.show(confirm)
+                .then(() => {
+                    callback(true);
+                }, () => {
+                    callback(false);
+                });
         } catch (e) {
             Logger.exception(this, e);
         }

@@ -13,6 +13,7 @@ import Todo from "./todo/todo.model";
 
 export interface ITodoListService {
     getTodos(): ng.IPromise<ResponseWs<Todo[] | undefined>>;
+
     cancelOngoingRequests(): void;
 }
 
@@ -65,12 +66,13 @@ export default class TodoListService implements ITodoListService {
         // fetch data
         this.getUserTodosRequest.promise = this.http.get<Todo[]>(url, config);
 
-        return this.getUserTodosRequest.promise.then((response: ng.IHttpResponse<Todo[]>) => {
-            return new ResponseWs(response.status === 200, response.statusText, response.data, true, response.status === -1);
+        return this.getUserTodosRequest.promise
+            .then((response: ng.IHttpResponse<Todo[]>) => {
+                return new ResponseWs(response.status === 200, response.statusText, response.data, true, response.status === -1);
 
-        }, (response: ng.IHttpResponse<Todo[]>) => {
-            return new ResponseWs(false, response.statusText, undefined, true, response.status === -1);
-        });
+            }, (response: ng.IHttpResponse<Todo[]>) => {
+                return new ResponseWs(false, response.statusText, undefined, true, response.status === -1);
+            });
     }
 
     public cancelOngoingRequests(): void {

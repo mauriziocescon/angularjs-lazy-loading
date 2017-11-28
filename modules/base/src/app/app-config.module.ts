@@ -1,8 +1,15 @@
-export const appConfigFunc = ($ocLazyLoadProvider: oc.ILazyLoadProvider,
+export const appConfigFunc = ($httpProvider: ng.IHttpProvider,
+                              $ocLazyLoadProvider: oc.ILazyLoadProvider,
                               $translateProvider: ng.translate.ITranslateProvider,
                               tmhDynamicLocaleProvider: ng.dynamicLocale.tmhDynamicLocaleProvider,
                               $mdIconProvider: ng.material.IIconProvider,
                               $mdThemingProvider: ng.material.IThemingProvider) => {
+    $httpProvider.defaults.headers = {
+        common: {
+            "Content-Type": "application/json",
+        },
+    };
+
     $ocLazyLoadProvider.config({
         debug: true,
     });
@@ -25,4 +32,4 @@ export const appConfigFunc = ($ocLazyLoadProvider: oc.ILazyLoadProvider,
         .backgroundPalette("grey");
 };
 
-appConfigFunc.$inject = ["$ocLazyLoadProvider", "$translateProvider", "tmhDynamicLocaleProvider", "$mdIconProvider", "$mdThemingProvider"];
+appConfigFunc.$inject = ["$httpProvider", "$ocLazyLoadProvider", "$translateProvider", "tmhDynamicLocaleProvider", "$mdIconProvider", "$mdThemingProvider"];

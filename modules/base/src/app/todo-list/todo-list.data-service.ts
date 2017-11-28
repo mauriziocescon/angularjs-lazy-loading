@@ -38,11 +38,6 @@ export default class TodoListService implements ITodoListService {
         this.utilitiesService = UtilitiesService;
 
         this.getUserTodosRequest = new RequestWs();
-        this.http.defaults = this.httpDefaults;
-    }
-
-    protected get httpDefaults(): ng.IHttpProviderDefaults {
-        return {};
     }
 
     public getTodos(): ng.IPromise<ResponseWs<Todo[] | undefined>> {

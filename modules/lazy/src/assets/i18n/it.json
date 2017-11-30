@@ -1,0 +1,21 @@
+{
+  "COMPONENT_LOADER": {
+    "MODULE_LOADED": "Modulo scaricato ed integrato!"
+  },
+  "CONTACT_LIST": {
+    "CONTACT_LIST_WELCOME": "Lista contatti dove contact component è scaricato in maniera lazy",
+    "NO_RESULT": "Vuoto",
+    "RETRY": "Riprova"
+  },
+  "NAVIGATION_BAR": {
+    "CONTACTS": "Contatti",
+    "TODOS": "Todo"
+  },
+  "TODO_LIST": {
+    "CLOSE": "Chiudi",
+    "ERROR_ACCESS_DATA": "Errore accesso ai dati",
+    "NO_RESULT": "Vuoto",
+    "RETRY": "Riprova",
+    "TODO_LIST_WELCOME": "Todo list dove il todo-component è integrato"
+  }
+}

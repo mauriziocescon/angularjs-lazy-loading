@@ -1,0 +1,21 @@
+{
+  "COMPONENT_LOADER": {
+    "MODULE_LOADED": "Third-party module loaded!"
+  },
+  "CONTACT_LIST": {
+    "CONTACT_LIST_WELCOME": "Contact list where contact component is lazy loaded",
+    "NO_RESULT": "Empty",
+    "RETRY": "Retry"
+  },
+  "NAVIGATION_BAR": {
+    "CONTACTS": "Contacts",
+    "TODOS": "Todos"
+  },
+  "TODO_LIST": {
+    "CLOSE": "Close",
+    "ERROR_ACCESS_DATA": "Error access data",
+    "NO_RESULT": "Empty",
+    "RETRY": "Retry",
+    "TODO_LIST_WELCOME": "Regular todo list where todo component is bundled"
+  }
+}

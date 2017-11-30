@@ -1,0 +1,21 @@
+{
+  "COMPONENT_LOADER": {
+    "MODULE_LOADED": "Module geladen"
+  },
+  "CONTACT_LIST": {
+    "CONTACT_LIST_WELCOME": "Willkommen zu Deiner Kontaktliste",
+    "NO_RESULT": "Leer",
+    "RETRY": "Erneut versuchen"
+  },
+  "NAVIGATION_BAR": {
+    "CONTACTS": "Kontakte",
+    "TODOS": "Todos"
+  },
+  "TODO_LIST": {
+    "CLOSE": "Schließen",
+    "ERROR_ACCESS_DATA": "Fehler beim Datenzugriff",
+    "NO_RESULT": "Leer",
+    "RETRY": "Erneut versuchen",
+    "TODO_LIST_WELCOME": "Willkommen zu Deiner ToDo Liste"
+  }
+}

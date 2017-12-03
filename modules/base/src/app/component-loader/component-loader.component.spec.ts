@@ -54,6 +54,7 @@ describe("ComponentLoaderController", () => {
         const paths = ["file1.js", "file2.js"];
         const controller = componentController("componentLoader", {}, {paths}) as ComponentLoaderController;
         controller.$onInit();
+        httpBackend.flush();
         expect(controller.paths).not.toBeUndefined("controller.paths is undefined...");
     });
 
@@ -61,6 +62,7 @@ describe("ComponentLoaderController", () => {
         const paths = ["file1.js", "file2.js"];
         const controller = componentController("componentLoader", {}, {paths}) as ComponentLoaderController;
         controller.$onInit();
+        httpBackend.flush();
         expect(controller.paths).not.toBeNull("controller.paths is null...");
     });
 
@@ -73,6 +75,7 @@ describe("ComponentLoaderController", () => {
             return deferred.promise;
         });
         controller.$onInit();
+        httpBackend.flush();
         rootScope.$apply();
         expect(controller.isLoadingData).toBeFalsy("isLoadingData is true after the loading...");
     });
@@ -86,6 +89,7 @@ describe("ComponentLoaderController", () => {
             return deferred.promise;
         });
         controller.$onInit();
+        httpBackend.flush();
         rootScope.$apply();
         expect(controller.shouldRetry).toBeFalsy("shouldRetry is true after the loading...");
     });
@@ -99,6 +103,7 @@ describe("ComponentLoaderController", () => {
             return deferred.promise;
         });
         controller.$onInit();
+        httpBackend.flush();
         rootScope.$apply();
         expect(controller.showData).toBeTruthy("showData is false after the loading...");
     });

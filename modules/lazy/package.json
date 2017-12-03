@@ -33,7 +33,7 @@
     "@types/jquery": "3.2.16",
     "@types/node": "8.0.53",
     "@types/oclazyload": "0.0.32",
-    "awesome-typescript-loader": "3.4.0",
+    "awesome-typescript-loader": "3.4.1",
     "babel-core": "6.26.0",
     "babel-preset-env": "1.6.1",
     "clean-webpack-plugin": "0.1.17",
@@ -45,7 +45,7 @@
     "karma-chrome-launcher": "2.2.0",
     "karma-firefox-launcher": "1.0.1",
     "karma-ie-launcher": "1.0.0",
-    "karma-jasmine": "1.1.0",
+    "karma-jasmine": "1.1.1",
     "karma-phantomjs-launcher": "1.0.4",
     "karma-safari-launcher": "1.0.0",
     "karma-spec-reporter": "0.0.31",
@@ -60,7 +60,7 @@
     "tslint": "5.8.0",
     "tslint-loader": "3.5.3",
     "typescript": "2.6.2",
-    "webpack": "3.8.1",
+    "webpack": "3.9.1",
     "webpack-merge": "4.1.1"
   }
 }

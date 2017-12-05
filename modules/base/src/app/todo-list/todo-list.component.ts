@@ -82,7 +82,7 @@ export class TodoListController {
                 }
             })
             .catch((reason: any) => {
-                this.translate(["TODO_LIST.ERROR_ACCESS_DATA_COMPONENT", "TODO_LIST.CLOSE"])
+                this.translate(["TODO_LIST.ERROR_ACCESS_DATA", "TODO_LIST.CLOSE"])
                     .then((translations: any) => {
                         this.uiUtilitiesService.modalAlert(translations.ERROR_ACCESS_DATA, reason.toString(), translations.CLOSE);
                     });

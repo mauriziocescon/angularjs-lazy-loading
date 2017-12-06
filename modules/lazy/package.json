@@ -31,7 +31,7 @@
     "@types/angular-ui-router": "1.1.40",
     "@types/jasmine": "2.8.2",
     "@types/jquery": "3.2.16",
-    "@types/node": "8.0.53",
+    "@types/node": "8.0.56",
     "@types/oclazyload": "0.0.32",
     "awesome-typescript-loader": "3.4.1",
     "babel-core": "6.26.0",
@@ -60,7 +60,7 @@
     "tslint": "5.8.0",
     "tslint-loader": "3.5.3",
     "typescript": "2.6.2",
-    "webpack": "3.9.1",
+    "webpack": "3.10.0",
     "webpack-merge": "4.1.1"
   }
 }

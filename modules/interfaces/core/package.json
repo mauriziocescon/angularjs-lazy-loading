@@ -12,7 +12,7 @@
     "@types/angular-translate": "2.15.1",
     "@types/angular-ui-router": "1.1.40",
     "@types/jquery": "3.2.16",
-    "@types/node": "8.0.53",
+    "@types/node": "8.0.58",
     "@types/oclazyload": "0.0.32",
     "@types/stacktrace-js": "0.0.32"
   }

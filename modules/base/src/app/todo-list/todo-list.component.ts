@@ -67,7 +67,7 @@ export class TodoListController {
         this.busy = true;
 
         this.todoListService.getTodos()
-            .then((response: ResponseWs<Todo[]>) => {
+            .then((response: ResponseWs<Todo[] | undefined>) => {
 
                 if (response.isSuccess()) {
                     this.todos = response.getData();

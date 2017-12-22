@@ -10,13 +10,13 @@
     "test": "karma start karma.conf.js"
   },
   "dependencies": {
-    "angular": "1.6.7",
-    "angular-animate": "1.6.7",
-    "angular-aria": "1.6.7",
-    "angular-messages": "1.6.7",
-    "angular-mocks": "1.6.7",
-    "angular-sanitize": "1.6.7",
-    "angular-translate": "2.16.0",
+    "angular": "1.6.8",
+    "angular-animate": "1.6.8",
+    "angular-aria": "1.6.8",
+    "angular-messages": "1.6.8",
+    "angular-mocks": "1.6.8",
+    "angular-sanitize": "1.6.8",
+    "angular-translate": "2.17.0",
     "jquery": "3.2.1"
   },
   "devDependencies": {
@@ -31,7 +31,7 @@
     "@types/angular-ui-router": "1.1.40",
     "@types/jasmine": "2.8.2",
     "@types/jquery": "3.2.17",
-    "@types/node": "8.5.1",
+    "@types/node": "8.5.2",
     "@types/oclazyload": "0.0.32",
     "awesome-typescript-loader": "3.4.1",
     "babel-core": "6.26.0",
@@ -41,7 +41,7 @@
     "file-loader": "1.1.6",
     "html-loader": "0.5.1",
     "jasmine-core": "2.8.0",
-    "karma": "1.7.1",
+    "karma": "2.0.0",
     "karma-chrome-launcher": "2.2.0",
     "karma-firefox-launcher": "1.1.0",
     "karma-ie-launcher": "1.0.0",

@@ -4,14 +4,14 @@ import { IUIUtilitiesService, IUtilitiesService } from "icore";
 import { Contact } from "./contact/contact.module";
 import { IContactListService } from "./contact-list.service";
 export declare class ContactListController {
-    static $inject: string[];
-    contacts: Contact[];
     protected translate: ng.translate.ITranslateService;
     protected uiUtilitiesService: IUIUtilitiesService;
     protected utilitiesService: IUtilitiesService;
     protected contactListService: IContactListService;
+    static $inject: string[];
+    contacts: Contact[];
     protected busy: boolean;
-    constructor($translate: ng.translate.ITranslateService, UIUtilitiesService: IUIUtilitiesService, UtilitiesService: IUtilitiesService, ContactListService: IContactListService);
+    constructor(translate: ng.translate.ITranslateService, uiUtilitiesService: IUIUtilitiesService, utilitiesService: IUtilitiesService, contactListService: IContactListService);
     readonly isLoadingData: boolean;
     readonly hasNoData: boolean;
     readonly shouldRetry: boolean;

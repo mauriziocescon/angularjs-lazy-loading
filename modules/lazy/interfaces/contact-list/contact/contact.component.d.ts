@@ -3,10 +3,10 @@ import "./contact.component.scss";
 import { Contact } from "./contact.model";
 import { IContactService } from "./contact.service";
 export declare class ContactController {
+    protected contactService: IContactService;
     static $inject: string[];
     contact: Contact;
-    protected contactService: IContactService;
-    constructor(ContactService: IContactService);
+    constructor(contactService: IContactService);
     $onInit(): void;
     $onDestroy(): void;
     getContactDesc(contact: Contact): string;

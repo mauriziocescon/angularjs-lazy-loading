@@ -20,23 +20,13 @@ export interface ITodoListService {
 export default class TodoListService implements ITodoListService {
     public static $inject = ["$http", "$q", "AppConstantsService", "UtilitiesService"];
 
-    protected http: ng.IHttpService;
-    protected q: ng.IQService;
-    protected appConstantsService: IAppConstantsService;
-    protected utilitiesService: IUtilitiesService;
-
     // requests
     protected getUserTodosRequest: RequestWs<Todo[]>;
 
-    constructor($http: ng.IHttpService,
-                $q: ng.IQService,
-                AppConstantsService: IAppConstantsService,
-                UtilitiesService: IUtilitiesService) {
-        this.http = $http;
-        this.q = $q;
-        this.appConstantsService = AppConstantsService;
-        this.utilitiesService = UtilitiesService;
-
+    constructor(protected http: ng.IHttpService,
+                protected q: ng.IQService,
+                protected appConstantsService: IAppConstantsService,
+                protected utilitiesService: IUtilitiesService) {
         this.getUserTodosRequest = new RequestWs();
     }
 

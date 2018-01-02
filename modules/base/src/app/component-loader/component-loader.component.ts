@@ -12,22 +12,13 @@ export class ComponentLoaderController {
 
     public paths: string[];
 
-    protected ocLazyLoad: oc.ILazyLoad;
-    protected translate: ng.translate.ITranslateService;
-    protected uiUtilitiesService: IUIUtilitiesService;
-    protected utilitiesService: IUtilitiesService;
-
     protected busy: boolean;
     protected downloadSucceed: boolean;
 
-    constructor($ocLazyLoad: oc.ILazyLoad,
-                $translate: ng.translate.ITranslateService,
-                UIUtilitiesService: IUIUtilitiesService,
-                UtilitiesService: IUtilitiesService) {
-        this.ocLazyLoad = $ocLazyLoad;
-        this.translate = $translate;
-        this.uiUtilitiesService = UIUtilitiesService;
-        this.utilitiesService = UtilitiesService;
+    constructor(protected ocLazyLoad: oc.ILazyLoad,
+                protected translate: ng.translate.ITranslateService,
+                protected uiUtilitiesService: IUIUtilitiesService,
+                protected utilitiesService: IUtilitiesService) {
     }
 
     public get isLoadingData(): boolean {

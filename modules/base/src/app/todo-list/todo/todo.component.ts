@@ -10,10 +10,7 @@ class TodoController {
     public date: Date;
     public amount: number;
 
-    protected todoService: ITodoService;
-
-    constructor(TodoService: ITodoService) {
-        this.todoService = TodoService;
+    constructor(protected todoService: ITodoService) {
     }
 
     public $onInit(): void {

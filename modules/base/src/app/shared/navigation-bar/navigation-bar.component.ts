@@ -12,20 +12,10 @@ export class NavigationBarController {
     public selectedLanguage: string;
     public supportedLanguages: string[];
 
-    protected state: ng.ui.IStateService;
-    protected appConstantsService: IAppConstantsService;
-    protected appLanguageService: IAppLanguageService;
-    protected utilitiesService: IUtilitiesService;
-
-    constructor($state: ng.ui.IStateService,
-                AppConstantsService: IAppConstantsService,
-                AppLanguageService: IAppLanguageService,
-                UtilitiesService: IUtilitiesService) {
-        this.state = $state;
-        this.appConstantsService = AppConstantsService;
-        this.appLanguageService = AppLanguageService;
-        this.utilitiesService = UtilitiesService;
-
+    constructor(protected state: ng.ui.IStateService,
+                protected appConstantsService: IAppConstantsService,
+                protected appLanguageService: IAppLanguageService,
+                protected utilitiesService: IUtilitiesService) {
         this.name = "NavigationBarComponent";
     }
 

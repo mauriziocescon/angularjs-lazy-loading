@@ -17,21 +17,12 @@ export class TodoListController {
     public static $inject = ["$translate", "UIUtilitiesService", "UtilitiesService", "TodoListService"];
     public todos: Todo[] | undefined;
 
-    protected translate: ng.translate.ITranslateService;
-    protected uiUtilitiesService: IUIUtilitiesService;
-    protected utilitiesService: IUtilitiesService;
-    protected todoListService: ITodoListService;
-
     protected busy: boolean;
 
-    constructor($translate: ng.translate.ITranslateService,
-                UIUtilitiesService: IUIUtilitiesService,
-                UtilitiesService: IUtilitiesService,
-                TodoListService: ITodoListService) {
-        this.translate = $translate;
-        this.uiUtilitiesService = UIUtilitiesService;
-        this.utilitiesService = UtilitiesService;
-        this.todoListService = TodoListService;
+    constructor(protected translate: ng.translate.ITranslateService,
+                protected uiUtilitiesService: IUIUtilitiesService,
+                protected utilitiesService: IUtilitiesService,
+                protected todoListService: ITodoListService) {
     }
 
     public get isLoadingData(): boolean {

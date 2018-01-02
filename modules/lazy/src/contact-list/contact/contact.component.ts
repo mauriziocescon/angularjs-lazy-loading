@@ -8,10 +8,7 @@ export class ContactController {
     public static $inject = ["ContactService"];
     public contact: Contact;
 
-    protected contactService: IContactService;
-
-    constructor(ContactService: IContactService) {
-        this.contactService = ContactService;
+    constructor(protected contactService: IContactService) {
     }
 
     public $onInit(): void {

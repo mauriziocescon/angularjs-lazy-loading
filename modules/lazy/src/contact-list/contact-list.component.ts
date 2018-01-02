@@ -14,21 +14,12 @@ export class ContactListController {
     public static $inject = ["$translate", "UIUtilitiesService", "UtilitiesService", "ContactListService"];
     public contacts: Contact[];
 
-    protected translate: ng.translate.ITranslateService;
-    protected uiUtilitiesService: IUIUtilitiesService;
-    protected utilitiesService: IUtilitiesService;
-    protected contactListService: IContactListService;
-
     protected busy: boolean;
 
-    constructor($translate: ng.translate.ITranslateService,
-                UIUtilitiesService: IUIUtilitiesService,
-                UtilitiesService: IUtilitiesService,
-                ContactListService: IContactListService) {
-        this.translate = $translate;
-        this.uiUtilitiesService = UIUtilitiesService;
-        this.utilitiesService = UtilitiesService;
-        this.contactListService = ContactListService;
+    constructor(protected translate: ng.translate.ITranslateService,
+                protected uiUtilitiesService: IUIUtilitiesService,
+                protected utilitiesService: IUtilitiesService,
+                protected contactListService: IContactListService) {
     }
 
     public get isLoadingData(): boolean {

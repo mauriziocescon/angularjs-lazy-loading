@@ -47,22 +47,11 @@ export interface IUIUtilitiesService {
 export class UIUtilitiesService implements IUIUtilitiesService {
     public static $inject = ["$mdDialog", "$mdToast", "AppConstantsService", "UtilitiesService", "UIUtilitiesConstants"];
 
-    protected mdDialog: ng.material.IDialogService;
-    protected mdToast: ng.material.IToastService;
-    protected appConstantsService: IAppConstantsService;
-    protected utilitiesService: IUtilitiesService;
-    protected uiUtilitiesConstants: IUIUtilitiesConstants;
-
-    constructor($mdDialog: ng.material.IDialogService,
-                $mdToast: ng.material.IToastService,
-                AppConstantsService: IAppConstantsService,
-                UtilitiesService: IUtilitiesService,
-                UIUtilitiesConstants: IUIUtilitiesConstants) {
-        this.mdDialog = $mdDialog;
-        this.mdToast = $mdToast;
-        this.appConstantsService = AppConstantsService;
-        this.utilitiesService = UtilitiesService;
-        this.uiUtilitiesConstants = UIUtilitiesConstants;
+    constructor(protected mdDialog: ng.material.IDialogService,
+                protected mdToast: ng.material.IToastService,
+                protected appConstantsService: IAppConstantsService,
+                protected utilitiesService: IUtilitiesService,
+                protected uiUtilitiesConstants: IUIUtilitiesConstants) {
     }
 
     public getCurrencySymbol(currency: string): string {

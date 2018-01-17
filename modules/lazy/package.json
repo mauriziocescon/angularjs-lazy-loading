@@ -1,6 +1,7 @@
 {
   "name": "lazy",
   "version": "1.0.0",
+  "description": "",
   "main": "./dist/lazy.js",
   "types": "./interfaces/index.d.ts",
   "scripts": {

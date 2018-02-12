@@ -5,6 +5,7 @@
   "main": "./dist/lazy.js",
   "types": "./interfaces/index.d.ts",
   "scripts": {
+    "postinstall": "npm run build",
     "serve": "webpack --progress --profile --colors --env.name=dev",
     "build": "webpack --progress --profile --colors --env.name=prod",
     "pretest": "webpack --progress --profile --colors --env.name=test",

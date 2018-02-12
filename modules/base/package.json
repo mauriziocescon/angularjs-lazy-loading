@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "postinstall": "node ./mock-server/db-creator.js",
+    "postinstall": "node ./mock-server/db-creator.js | npm run build",
     "start": "npm run json-server",
     "json-server": "node ./mock-server/server.js",
     "json-server-watch": "nodemon ./mock-server/server.js",

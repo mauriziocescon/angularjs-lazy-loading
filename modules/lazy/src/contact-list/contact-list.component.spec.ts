@@ -13,9 +13,9 @@ describe("ContactListController", () => {
 
     // Set up the module
     beforeEach(angular.mock.module("lazy", ($provide: ng.auto.IProvideService) => {
-        $provide.value("$translate", () => {});
-        $provide.value("UIUtilitiesService", () => {});
-        $provide.value("UtilitiesService", () => {});
+        $provide.value("$translate", () => {/* do nothing */});
+        $provide.value("UIUtilitiesService", () => {/* do nothing */});
+        $provide.value("UtilitiesService", () => {/* do nothing */});
     }));
 
     beforeEach(inject(($rootScope: ng.IRootScopeService,

@@ -10,16 +10,9 @@ module.exports = (env) => {
 
         plugins: [
 
-            new webpack.optimize.UglifyJsPlugin({
-                mangle: {
-                    keep_fnames: true,
-                },
-                sourceMap: true,
-            }),
-
             new webpack.DefinePlugin({
                 "process.env": {
-                    "ENV": JSON.stringify("production"),
+                    "NODE_ENV": JSON.stringify("production"),
                 },
             }),
         ],

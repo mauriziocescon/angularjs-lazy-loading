@@ -17,9 +17,6 @@ module.exports = (env) => {
             lazy: "./src/lazy.ts",
         },
 
-        // Enable sourcemaps for debugging webpack's output.
-        devtool: "source-map",
-
         resolve: {
             // Add ".ts" and ".tsx" as a resolvable extension.
             extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js", ".scss", ".html", ".json"],
@@ -68,14 +65,6 @@ module.exports = (env) => {
                 excludeChunks: ["lazy"],
                 template: "src/index.html",
                 inject: "head",
-            }),
-
-            new webpack.optimize.CommonsChunkPlugin({
-                name: "vendor",
-                minChunks: (module) => {
-                    // this assumes your vendor imports exist in the node_modules directory
-                    return module.context && module.context.indexOf("node_modules") !== -1;
-                },
             }),
 
             new StyleLintPlugin(),

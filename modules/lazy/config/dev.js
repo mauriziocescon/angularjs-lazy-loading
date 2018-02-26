@@ -12,7 +12,7 @@ module.exports = (env) => {
 
             new webpack.DefinePlugin({
                 "process.env": {
-                    "ENV": JSON.stringify("development"),
+                    "NODE_ENV": JSON.stringify("development"),
                 },
             }),
         ],

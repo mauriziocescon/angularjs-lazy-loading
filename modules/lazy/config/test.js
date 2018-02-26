@@ -18,15 +18,7 @@ module.exports = (env) => {
 
             new webpack.DefinePlugin({
                 "process.env": {
-                    "ENV": JSON.stringify("test"),
-                },
-            }),
-
-            new webpack.optimize.CommonsChunkPlugin({
-                name: "vendor",
-                minChunks: (module) => {
-                    // this assumes your vendor imports exist in the node_modules directory
-                    return module.context && module.context.indexOf("node_modules") !== -1;
+                    "NODE_ENV": JSON.stringify("test"),
                 },
             }),
         ],

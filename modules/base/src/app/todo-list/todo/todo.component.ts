@@ -6,9 +6,9 @@ import { ITodoService } from "./todo.service";
 
 class TodoController {
     public static $inject = ["TodoService"];
-    public todo: Todo;
-    public date: Date;
-    public amount: number;
+    public todo!: Todo;
+    public date!: Date;
+    public amount!: number;
 
     constructor(protected todoService: ITodoService) {
     }

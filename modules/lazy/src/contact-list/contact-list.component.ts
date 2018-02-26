@@ -12,9 +12,9 @@ import { IContactListService } from "./contact-list.service";
 
 export class ContactListController {
     public static $inject = ["$translate", "UIUtilitiesService", "UtilitiesService", "ContactListService"];
-    public contacts: Contact[];
+    public contacts: Contact[] | undefined;
 
-    protected busy: boolean;
+    protected busy!: boolean;
 
     constructor(protected translate: ng.translate.ITranslateService,
                 protected uiUtilitiesService: IUIUtilitiesService,
@@ -38,7 +38,7 @@ export class ContactListController {
         return this.isLoadingData === false && this.hasNoData === false && this.shouldRetry === false;
     }
 
-    public get dataSource(): Contact[] {
+    public get dataSource(): Contact[] | undefined {
         return this.contacts;
     }
 

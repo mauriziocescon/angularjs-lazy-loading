@@ -8,9 +8,9 @@ import "./navigation-bar.component.scss";
 export class NavigationBarController {
     public static $inject = ["$state", "AppConstantsService", "AppLanguageService", "UtilitiesService"];
     public name: string;
-    public currentNavItem: string;
-    public selectedLanguage: string;
-    public supportedLanguages: string[];
+    public currentNavItem!: string;
+    public selectedLanguage!: string;
+    public supportedLanguages!: string[];
 
     constructor(protected state: ng.ui.IStateService,
                 protected appConstantsService: IAppConstantsService,

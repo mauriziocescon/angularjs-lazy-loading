@@ -6,7 +6,7 @@ import { IContactService } from "./contact.service";
 
 export class ContactController {
     public static $inject = ["ContactService"];
-    public contact: Contact;
+    public contact!: Contact;
 
     constructor(protected contactService: IContactService) {
     }

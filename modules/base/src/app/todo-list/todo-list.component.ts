@@ -17,7 +17,7 @@ export class TodoListController {
     public static $inject = ["$translate", "UIUtilitiesService", "UtilitiesService", "TodoListService"];
     public todos: Todo[] | undefined;
 
-    protected busy: boolean;
+    protected busy!: boolean;
 
     constructor(protected translate: ng.translate.ITranslateService,
                 protected uiUtilitiesService: IUIUtilitiesService,

@@ -41,12 +41,7 @@ describe("TodoListController", () => {
             const response = [];
 
             for (let i = 0; i < 4; i++) {
-                const todo = new Todo();
-
-                todo.userId = 1;
-                todo.id = i;
-                todo.title = "title";
-                todo.completed = Math.random() > 0.5;
+                const todo = new Todo(1, i, "title", Math.random() > 0.5);
 
                 response.push(todo);
             }

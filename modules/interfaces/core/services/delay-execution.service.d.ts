@@ -1,4 +1,4 @@
-import { Enum } from "../../../base/src/app/shared/utilities/enum";
+import { Enum } from "./enum";
 
 /**
  * Delay the execution of a function.

@@ -2,7 +2,7 @@ import * as StackTrace from "stacktrace-js";
 
 import { TypeDetect } from "./type-detect";
 
-import { environment } from "../../../../../lazy/src/environments/environment";
+import { environment } from "../../../environments/environment";
 
 export class Logger {
 

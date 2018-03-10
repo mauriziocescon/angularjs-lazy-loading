@@ -14,13 +14,13 @@ module.exports = (env) => {
             test: "./src/test.spec.ts",
         },
 
-        devtool: "cheap-module-eval-source-map",
+        mode: "development",
 
         plugins: [
 
             // copy lazy
             new CopyPlugin([{
-                from: "../lazy/dist",
+                from: "modules/lazy/dist",
             }]),
 
             new webpack.DefinePlugin({

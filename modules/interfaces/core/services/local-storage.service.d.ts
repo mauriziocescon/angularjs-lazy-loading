@@ -1,4 +1,4 @@
-import { Enum } from "../../../base/src/app/shared/utilities/enum";
+import { Enum } from "./enum";
 
 /**
  * Manage data in

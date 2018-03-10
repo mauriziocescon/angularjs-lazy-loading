@@ -7,6 +7,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const StyleLintPlugin = require("stylelint-webpack-plugin");
 const { CheckerPlugin } = require("awesome-typescript-loader");
+const { TsConfigPathsPlugin } = require("awesome-typescript-loader");
 
 module.exports = (env) => {
     return {
@@ -20,6 +21,10 @@ module.exports = (env) => {
         resolve: {
             // Add ".ts" and ".tsx" as a resolvable extension.
             extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js", ".scss", ".html", ".json"],
+
+            plugins: [
+                new TsConfigPathsPlugin(),
+            ],
         },
 
         plugins: [
@@ -67,7 +72,7 @@ module.exports = (env) => {
                 inject: "head",
             }),
 
-            new StyleLintPlugin(),
+            // new StyleLintPlugin(),
         ],
 
         module: {

@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "allowJs": true,
+    "baseUrl": ".",
     "checkJs": false,
     "diagnostics": true,
     "emitDecoratorMetadata": true,
@@ -8,6 +9,10 @@
     "jsx": "preserve",
     "module": "CommonJS",
     "moduleResolution": "Node",
+    "paths": {
+      "lazy": ["modules/lazy"],
+      "icore": ["modules/interfaces/core"]
+    },
     "pretty": true,
     "removeComments": false,
     "sourceMap": true,

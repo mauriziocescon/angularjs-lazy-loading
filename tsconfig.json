@@ -10,7 +10,8 @@
     "module": "CommonJS",
     "moduleResolution": "Node",
     "paths": {
-      "lazy": ["modules/lazy"]
+      "lazy": ["modules/lazy"],
+      "icore": ["modules/interfaces/core"]
     },
     "pretty": true,
     "removeComments": false,

@@ -7,9 +7,9 @@ module.exports = (env) => {
     return webpackMerge(commonConfig(env), {
 
         entry: {
+            vendors: "./src/test-vendors.ts",
             lazy: "./src/index.ts",
-            vendor: "./src/test.vendor.ts",
-            test: "./src/test.spec.ts",
+            tests: "./src/tests.ts",
         },
 
         mode: "development",
@@ -35,6 +35,19 @@ module.exports = (env) => {
                     ],
                 },
             ],
+        },
+
+        optimization: {
+            splitChunks: {
+                cacheGroups: {
+                    commons: {
+                        test: /node_modules/,
+                        chunks: "all",
+                        enforce: true,
+                        name: "chunk-vendors",
+                    },
+                },
+            },
         },
 
         output: {

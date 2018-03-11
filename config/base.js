@@ -13,7 +13,7 @@ module.exports = (env) => {
     return {
 
         entry: {
-            vendor: "./src/vendor.ts",
+            vendors: "./src/vendors.ts",
             app: "./src/main.ts",
             lazy: "./src/lazy.ts",
         },
@@ -55,7 +55,7 @@ module.exports = (env) => {
                 from: "src/index.html",
             }, {
                 from: "src/manifest.json",
-            },  {
+            }, {
                 from: "src/assets/i18n", to: "assets/i18n",
             }, {
                 from: "src/assets/imgs", to: "assets/imgs",
@@ -125,6 +125,19 @@ module.exports = (env) => {
                     ],
                 },
             ],
+        },
+
+        optimization: {
+            splitChunks: {
+                cacheGroups: {
+                    commons: {
+                        test: /node_modules/,
+                        chunks: "all",
+                        enforce: true,
+                        name: "chunk-vendors",
+                    },
+                },
+            },
         },
     };
 };

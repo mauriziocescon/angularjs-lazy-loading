@@ -12,7 +12,7 @@ module.exports = (config) => {
         // list of files / patterns to load in the browser
         files: [
             "dist/vendors.js",
-            "dist/chunk-vendors.js",
+            "dist/common~**.js",
             "dist/lazy.js",
             "dist/tests.js",
         ],

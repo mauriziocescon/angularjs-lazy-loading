@@ -37,19 +37,6 @@ module.exports = (env) => {
             ],
         },
 
-        optimization: {
-            splitChunks: {
-                cacheGroups: {
-                    commons: {
-                        test: /node_modules/,
-                        chunks: "all",
-                        enforce: true,
-                        name: "chunk-vendors",
-                    },
-                },
-            },
-        },
-
         output: {
             path: path.resolve(__dirname, "../dist"),
             filename: "[name].js",

@@ -14,6 +14,18 @@ module.exports = () => {
             extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js", ".scss", ".html", ".json"],
         },
 
+        optimization: {
+
+            splitChunks: {
+                cacheGroups: {
+                    common: {
+                        test: /node_modules/,
+                        chunks: "initial",
+                    },
+                },
+            },
+        },
+
         plugins: [
 
             // environment variables

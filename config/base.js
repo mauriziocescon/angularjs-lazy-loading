@@ -27,6 +27,18 @@ module.exports = (env) => {
             ],
         },
 
+        optimization: {
+
+            splitChunks: {
+                cacheGroups: {
+                    common: {
+                        test: /node_modules/,
+                        chunks: "initial",
+                    },
+                },
+            },
+        },
+
         plugins: [
 
             // environment variables
@@ -125,19 +137,6 @@ module.exports = (env) => {
                     ],
                 },
             ],
-        },
-
-        optimization: {
-            splitChunks: {
-                cacheGroups: {
-                    commons: {
-                        test: /node_modules/,
-                        chunks: "all",
-                        enforce: true,
-                        name: "chunk-vendors",
-                    },
-                },
-            },
         },
     };
 };

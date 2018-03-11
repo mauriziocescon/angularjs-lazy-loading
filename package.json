@@ -58,7 +58,7 @@
     "angular-messages": "1.6.9",
     "angular-mocks": "1.6.9",
     "angular-sanitize": "1.6.9",
-    "angular-stats": "1.1.13",
+    "angular-stats": "1.2.0",
     "angular-translate": "2.17.0",
     "angular-translate-loader-static-files": "2.17.0",
     "angular-translate-storage-local": "2.17.0",

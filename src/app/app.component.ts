@@ -1,25 +1,25 @@
-import template from "./app.component.html";
-import "./app.component.scss";
+import template from './app.component.html';
+import './app.component.scss';
 
 export default class AppController {
-    public static $inject = [];
+  public static $inject = [];
 
-    constructor() {
-        // do nothing
-    }
+  constructor() {
+    // do nothing
+  }
 
-    public $onInit(): void {
-        // do nothing
-    }
+  public $onInit(): void {
+    // do nothing
+  }
 
-    public $onDestroy(): void {
-        // do nothing
-    }
+  public $onDestroy(): void {
+    // do nothing
+  }
 }
 
 export const AppComponent: ng.IComponentOptions = {
-    controller: AppController,
-    template: () => {
-        return template;
-    },
+  controller: AppController,
+  template: () => {
+    return template;
+  },
 };

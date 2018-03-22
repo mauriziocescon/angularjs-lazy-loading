@@ -12,7 +12,9 @@
     "module": "CommonJS",
     "moduleResolution": "Node",
     "paths": {
-      "icore": ["../interfaces/core"]
+      "icore": [
+        "../interfaces/core"
+      ]
     },
     "pretty": true,
     "removeComments": false,

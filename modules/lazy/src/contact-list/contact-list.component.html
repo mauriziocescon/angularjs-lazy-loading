@@ -1,18 +1,21 @@
 <div class="contact-list" layout="column" flex md-sroll-y>
 
-    <h3>{{ "CONTACT_LIST.CONTACT_LIST_WELCOME" | translate }}</h3>
+  <h3>{{ "CONTACT_LIST.CONTACT_LIST_WELCOME" | translate }}</h3>
 
-    <md-list flex ng-if="$ctrl.showData">
-        <contact ng-repeat="contact in $ctrl.dataSource" contact="contact"></contact>
-    </md-list>
+  <md-list flex ng-if="$ctrl.showData">
+    <contact ng-repeat="contact in $ctrl.dataSource" contact="contact"></contact>
+  </md-list>
 
-    <div layout="row" layout-align="space-around">
-        <md-progress-circular ng-show="$ctrl.isLoadingData" md-mode="indeterminate"></md-progress-circular>
-        <md-button class="md-primary" ng-show="$ctrl.hasNoData">{{ "CONTACT_LIST.NO_RESULT" | translate }}</md-button>
-        <md-button class="md-primary" ng-show="$ctrl.shouldRetry" ng-click="$ctrl.loadModule()">{{ "CONTACT_LIST.RETRY" | translate }}</md-button>
-    </div>
-
-    <md-button class="md-button md-fab md-fab-bottom-right icon-button" ng-show="$ctrl.showData" ng-click="$ctrl.addContact()" aria-label="Add contact">
-        <md-icon md-font-icon="md">add</md-icon>
+  <div layout="row" layout-align="space-around">
+    <md-progress-circular ng-show="$ctrl.isLoadingData" md-mode="indeterminate"></md-progress-circular>
+    <md-button class="md-primary" ng-show="$ctrl.hasNoData">{{ "CONTACT_LIST.NO_RESULT" | translate }}</md-button>
+    <md-button class="md-primary" ng-show="$ctrl.shouldRetry" ng-click="$ctrl.loadModule()">{{ "CONTACT_LIST.RETRY" |
+      translate }}
     </md-button>
+  </div>
+
+  <md-button class="md-button md-fab md-fab-bottom-right icon-button" ng-show="$ctrl.showData"
+             ng-click="$ctrl.addContact()" aria-label="Add contact">
+    <md-icon md-font-icon="md">add</md-icon>
+  </md-button>
 </div>

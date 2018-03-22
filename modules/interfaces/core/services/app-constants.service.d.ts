@@ -1,4 +1,4 @@
-import * as Constants from "./app-constants.model";
+import * as Constants from './app-constants.model';
 
 /**
  * Get application constants
@@ -6,24 +6,24 @@ import * as Constants from "./app-constants.model";
  * grouped by field
  */
 export interface IAppConstantsService {
-    /**
-     * Api
-     */
-    Api: Constants.Api;
-    /**
-     * Application
-     */
-    Application: Constants.Application;
-    /**
-     * Supported languages
-     */
-    Languages: Constants.Languages;
-    /**
-     * Local storage keys
-     */
-    LocalStorageKey: Constants.LocalStorageKey;
-    /**
-     * RegExp
-     */
-    Validator: Constants.Validator;
+  /**
+   * Api
+   */
+  Api: Constants.Api;
+  /**
+   * Application
+   */
+  Application: Constants.Application;
+  /**
+   * Supported languages
+   */
+  Languages: Constants.Languages;
+  /**
+   * Local storage keys
+   */
+  LocalStorageKey: Constants.LocalStorageKey;
+  /**
+   * RegExp
+   */
+  Validator: Constants.Validator;
 }

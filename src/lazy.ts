@@ -1,6 +1,6 @@
-import * as angular from "angular";
+import * as angular from 'angular';
 
-import { lazy } from "lazy";
+import { lazy } from 'lazy';
 
-export const lazyModules = angular.module("lazy-modules", [lazy])
-    .name;
+export const lazyModules = angular.module('lazy-modules', [lazy])
+  .name;

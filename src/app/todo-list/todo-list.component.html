@@ -1,15 +1,15 @@
 <div class="todo-list" layout="column" flex>
 
-    <h3>{{ "TODO_LIST.TODO_LIST_WELCOME" | translate }}</h3>
+  <h3>{{ "TODO_LIST.TODO_LIST_WELCOME" | translate }}</h3>
 
-    <md-list flex ng-if="$ctrl.showData">
-        <todo ng-repeat="todo in $ctrl.dataSource" todo="todo"></todo>
-    </md-list>
+  <md-list flex ng-if="$ctrl.showData">
+    <todo ng-repeat="todo in $ctrl.dataSource" todo="todo"></todo>
+  </md-list>
 
-    <div layout="row" layout-align="space-around">
-        <md-progress-circular ng-show="$ctrl.isLoadingData" md-mode="indeterminate"></md-progress-circular>
-        <md-button class="md-primary" ng-show="$ctrl.hasNoData">{{ "TODO_LIST.NO_RESULT" | translate }}</md-button>
-        <md-button class="md-primary" ng-show="$ctrl.shouldRetry" ng-click="$ctrl.loadDataSource()">{{ "TODO_LIST.RETRY" | translate }}</md-button>
-    </div>
+  <div layout="row" layout-align="space-around">
+    <md-progress-circular ng-show="$ctrl.isLoadingData" md-mode="indeterminate"></md-progress-circular>
+    <md-button class="md-primary" ng-show="$ctrl.hasNoData">{{ "TODO_LIST.NO_RESULT" | translate }}</md-button>
+    <md-button class="md-primary" ng-show="$ctrl.shouldRetry" ng-click="$ctrl.loadDataSource()">{{ "TODO_LIST.RETRY" | translate }}</md-button>
+  </div>
 </div>
 

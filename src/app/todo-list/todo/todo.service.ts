@@ -1,16 +1,16 @@
-import Todo from "./todo.model";
+import Todo from './todo.model';
 
 export interface ITodoService {
-    getDescription(todo: Todo): string;
+  getDescription(todo: Todo): string;
 }
 
 export default class TodoService implements ITodoService {
 
-    constructor() {
-        // do nothing
-    }
+  constructor() {
+    // do nothing
+  }
 
-    public getDescription(todo: Todo): string {
-        return todo.title + " of todo";
-    }
+  public getDescription(todo: Todo): string {
+    return todo.title + ' of todo';
+  }
 }

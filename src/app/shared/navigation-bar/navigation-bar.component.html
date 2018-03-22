@@ -1,22 +1,20 @@
 <div class="navigation-bar">
-    <md-toolbar class="md-hue-2">
-        <div class="md-toolbar-tools">
-            <md-nav-bar
-                md-selected-nav-item="$ctrl.currentNavItem"
-                nav-bar-aria-label="navigation links">
-                <md-nav-item md-nav-sref="todo-list" name="todos" value="todos">
-                    {{ "TODOS" | translate }}
-                </md-nav-item>
-                <md-nav-item md-nav-sref="contact-list" name="contacts" value="contacts">
-                    {{ "CONTACTS" | translate }}
-                </md-nav-item>
-            </md-nav-bar>
-            <span flex></span>
-            <md-select ng-model="$ctrl.selectedLanguage" placeholder="Language" class="md-no-underline">
-                <md-option ng-repeat="language in $ctrl.supportedLanguages" ng-click="$ctrl.selectLanguage(language)" ng-value="language">
-                    {{ language }}
-                </md-option>
-            </md-select>
-        </div>
-    </md-toolbar>
+  <md-toolbar class="md-hue-2">
+    <div class="md-toolbar-tools">
+      <md-nav-bar md-selected-nav-item="$ctrl.currentNavItem" nav-bar-aria-label="navigation links">
+        <md-nav-item md-nav-sref="todo-list" name="todos" value="todos">
+          {{ "TODOS" | translate }}
+        </md-nav-item>
+        <md-nav-item md-nav-sref="contact-list" name="contacts" value="contacts">
+          {{ "CONTACTS" | translate }}
+        </md-nav-item>
+      </md-nav-bar>
+      <span flex></span>
+      <md-select ng-model="$ctrl.selectedLanguage" placeholder="Language" class="md-no-underline">
+        <md-option ng-repeat="language in $ctrl.supportedLanguages" ng-click="$ctrl.selectLanguage(language)" ng-value="language">
+          {{ language }}
+        </md-option>
+      </md-select>
+    </div>
+  </md-toolbar>
 </div>

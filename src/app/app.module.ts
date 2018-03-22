@@ -1,39 +1,39 @@
-import * as angular from "angular";
-import { angularStats } from "angular-stats";
+import * as angular from 'angular';
+import { angularStats } from 'angular-stats';
 
 // locales
-import "angular-i18n/angular-locale_de.js";
-import "angular-i18n/angular-locale_en.js";
-import "angular-i18n/angular-locale_it.js";
+import 'angular-i18n/angular-locale_de.js';
+import 'angular-i18n/angular-locale_en.js';
+import 'angular-i18n/angular-locale_it.js';
 
-import { core } from "./core/core.module";
-import { shared } from "./shared/shared.module";
+import { core } from './core/core.module';
+import { shared } from './shared/shared.module';
 
-import { componentLoader } from "./component-loader/component-loader.module";
-import { todoList } from "./todo-list/todo-list.module";
+import { componentLoader } from './component-loader/component-loader.module';
+import { todoList } from './todo-list/todo-list.module';
 
-import { appConfigFunc } from "./app-config.module";
-import { routingConfigFunc } from "./app-routing.module";
+import { appConfigFunc } from './app-config.module';
+import { routingConfigFunc } from './app-routing.module';
 
-import { AppComponent } from "./app.component";
+import { AppComponent } from './app.component';
 
-export * from "./core/core.module";
+export * from './core/core.module';
 
-const appModule = angular.module("app", [
-    "ngAnimate",
-    "ngLocale",
-    "ngMaterial",
-    "ngMessages",
-    "ngSanitize",
-    "oc.lazyLoad",
-    "tmh.dynamicLocale",
-    "pascalprecht.translate",
-    "ui.router",
-    angularStats,
-    core,
-    shared,
-    todoList,
-    componentLoader,
+const appModule = angular.module('app', [
+  'ngAnimate',
+  'ngLocale',
+  'ngMaterial',
+  'ngMessages',
+  'ngSanitize',
+  'oc.lazyLoad',
+  'tmh.dynamicLocale',
+  'pascalprecht.translate',
+  'ui.router',
+  angularStats,
+  core,
+  shared,
+  todoList,
+  componentLoader,
 ]);
 
 // config providers

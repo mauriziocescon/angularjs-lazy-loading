@@ -1,23 +1,24 @@
-import { Contact } from "./contact/contact.module";
+import { Contact } from './contact/contact.module';
 
 export interface IContactListService {
-    addContact(): void;
-    getContacts(): Contact[];
+  addContact(): void;
+
+  getContacts(): Contact[];
 }
 
 export default class ContactListService implements IContactListService {
-    protected contactList: Contact[];
+  protected contactList: Contact[];
 
-    constructor() {
-        this.contactList = [];
-    }
+  constructor() {
+    this.contactList = [];
+  }
 
-    public addContact(): void {
-        const contact = new Contact("face", "Desc", "Note");
-        this.contactList.push(contact);
-    }
+  public addContact(): void {
+    const contact = new Contact('face', 'Desc', 'Note');
+    this.contactList.push(contact);
+  }
 
-    public getContacts(): Contact[] {
-        return this.contactList;
-    }
+  public getContacts(): Contact[] {
+    return this.contactList;
+  }
 }

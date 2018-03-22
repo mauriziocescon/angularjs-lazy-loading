@@ -1,7 +1,7 @@
-import * as angular from "angular";
+import * as angular from 'angular';
 
-import { ComponentLoaderComponent } from "./component-loader.component";
+import { ComponentLoaderComponent } from './component-loader.component';
 
-export const componentLoader = angular.module("app.componentLoader", [])
-    .component("componentLoader", ComponentLoaderComponent)
-    .name;
+export const componentLoader = angular.module('app.componentLoader', [])
+  .component('componentLoader', ComponentLoaderComponent)
+  .name;

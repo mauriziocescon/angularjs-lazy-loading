@@ -16,6 +16,7 @@ import 'angular-translate-storage-local';
 import 'angular-ui-router';
 import 'babel-polyfill';
 import 'oclazyload';
+import 'parse-link-header';
 import 'stacktrace-js';
 
 // Take a look at http://thesassway.com/beginner/how-to-structure-a-sass-project

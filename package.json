@@ -18,9 +18,11 @@
     "build:lazy": "npm run build --prefix modules/lazy",
     "test:lazy": "npm run test --prefix modules/lazy",
     "serve": "npm run serve:lazy && webpack-dev-server --d --progress --profile --colors --env.name=dev | npm run json-server-watch",
-    "build": "npm run build:lazy && webpack --progress --profile --colors --env.name=prod",
+    "build": "npm run build:lazy && webpack --progress --profile --json --colors --env.name=prod",
     "pretest": "npm run test:lazy && webpack --progress --profile --colors --env.name=test",
-    "test": "karma start karma.conf.js"
+    "test": "karma start karma.conf.js",
+    "bundle-analyzer:lazy": "npm run bundle-analyzer --prefix modules/lazy",
+    "bundle-analyzer": "webpack-bundle-analyzer ./dist/stats.json"
   },
   "repository": {
     "type": "git",
@@ -121,6 +123,7 @@
     "tslint-loader": "3.6.0",
     "typescript": "2.9.2",
     "webpack": "4.12.0",
+    "webpack-bundle-analyzer": "2.13.1",
     "webpack-cli": "3.0.8",
     "webpack-dev-server": "3.1.4",
     "webpack-manifest-plugin": "2.0.3",

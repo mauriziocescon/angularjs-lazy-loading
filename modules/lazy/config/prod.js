@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const webpackMerge = require('webpack-merge');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const commonConfig = require('./base.js');
 
 module.exports = (env) => {
@@ -14,6 +15,13 @@ module.exports = (env) => {
         'process.env': {
           'NODE_ENV': JSON.stringify('production'),
         },
+      }),
+
+      // bundle analyzer
+      new BundleAnalyzerPlugin({
+        analyzerMode: 'disabled',
+        generateStatsFile: true,
+        logLevel: 'silent',
       }),
     ],
 

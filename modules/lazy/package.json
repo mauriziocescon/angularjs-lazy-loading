@@ -7,9 +7,10 @@
   "scripts": {
     "postinstall": "npm run build",
     "serve": "webpack --progress --profile --colors --env.name=dev",
-    "build": "webpack --progress --profile --colors --env.name=prod",
+    "build": "webpack --progress --profile --json --colors --env.name=prod",
     "pretest": "webpack --progress --profile --colors --env.name=test",
-    "test": "karma start karma.conf.js"
+    "test": "karma start karma.conf.js",
+    "bundle-analyzer": "webpack-bundle-analyzer ./dist/stats.json"
   },
   "peerDependencies": {
     "angular": "1.6.9",

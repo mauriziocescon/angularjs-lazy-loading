@@ -10,7 +10,7 @@
         </md-nav-item>
       </md-nav-bar>
       <span flex></span>
-      <md-button class="md-fab md-mini md-hue-3" aria-label="Server" ng-click="$ctrl.openJsonServer()">
+      <md-button class="md-fab md-mini md-hue-3" aria-label="Server" ng-if="$ctrl.canOpenJsonServer" ng-click="$ctrl.openJsonServer()">
         <md-icon md-font-icon="md">code</md-icon>
       </md-button>
       <md-select ng-model="$ctrl.selectedLanguage" placeholder="Language" class="md-no-underline">

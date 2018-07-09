@@ -113,7 +113,7 @@ export class UIUtilitiesService implements IUIUtilitiesService {
     try {
       const toast = this.mdToast.simple()
         .textContent(message)
-        .position('start');
+        .position('bottom');
 
       this.mdToast.show(toast);
     } catch (e) {

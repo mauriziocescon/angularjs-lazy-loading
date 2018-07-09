@@ -10,6 +10,9 @@
         </md-nav-item>
       </md-nav-bar>
       <span flex></span>
+      <md-button class="md-fab md-mini md-hue-3" aria-label="Server" ng-click="$ctrl.openJsonServer()">
+        <md-icon md-font-icon="md">code</md-icon>
+      </md-button>
       <md-select ng-model="$ctrl.selectedLanguage" placeholder="Language" class="md-no-underline">
         <md-option ng-repeat="language in $ctrl.supportedLanguages" ng-click="$ctrl.selectLanguage(language)" ng-value="language">
           {{ language }}

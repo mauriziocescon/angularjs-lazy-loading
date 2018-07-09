@@ -6,17 +6,22 @@ import template from './navigation-bar.component.html';
 import './navigation-bar.component.scss';
 
 export class NavigationBarController {
-  public static $inject = ['$state', 'AppConstantsService', 'AppLanguageService', 'UtilitiesService'];
+  public static $inject = ['$window', '$state', 'AppConstantsService', 'AppLanguageService', 'UtilitiesService'];
   public name: string;
   public currentNavItem!: string;
   public selectedLanguage!: string;
   public supportedLanguages!: string[];
 
-  constructor(protected state: ng.ui.IStateService,
+  constructor(protected window: ng.IWindowService,
+              protected state: ng.ui.IStateService,
               protected appConstantsService: IAppConstantsService,
               protected appLanguageService: IAppLanguageService,
               protected utilitiesService: IUtilitiesService) {
     this.name = 'NavigationBarComponent';
+  }
+
+  get canOpenJsonServer(): boolean {
+    return this.appConstantsService.Application.SHOW_JSON_SERVER_API === true;
   }
 
   public $onInit(): void {
@@ -48,6 +53,10 @@ export class NavigationBarController {
       this.selectedLanguage = language;
       this.appLanguageService.setLanguageId(this.selectedLanguage);
     }
+  }
+
+  public openJsonServer(): void {
+    this.window.open(this.appConstantsService.Application.JSON_SERVER_API_URL);
   }
 }
 

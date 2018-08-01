@@ -9,7 +9,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "jsx": "preserve",
-    "module": "CommonJS",
+    "module": "ESNext",
     "moduleResolution": "Node",
     "paths": {
       "icore": [

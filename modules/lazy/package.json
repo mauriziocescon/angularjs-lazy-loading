@@ -7,18 +7,18 @@
   "scripts": {
     "postinstall": "npm run build",
     "serve": "webpack --progress --profile --colors --env.name=dev",
-    "build": "webpack --progress --profile --json --colors --env.name=prod",
+    "build": "webpack --progress --profile --colors --env.name=prod",
     "pretest": "webpack --progress --profile --colors --env.name=test",
     "test": "karma start karma.conf.js",
     "bundle-analyzer": "webpack-bundle-analyzer ./dist/stats.json"
   },
   "peerDependencies": {
-    "angular": "1.6.9",
-    "angular-animate": "1.6.9",
-    "angular-aria": "1.6.9",
-    "angular-messages": "1.6.9",
-    "angular-mocks": "1.6.9",
-    "angular-sanitize": "1.6.9",
-    "angular-translate": "2.17.0"
+    "angular": "1.7.2",
+    "angular-animate": "1.7.2",
+    "angular-aria": "1.7.2",
+    "angular-messages": "1.7.2",
+    "angular-mocks": "1.7.2",
+    "angular-sanitize": "1.7.2",
+    "angular-translate": "2.18.1"
   }
 }

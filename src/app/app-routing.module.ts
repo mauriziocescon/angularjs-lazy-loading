@@ -10,14 +10,16 @@ export const routingConfigFunc = ($locationProvider: ng.ILocationProvider,
     name: 'contact-list',
     resolve: {
       paths: () => {
-        return ['lazy.js'];
+        return [
+          'lazy.js',
+        ];
       },
     },
     template: () => {
       return `
-                <component-loader paths='$resolve.paths'>
-                    <contact-list></contact-list>
-                </component-loader>`;
+        <component-loader paths='$resolve.paths'>
+          <contact-list></contact-list>
+        </component-loader>`;
     },
     url: '/contact-list',
   });

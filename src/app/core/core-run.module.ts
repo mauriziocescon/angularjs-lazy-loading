@@ -7,7 +7,7 @@ import {
 export const servicesSetupFunc = ($translateService: ng.translate.ITranslateService,
                                   AppLanguageService: IAppLanguageService) => {
   // setup services
-  // Logger.log("ANGULAR CORE OK  " + UtilitiesService.getNow().toISOString());
+  // Logger.log('ANGULAR CORE OK  ' + UtilitiesService.getNow().toISOString());
   AppLanguageService.start();
 
   // set language

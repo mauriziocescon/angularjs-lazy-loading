@@ -1,4 +1,4 @@
-/// <reference types="angular" />
+/// <reference types='angular' />
 import './contact.component.scss';
 import { Contact } from './contact.model';
 import { IContactService } from './contact.service';

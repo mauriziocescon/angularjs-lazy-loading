@@ -2,7 +2,7 @@
   "name": "@types/icore",
   "version": "1.0.0",
   "peerDependencies": {
-    "@types/angular": "1.6.50",
+    "@types/angular": "1.6.51",
     "@types/angular-animate": "1.5.10",
     "@types/angular-dynamic-locale": "0.1.34",
     "@types/angular-material": "1.1.59",
@@ -10,7 +10,7 @@
     "@types/angular-sanitize": "1.3.7",
     "@types/angular-translate": "2.16.0",
     "@types/angular-ui-router": "1.1.40",
-    "@types/node": "10.9.4",
+    "@types/node": "10.12.1",
     "@types/oclazyload": "0.0.32",
     "@types/stacktrace-js": "0.0.32"
   }

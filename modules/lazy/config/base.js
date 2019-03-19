@@ -28,12 +28,7 @@ module.exports = () => {
       new webpack.optimize.ModuleConcatenationPlugin(),
 
       // clean dist folder
-      new CleanPlugin(['dist', 'build'], {
-        root: path.resolve(__dirname, '../'),
-        verbose: true,
-        dry: false,
-        exclude: [],
-      }),
+      new CleanPlugin(),
 
       new CheckerPlugin(),
 

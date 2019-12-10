@@ -2,16 +2,14 @@
   "name": "@types/icore",
   "version": "1.0.0",
   "peerDependencies": {
-    "@types/angular": "1.6.54",
+    "@types/angular": "1.6.57",
     "@types/angular-animate": "1.5.10",
-    "@types/angular-dynamic-locale": "0.1.34",
-    "@types/angular-material": "1.1.66",
+    "@types/angular-material": "1.1.68",
     "@types/angular-mocks": "1.7.0",
-    "@types/angular-sanitize": "1.3.7",
-    "@types/angular-translate": "2.16.0",
+    "@types/angular-sanitize": "1.7.0",
+    "@types/angular-translate": "2.16.1",
     "@types/angular-ui-router": "1.1.40",
     "@types/node": "11.11.3",
-    "@types/oclazyload": "0.0.32",
-    "@types/stacktrace-js": "0.0.32"
+    "@types/oclazyload": "0.0.32"
   }
 }

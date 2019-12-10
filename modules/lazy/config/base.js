@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
-const CleanPlugin = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const {CheckerPlugin} = require('awesome-typescript-loader');
 
@@ -28,7 +28,7 @@ module.exports = () => {
       new webpack.optimize.ModuleConcatenationPlugin(),
 
       // clean dist folder
-      new CleanPlugin(),
+      new CleanWebpackPlugin(),
 
       new CheckerPlugin(),
 

@@ -12,11 +12,11 @@ export declare class ContactListController {
     contacts: Contact[] | undefined;
     protected busy: boolean;
     constructor(translate: ng.translate.ITranslateService, uiUtilitiesService: IUIUtilitiesService, utilitiesService: IUtilitiesService, contactListService: IContactListService);
-    readonly isLoadingData: boolean;
-    readonly hasNoData: boolean;
-    readonly shouldRetry: boolean;
-    readonly showData: boolean;
-    readonly dataSource: Contact[] | undefined;
+    get isLoadingData(): boolean;
+    get hasNoData(): boolean;
+    get shouldRetry(): boolean;
+    get showData(): boolean;
+    get dataSource(): Contact[] | undefined;
     $onInit(): void;
     $onDestroy(): void;
     addContact(): void;

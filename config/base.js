@@ -6,7 +6,7 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
-const {CheckerPlugin, TsConfigPathsPlugin} = require('awesome-typescript-loader');
+const TsConfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = (env) => {
   return {
@@ -23,7 +23,7 @@ module.exports = (env) => {
 
       plugins: [
         new TsConfigPathsPlugin(),
-      ],
+      ]
     },
 
     optimization: {
@@ -64,8 +64,6 @@ module.exports = (env) => {
         ],
       }),
 
-      new CheckerPlugin(),
-
       // insert file dynamically
       new HtmlWebpackPlugin({
         excludeChunks: ['lazy'],
@@ -96,7 +94,8 @@ module.exports = (env) => {
           test: /\.(js|ts|tsx)?$/,
           exclude: [/node_modules/],
           use: [
-            {loader: 'awesome-typescript-loader', options: {useBabel: true, useCache: true}},
+            {loader: 'babel-loader', options: {cacheDirectory: true, presets: ['@babel/env']}},
+            {loader: 'ts-loader'},
           ],
         },
 

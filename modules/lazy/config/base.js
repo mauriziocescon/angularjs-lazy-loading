@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const path = require('path');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
-const {CheckerPlugin} = require('awesome-typescript-loader');
 
 module.exports = () => {
   return {
@@ -26,8 +25,6 @@ module.exports = () => {
 
       // clean dist folder
       new CleanWebpackPlugin(),
-
-      new CheckerPlugin(),
 
       new StyleLintPlugin({
         files: 'src/**/*.s?(a|c)ss',
@@ -65,7 +62,8 @@ module.exports = () => {
           test: /\.(js|ts|tsx)?$/,
           exclude: [/node_modules/, /config/],
           use: [
-            {loader: 'awesome-typescript-loader', options: {useBabel: true, useCache: true}},
+            {loader: 'babel-loader', options: {cacheDirectory: true, presets: ['@babel/env']}},
+            {loader: 'ts-loader'},
           ],
         },
 

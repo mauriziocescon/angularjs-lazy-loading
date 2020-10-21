@@ -2,11 +2,11 @@
 const webpack = require('webpack');
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
-const webpackMerge = require('webpack-merge');
+const {merge} = require('webpack-merge');
 const commonConfig = require('./base.js');
 
 module.exports = (env) => {
-  return webpackMerge(commonConfig(env), {
+  return merge(commonConfig(env), {
 
     entry: {
       vendors: './src/vendors.ts',
@@ -19,9 +19,11 @@ module.exports = (env) => {
     plugins: [
 
       // copy lazy
-      new CopyPlugin([{
-        from: 'modules/lazy/dist',
-      }]),
+      new CopyPlugin({
+        patterns: [
+          {from: 'modules/lazy/dist'},
+        ],
+      }),
 
       new webpack.DefinePlugin({
         'process.env': {

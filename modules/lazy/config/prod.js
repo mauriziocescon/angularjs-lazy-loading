@@ -1,11 +1,11 @@
 const webpack = require('webpack');
 const path = require('path');
-const webpackMerge = require('webpack-merge');
+const {merge} = require('webpack-merge');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const commonConfig = require('./base.js');
 
 module.exports = (env) => {
-  return webpackMerge(commonConfig(env), {
+  return merge(commonConfig(env), {
 
     mode: 'production',
 

@@ -6,8 +6,7 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
-const {CheckerPlugin} = require('awesome-typescript-loader');
-const {TsConfigPathsPlugin} = require('awesome-typescript-loader');
+const {CheckerPlugin, TsConfigPathsPlugin} = require('awesome-typescript-loader');
 
 module.exports = (env) => {
   return {
@@ -28,7 +27,8 @@ module.exports = (env) => {
     },
 
     optimization: {
-
+      // concatenateModules: true,
+      // usedExports: true,
       splitChunks: {
         cacheGroups: {
           common: {
@@ -52,23 +52,17 @@ module.exports = (env) => {
       // hot module replacement
       new webpack.HotModuleReplacementPlugin({}),
 
-      // scope hoisting
-      new webpack.optimize.ModuleConcatenationPlugin(),
-
       // clean dist folder
       new CleanWebpackPlugin(),
 
-      new CopyPlugin([{
-        from: 'src/index.html',
-      }, {
-        from: 'src/manifest.json',
-      }, {
-        from: 'src/assets/i18n', to: 'assets/i18n',
-      }, {
-        from: 'src/assets/imgs', to: 'assets/imgs',
-      }, {
-        from: {glob: 'node_modules/angular-i18n/**_+(de|en|it).js'}, to: 'locales', flatten: true,
-      }]),
+      new CopyPlugin({
+        patterns: [
+          {from: 'src/index.html'},
+          {from: 'src/assets/i18n', to: 'assets/i18n'},
+          {from: 'src/assets/imgs', to: 'assets/imgs'},
+          {from: 'node_modules/angular-i18n/**_+(de|en|it).js', to: 'locales', flatten: true},
+        ],
+      }),
 
       new CheckerPlugin(),
 
@@ -79,7 +73,9 @@ module.exports = (env) => {
         inject: 'head',
       }),
 
-      new StyleLintPlugin(),
+      new StyleLintPlugin({
+        files: 'src/**/*.s?(a|c)ss',
+      }),
     ],
 
     module: {
@@ -91,7 +87,7 @@ module.exports = (env) => {
           test: /\.html?$/,
           exclude: /index.html$/,
           use: [
-            {loader: 'html-loader', options: {exportAsEs6Default: true, minimize: true}},
+            {loader: 'html-loader', options: {esModule: true, minimize: true}},
           ],
         },
 

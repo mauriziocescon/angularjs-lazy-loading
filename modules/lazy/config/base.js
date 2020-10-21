@@ -24,15 +24,14 @@ module.exports = () => {
         }
       }),
 
-      // scope hoisting
-      new webpack.optimize.ModuleConcatenationPlugin(),
-
       // clean dist folder
       new CleanWebpackPlugin(),
 
       new CheckerPlugin(),
 
-      new StyleLintPlugin(),
+      new StyleLintPlugin({
+        files: 'src/**/*.s?(a|c)ss',
+      }),
     ],
 
     module: {
@@ -57,7 +56,7 @@ module.exports = () => {
           test: /\.html?$/,
           exclude: /index.html$/,
           use: [
-            {loader: 'html-loader', options: {exportAsEs6Default: true, minimize: true}},
+            {loader: 'html-loader', options: {esModule: true, minimize: true}},
           ],
         },
 

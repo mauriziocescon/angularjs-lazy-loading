@@ -13,12 +13,12 @@
     "bundle-analyzer": "webpack-bundle-analyzer ./dist/stats.json"
   },
   "peerDependencies": {
-    "angular": "1.8.1",
-    "angular-animate": "1.8.1",
-    "angular-aria": "1.8.1",
-    "angular-messages": "1.8.1",
-    "angular-mocks": "1.8.1",
-    "angular-sanitize": "1.8.1",
+    "angular": "1.8.2",
+    "angular-animate": "1.8.2",
+    "angular-aria": "1.8.2",
+    "angular-messages": "1.8.2",
+    "angular-mocks": "1.8.2",
+    "angular-sanitize": "1.8.2",
     "angular-translate": "2.18.3"
   }
 }

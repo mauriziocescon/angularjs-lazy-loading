@@ -17,7 +17,7 @@
     "serve:lazy": "npm run serve --prefix modules/lazy",
     "build:lazy": "npm run build --prefix modules/lazy",
     "test:lazy": "npm run test --prefix modules/lazy",
-    "serve": "npm run serve:lazy && webpack-dev-server --d --progress --profile --color --env name=dev | npm run json-server-watch",
+    "serve": "npm run serve:lazy && webpack serve --progress --color --env name=dev --config webpack.config.js | npm run json-server-watch",
     "build": "npm run build:lazy && webpack --progress --profile --color --env name=prod",
     "pretest": "npm run test:lazy && webpack --progress --profile --color --env name=test",
     "test": "karma start karma.conf.js",

@@ -67,7 +67,7 @@
     "angular-translate-storage-local": "2.18.4",
     "angular-ui-router": "0.4.3",
     "oclazyload": "1.1.0",
-    "parse-link-header": "1.0.1",
+    "parse-link-header": "2.0.0",
     "roboto-fontface": "0.10.0",
     "stacktrace-js": "2.0.2"
   },

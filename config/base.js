@@ -21,6 +21,11 @@ module.exports = (env) => {
       // Add '.ts' and '.tsx' as a resolvable extension.
       extensions: ['.webpack.js', '.web.js', '.ts', '.tsx', '.js', '.scss', '.html', '.json'],
 
+      fallback: {
+        url: require.resolve('url'),
+        querystring: require.resolve('querystring-es3'),
+      },
+
       plugins: [
         new TsConfigPathsPlugin(),
       ]

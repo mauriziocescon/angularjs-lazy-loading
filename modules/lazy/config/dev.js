@@ -20,14 +20,6 @@ module.exports = (env) => {
     module: {
 
       rules: [
-
-        // images loader
-        {
-          test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-          use: [
-            {loader: 'file-loader', options: {name: '[name].[ext]'}},
-          ],
-        },
       ],
     },
 

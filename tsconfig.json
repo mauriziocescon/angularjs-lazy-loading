@@ -7,8 +7,8 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "jsx": "preserve",
-    "module": "CommonJS",
-    "moduleResolution": "Node",
+    "module": "es2022",
+    "moduleResolution": "bundler",
     "paths": {
       "lazy": ["modules/lazy"],
       "icore": ["modules/interfaces/core"]
@@ -17,7 +17,7 @@
     "removeComments": false,
     "sourceMap": true,
     "strict": true,
-    "target": "ES2017",
+    "target": "es2022",
     "types": [
       "jasmine",
       "node"

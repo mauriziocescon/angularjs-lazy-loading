@@ -27,7 +27,7 @@ Lazy loading application
 
 8. [Babel](https://babeljs.io/) 
 
-9. [TSLint](https://palantir.github.io/tslint/) 
+9. [EsLint](https://eslint.org)
 
 10. [Stylelint](https://stylelint.io/) 
 

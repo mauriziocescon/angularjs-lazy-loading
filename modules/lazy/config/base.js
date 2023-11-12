@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = () => {
   return {
@@ -35,6 +36,11 @@ module.exports = () => {
 
       new StyleLintPlugin({
         files: 'src/**/*.s?(a|c)ss',
+      }),
+
+      new ESLintPlugin({
+        extensions: ['ts', 'tsx'],
+        emitError: true,
       }),
     ],
 
@@ -71,16 +77,6 @@ module.exports = () => {
           use: [
             {loader: 'babel-loader', options: {cacheDirectory: true, babelrc: true}},
             {loader: 'ts-loader'},
-          ],
-        },
-
-        // preprocess + ts-lint
-        {
-          test: /\.(js|ts|tsx)?$/,
-          exclude: [/node_modules/, /config/],
-          enforce: 'pre',
-          use: [
-            {loader: 'tslint-loader', options: {emitErrors: false, formatter: 'stylish'}},
           ],
         },
 

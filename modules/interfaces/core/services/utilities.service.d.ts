@@ -12,7 +12,7 @@ export interface IUtilitiesService {
    * @param scope
    * @param args
    */
-  defer(func: Function, n: number, scope: any, ...args: any[]): ng.IPromise<any>; // tslint:disable-line:ban-types
+  defer(func: Function, n: number, scope: any, ...args: any[]): ng.IPromise<any>;
   /**
    * Cancel the defer func
    *
@@ -27,7 +27,7 @@ export interface IUtilitiesService {
    * @param scope
    * @param args
    */
-  call(func: Function, scope: any, ...args: any[]): void; // tslint:disable-line:ban-types
+  call(func: Function, scope: any, ...args: any[]): void;
   /**
    * Deeply copy the object
    *

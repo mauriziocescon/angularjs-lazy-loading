@@ -61,5 +61,4 @@ config
 !services/**/*
 karma.conf.js
 tsconfig.json
-tslint.json
 webpack.config.js

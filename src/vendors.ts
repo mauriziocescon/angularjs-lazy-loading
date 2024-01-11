@@ -12,7 +12,6 @@ import 'angular-translate';
 import 'angular-translate-loader-static-files';
 import 'angular-translate-storage-local';
 import 'angular-ui-router';
-import '@babel/polyfill';
 import 'oclazyload';
 import 'parse-link-header';
 import 'stacktrace-js';

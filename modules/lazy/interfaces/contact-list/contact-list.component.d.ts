@@ -1,4 +1,3 @@
-/// <reference types="angular" />
 import './contact-list.component.scss';
 import { IUIUtilitiesService, IUtilitiesService } from 'icore';
 import { Contact } from './contact/contact.module';
